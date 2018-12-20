@@ -1,0 +1,15 @@
+<div class="main">
+  <img src="<%= "/user_images/#{@users.image_name}" %>">
+<div class="show-users-identfy">
+  <%= "user  : #{@users.name}" %><br>
+  <%= "email :"+@users.email %><br>
+  <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %><br>
+  <p>ツイート一覧</p>
+ <% num=0 %>
+  <% @users.posts.each do |post|%>
+  tweet
+  <%= "#{num}:#{post.content}" %><br>
+  <% num=num+1 %>
+  <% end %>
+</div>
+</div>

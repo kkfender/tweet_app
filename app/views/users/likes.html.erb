@@ -1,0 +1,17 @@
+ <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+      <% end %>
+      
+       <ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+    </ul>
+    
+    <%  <% @likes.each do |like| %>%>
+      <% post = Post.find_by(id: like.post_id) %>
+      
+      <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+          <%end %>

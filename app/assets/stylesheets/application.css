@@ -1,0 +1,143 @@
+/************************共通**********************/
+* {
+  box-sizing: border-box;
+/*border: solid red 1px;*/
+font-family: Impact,Charcoal ;
+}
+
+html {
+/*background-image: url("/tweet.png");*/
+background-size: cover;
+
+}
+body {
+ color: #2d3133;
+ min-height: 1vh;
+  margin: 0;
+}
+header {
+  margin:0 auto;
+}h1,h2,h3 {
+  font-size:35px;
+  font-family:fantasy ;
+}
+p {
+  font-size:25px;
+  font-family:sans-serif ; 
+  margin:auto;
+}
+.header-top {
+  height: 55px;
+  top: 0;
+  width: 100%;
+ background-color: #3ecdc6;
+  margin:0 auto;
+  padding:0;
+}
+
+.header-menus{
+/*float:left;*/
+margin:0 auto;
+ padding-right: 20px;
+}
+.header-logo {
+  float: left;
+  padding-left: 20px;
+   margin-top: 15px;
+  color: white;
+  font-size: 22px;
+  
+}
+
+
+ /*****************************************************/
+
+/*
+.header-content {
+
+}
+
+.header-logo {
+ 
+}
+*/ 
+
+ .header-menus li{
+  float: right;
+ /* line-height: 64px;*/
+  font-size: 13px;
+  color: white;
+  padding-left: 15px;
+  margin-top:15px;
+}
+
+.header-menus a {
+  font-size: 20px;
+  color: white;
+  
+}
+.main {
+  color: #8899a6;
+ position: relative;
+  width:100%;
+  margin: 0 auto;
+  text-align:center;
+
+}
+
+.like-btn {
+  color: #8899a6;
+}
+.like-btn-unlike {
+  color: #ff2581;
+}
+.posts-show-item .fa {
+  font-size: 30px;
+  margin-right: 3px;
+}
+input{
+  font-size:2em;
+  background-color: transparent;
+}
+.flash {
+ text-align:center;
+ background-color:yellow;
+}
+.show-index,.show-users-identfy,.post-index,.post-detail,.post-edit {
+ font-size:40px;
+}
+.main img {
+  width: 80px;
+  height: 80px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+}
+.button1  {
+ font-size: 1em;
+ font-weight: bold;
+ padding: 10px 30px;
+ background-color: #248;
+ color: #fff;
+ border-style: none;
+}
+
+.button1:hover {
+ background-color: #24d;
+ transition: 1.0s ;
+ color: #fff;
+}
+.errors  {
+ color:red;
+ 
+}
+.user-index-table{
+ float:left; 
+ 
+}
+.caption-d p {
+ color: #006633;
+ margin:0;
+ width:100%;
+ text-align:center;
+}

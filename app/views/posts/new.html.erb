@@ -1,0 +1,16 @@
+<div class="main">
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+<%=form_tag("/posts/create",class: "square_btn")do%>
+
+  <%@posts.errors.full_messages.each do |message|%>
+     <p class="errors"><%=message%></p>
+   <%end%>
+  
+<textarea name="content"></textarea><br><br>
+<input type="submit" value="投稿" class="button1">
+<%end%>
+  </div>
+      </div>
+      </div>
