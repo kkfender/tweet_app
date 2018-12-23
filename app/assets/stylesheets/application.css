@@ -1,5 +1,5 @@
 /************************共通**********************/
-* {
+ * {
   box-sizing: border-box;
 /*border: solid red 1px;*/
 font-family: Impact,Charcoal ;
@@ -7,12 +7,12 @@ font-family: Impact,Charcoal ;
 
 html {
 /*background-image: url("/tweet.png");*/
-background-size: cover;
+  background-size: cover;
 
 }
 body {
- color: #2d3133;
- min-height: 1vh;
+  color: #2d3133;
+  min-height: 1vh;
   margin: 0;
 }
 header {
@@ -30,20 +30,20 @@ p {
   height: 55px;
   top: 0;
   width: 100%;
- background-color: #3ecdc6;
+  background-color: #3ecdc6;
   margin:0 auto;
   padding:0;
 }
 
 .header-menus{
 /*float:left;*/
-margin:0 auto;
- padding-right: 20px;
+  margin:0 auto;
+  padding-right: 20px;
 }
 .header-logo {
   float: left;
   padding-left: 20px;
-   margin-top: 15px;
+  margin-top: 15px;
   color: white;
   font-size: 22px;
   
@@ -52,17 +52,9 @@ margin:0 auto;
 
  /*****************************************************/
 
-/*
-.header-content {
 
-}
 
-.header-logo {
- 
-}
-*/ 
-
- .header-menus li{
+.header-menus li{
   float: right;
  /* line-height: 64px;*/
   font-size: 13px;
@@ -78,7 +70,7 @@ margin:0 auto;
 }
 .main {
   color: #8899a6;
- position: relative;
+  position: relative;
   width:100%;
   margin: 0 auto;
   text-align:center;
@@ -100,11 +92,11 @@ input{
   background-color: transparent;
 }
 .flash {
- text-align:center;
- background-color:yellow;
+  text-align:center;
+  background-color:yellow;
 }
 .show-index,.show-users-identfy,.post-index,.post-detail,.post-edit {
- font-size:40px;
+  font-size:20px;
 }
 .main img {
   width: 80px;
