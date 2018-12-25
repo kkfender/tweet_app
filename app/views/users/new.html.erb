@@ -3,6 +3,10 @@
 
 <h3>新規ユーザー登録</h3>
 
+<%@users.errors.full_messages.each do |message|%>
+     <p class="errors"><%=message%></p>
+   <%end%>
+
 <p>ユーザー名</p>
 <input type="text" name="name" value="<%= @users.name%>">
 
