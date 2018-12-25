@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end 
   
   def create
-    @users = User.new(name: params[:name],email: params[:email],password: params[:password],image_name:"nobunaga.png")
+    @users = User.new(name: params[:name],email: params[:email],password: params[:password],password_confirmation: params[:password_confirmation],image_name:"nobunaga.png")
     if @users.save
         session[:user_id]=@users.id
         
