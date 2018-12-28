@@ -1,5 +1,9 @@
 <div class="main">
 <p "caption-d">ユーザー一覧</p>
+
+<%= will_paginate %>
+
+
 <% @users.each do |user| %>
 <div class="user-index-table">
 <table border="1" width="200" height="200">
@@ -13,4 +17,7 @@
 </table>
 </div>
 <%end%>
+
+<%= will_paginate %>
+
 </div>
