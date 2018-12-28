@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update]}
   
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 10)
+
   end
   def show
     @users = User.find_by(id: params[:id])

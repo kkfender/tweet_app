@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   before_action :ensure_correct_user,{only:[:edit,:update,:destroy]}
   before_action :authenticate_user
+ 
   def index
       @posts = Post.all
   end
