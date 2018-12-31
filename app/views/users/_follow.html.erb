@@ -1,0 +1,17 @@
+#任意のユーザーのマイページにて
+#マイページのユーザーが現在ログインしているユーザーでない時->フォロー/フォロワーボタンを設置
+<% if @users.id != @current_user.id %>
+  <li class="collection-item">
+    #現在のユーザーが対象のユーザーをフォローしてない時->「フォローするボタン」を設置
+    <% unless @current_user.following?(@users) %>
+      <div class="action">
+         <%= link_to 'フォローする' ,"/users/#{@users.id}/follow",method: :post, class: "btn waves-effect waves-light" ,remote: true %>
+      </div>
+    #現在のユーザーが対象のユーザーをフォローしてる時->「フォロー解除ボタン」を設置
+    <% else %>
+      <div class="action">
+          <%= link_to 'フォローを解除する' ,"/users/#{@users.id}/unfollow", method: :post,class: "btn waves-effect waves-light",remote: true %>
+      </div>-->
+    <% end %>
+  </li>
+<% end %>

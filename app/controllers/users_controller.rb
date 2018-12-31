@@ -82,7 +82,23 @@ class UsersController < ApplicationController
       flash[:notice] = "権限がありません"
       redirect_to("/posts/index")
     end
-  end
+  end 
+  
+  def follow
+    @users = User.find_by(id: params[:id])
+    #ログイン中のユーザーで対象のユーザー(@user)をフォローする
+    @current_user.follow(@users)
+    redirect_to("/users/#{@users.id}")
+    flash[:notice] = "#{@users.name}さんフォローしました"
+end
+
+  def unfollow
+   @users = User.find_by(id: params[:id])
+    #ログイン中のユーザーで対象のユーザー(@user)をフォロー解除する
+    @current_user.stop_following(@users)
+    redirect_to("/users/#{@users.id}")
+    flash[:notice] = "#{@users.name}さんをフォローを解除しました"
+end
     
 end
 

@@ -39,5 +39,10 @@ Rails.application.routes.draw do
   post "logout" => "users#logout"
   
 
+ ##################### follow    #########################
+ 
+  post  "users/:id/follow" =>   "users#follow"
+  post  "users/:id/unfollow" =>   "users#unfollow"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
