@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @users = User.find_by(id: params[:id])
  #   @posts = Post.find_by(user_id: params[:id])
+     @branch = params[:select_id]
   end
   def new
      @users = User.new

@@ -15,13 +15,13 @@
 <ul><li>フォロー</li>
     <li><%=@users.follow_count%>人</li>
   <% @users.all_following.each do |follow|%>
- 
+ <li> <%= follow.name%></li>
   <%end%>
   
   <li>フォロワー </li>
   <li><%=@users.followers_count%>人</li></ul>
   <% @users.followers .each do |follow|%>
-  
+  <%= follow.name%>
   <%end%>
   
   <%=render"users/follow"%>     <!--followのパーシャル-->
@@ -29,18 +29,14 @@
 </div>
  <div class="main-container">   <!--main-->
   <div class="mc-list">         <!--↓-->
-     <ul>
-      <li><%= link_to("つぶやき",:action=>"show", :select_id => "1") %></li>
-      <li><%= link_to("フォロー",:action=>"show", :select_id => 2) %></li>
-      </li><li>フォロワー</li></ul>
+     <ul><li><%=link_to("つぶやき","/users/#{@users.id}/tweet")%></li><li>フォロー</li><li>フォロワー</li></ul>
      </div>
   
 
-<% if @branch == "1" %>    <!--パ－シャルの切り替え-->
-   <%=render"users/tweet"%>     <!--tweetのパーシャル-->
-  <%else%> 
-   <%=render"users/followsPeople"%>
-   <%end%>
+ 
+   <%#=render"users/tweet"%>     <!--tweetのパーシャル-->
+   
+   <%#=render"users/followsPeople"%>    <!--フォローのアーシャル-->
    </div>
 
 </div>
