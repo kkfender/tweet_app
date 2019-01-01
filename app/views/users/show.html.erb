@@ -31,15 +31,18 @@
   <div class="mc-list">         <!--↓-->
      <ul>
       <li><%= link_to("つぶやき",:action=>"show", :select_id => "1") %></li>
-      <li><%= link_to("フォロー",:action=>"show", :select_id => 2) %></li>
-      </li><li>フォロワー</li></ul>
+      <li><%= link_to("フォロー",:action=>"show", :select_id => "2") %></li>
+      <li><%= link_to("フォロワー",:action=>"show", :select_id => "3") %></li>
+     </ul>
      </div>
   
 
-<% if @branch == "1" %>    <!--パ－シャルの切り替え-->
+<% if @branch ==( "1" or nil) %>    <!--パ－シャルの切り替え-->
    <%=render"users/tweet"%>     <!--tweetのパーシャル-->
+  <%elsif @branch == "2"%> 
+   <%=render"users/follows"%>
   <%else%> 
-   <%=render"users/followsPeople"%>
+  <%=render"users/followd"%>
    <%end%>
    </div>
 

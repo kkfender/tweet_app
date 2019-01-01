@@ -1,0 +1,16 @@
+<div class="follow-container">
+ <p>フォローされています</p>
+
+  <% @users.followers.each do |f|%>
+ <div class="user-box">
+    <%= f.name%>
+  
+    <img src="<%= "/user_images/#{f.image_name}" %>">
+ 
+    <%if @current_user.following? (f)%>
+     フォローしています
+     <%end%>
+ </div>
+    <%end%>
+    
+</div>
