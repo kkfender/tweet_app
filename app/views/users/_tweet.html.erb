@@ -1,0 +1,16 @@
+<div class="tweet-container">
+ 
+  <% @users.posts.each do |post|%>   <!--modelのpostsメソッド-->
+ <div class="tweet-main">
+   <div class="tweet-image">
+ <img src="<%= "/user_images/#{post.user.image_name}" %>">
+ </div>
+  <p class="tweet-user-name"><%= "#{post.user.name}"+'  ' %></p>
+
+  <p class="tweet-user-time"></p><%= "#{post.created_at}" %><br></p>
+  
+    <p class="tweet-content"><%= "#{post.content}" %></p>
+  
+  </div>
+  <% end %>
+</div>

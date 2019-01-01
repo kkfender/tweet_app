@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
   def show
     @users = User.find_by(id: params[:id])
+ #   @posts = Post.find_by(user_id: params[:id])
   end
   def new
      @users = User.new
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
     redirect_to("/login")
      end
     
-     def update
+    def update
       @users = User.find_by(id: params[:id])
       @users.name = params[:name]
       @users.email = params[:email]
@@ -67,7 +68,8 @@ class UsersController < ApplicationController
      else
       render("users/edit")  
      end
-   end
+    end
+ 
     def likes 
     @users = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)

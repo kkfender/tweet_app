@@ -4,6 +4,12 @@
 /*border: solid red 1px;*/
 font-family: Impact,Charcoal ;
 }
+.main-top {
+background-image: url("/haikei.jpg");
+  
+}
+
+
 
 html {
 /*background-image: url("/tweet.png");*/
@@ -99,8 +105,8 @@ input{
   font-size:20px;
 }
 .main img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 20%;
   box-shadow: 0 2px 6px #c1ced7;
   margin: 20px 0 10px;
@@ -132,4 +138,88 @@ input{
  margin:0;
  width:100%;
  text-align:center;
+}
+.prof-show-container {
+  width:400px;
+  height:500px;
+  margin:15px;
+  float:left;
+  background-color:aliceblue; 
+}
+.prof-show-container li {
+  float:left;
+  list-style:none;
+  padding-left:15px;
+}
+.main-container {
+  float:left;
+  margin:15px;
+  width:68%;
+  height:600px;
+  background-color:lemonchiffon; 
+}
+.main-container li {
+   font-size: 25px;
+   float:left;
+  list-style:none;
+  padding-left:150px;
+  
+}
+.mc-list {
+  float:left;
+  width:100%;
+ border-bottom:solid 1px paleturquoise; 
+}
+/******************      tweet               ********************/
+.tweet-container {
+  width:90%;
+  margin-left:50px;
+  background-color: aliceblue;
+  float:left;
+}
+.tweet-main {
+   width:85%;
+   margin-left:auto;
+   margin-right:auto;
+   text-align: left;
+   background-color:white;
+   border-bottom: solid 1px paleturquoise;
+  float:left;
+}
+.tweet-img {
+  width:100px;
+}
+.tweet-user-name {
+  font-size: 20px;
+  float:left;
+}
+.tweet-image {
+  width: 100px;
+  float: left;
+}
+.tweet-content {
+  word-break : break-all;
+float: left;
+
+}
+.tweet-user-time {
+  font-size: 20px;
+  
+}
+/*****************      folloes           ******************/
+
+.follow-container {
+  width:90%;
+  margin-left:50px;
+  background-color: white;
+  float:left;
+}
+.user-box {
+  width:250px;
+  height:300px;
+  border:solid white; 
+  float:left;
+  margin-left: 55px;
+  margin-bottom: 55px;
+  box-shadow: 0 2px 6px #c1ced7;
 }

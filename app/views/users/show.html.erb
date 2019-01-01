@@ -1,35 +1,41 @@
 <div class="main">
+ <div class="prof-show-container">
   <img src="<%= "/user_images/#{@users.image_name}" %>">
 <div class="show-users-identfy">
   
   <%if @current_user==@users%>
   <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
-  <%=@users.name%>をフォローしています
+  <%=@users.name%>をフォローしています<br>
   <%end%>
   
-  
+  <%= "#{@users.name}" %><br>
+   <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %><br>
  
-  
-  <%= "user  : #{@users.name}" %><br>
-  <%= "email :"+@users.email %><br>
-  <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %><br>
-  <p>ツイート一覧</p>
- <% num=0 %>
-  <% @users.posts.each do |post|%>
-  tweet
-  <%= "#{num}:#{post.content}" %><br>
-  <% num=num+1 %>
-  <% end %>
-<p>フォローしてる人たち </p><%=@users.follow_count%>人
+
+<ul><li>フォロー</li>
+    <li><%=@users.follow_count%>人</li>
   <% @users.all_following.each do |follow|%>
-  <%= follow.name%>
+ <li> <%= follow.name%></li>
   <%end%>
   
-  <p>フォローされてる人たち </p><%=@users.followers_count%>人
+  <li>フォロワー </li>
+  <li><%=@users.followers_count%>人</li></ul>
   <% @users.followers .each do |follow|%>
   <%= follow.name%>
   <%end%>
   
-  <%=render"users/follow"%>
+  <%=render"users/follow"%>     <!--followのパーシャル-->
+    </div>
 </div>
+ <div class="main-container">   <!--main-->
+  <div class="mc-list">         <!--↓-->
+     <ul><li>つぶやき</li><li>フォロー</li><li>フォロワー</li></ul>
+     </div>
+  
+
+ 
+   <%#=render"users/tweet"%>     <!--tweetのパーシャル-->
+   <%=render"users/followsPeople"%>
+   </div>
+
 </div>
