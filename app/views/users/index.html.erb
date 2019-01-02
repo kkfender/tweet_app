@@ -1,20 +1,20 @@
-<div class="main">
+<div class="user-container">
 <p "caption-d">ユーザー一覧</p>
 
 <%= will_paginate %>
 
 
 <% @users.each do |user| %>
-<div class="user-index-table">
-<table border="1" width="200" height="200">
 
- <tr>
-   <td> <img src="<%= "/user_images/#{user.image_name}"%>"></td> 
- </tr>   
-  <tr>
- <td height="70"><%=link_to(user.name,"/users/#{user.id}",class:"show-index")%> </td>
- </tr>
-</table>
+<div class="user-table">
+<div class="user-index-box">
+<div class="user-image">
+    <img src="<%= "/user_images/#{user.image_name}"%>">
+    
+ </div>
+ <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>
+
+</div> 
 </div>
 <%end%>
 

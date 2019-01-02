@@ -5,13 +5,22 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update]}
   
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 10)
+    @users = User.paginate(:page => params[:page], :per_page => 8)
+    
 
   end
   def show
     @users = User.find_by(id: params[:id])
- #   @posts = Post.find_by(user_id: params[:id])
+   @posts = Post.find_by(user_id: params[:id])
      @branch = params[:select_id]
+     
+   
+  if @posts !=nil
+  @likes_count = Like.where(post_id: @posts.id).count
+  end
+     
+     
+     
   end
   def new
      @users = User.new

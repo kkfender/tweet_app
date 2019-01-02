@@ -10,6 +10,17 @@
   <p class="tweet-user-time"></p><%= "#{post.created_at}" %><br></p>
   
     <p class="tweet-content"><%= "#{post.content}" %></p>
+    
+    <% if Like.find_by(user_id: @current_user.id,post_id: @posts.id)%>
+  <%= link_to("/likes/#{@posts.id}/destroy", {method: "post"},class:"post-detail") do %>
+    <span class="fa fa-heart like-btn-unlike"></span>
+  <%end%>
+<%else%>
+  <%= link_to("/likes/#{@posts.id}/create", {method: "post"},class:"post-detail") do %>
+    <span class="fa fa-heart like-btn"></span>
+  <%end%>
+<%end%>
+<%= @likes_count %>
   
   </div>
   <% end %>

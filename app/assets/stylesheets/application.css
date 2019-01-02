@@ -219,7 +219,54 @@ float: left;
   height:300px;
   border:solid white; 
   float:left;
-  margin-left: 55px;
-  margin-bottom: 55px;
+  margin-left: 45px;
+  margin-bottom: 45px;
   box-shadow: 0 2px 6px #c1ced7;
+}
+/*****************      user index           ******************/
+.user-container{
+width:100%;
+ 
+  background-color: beige;
+ 
+}
+.user-image {
+  width: 100px;
+  float: left;
+   margin-left:70px;
+   
+   
+}
+img {
+width: 150px;
+  height: 150px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  
+}
+.user-index-box {
+  height: 300px;
+  width: 300px;
+  border:solid white; 
+  float:left;
+  margin-left: 70px;
+  margin-bottom:30px;
+   box-shadow: 0 2px 6px #c1ced7;
+   background-color: white;
+}
+.user-table {
+ background-color: white;
+}
+.pagination {
+  font-size:30px;
+  text-align: center;
+  clear: both;
+  margin-bottom: 20px;
+}
+.show-index {
+  font-family: cursive; 
+   margin-left:auto;
+   margin-right:auto;
+   
 }

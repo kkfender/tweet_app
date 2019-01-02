@@ -1,11 +1,15 @@
 <div class="main">
   <p>最新のつぶやき</p>
    <% @posts.each do |post|%>
- 
- <%=link_to(post.content,"/posts/#{post.id}",class:"post-index")%>
-  <!--link_to(post.user.name, "/users/#{post.user.id}")-->
- 
- <%end%>
- 
+   <% if post.user.present? %>
+  <img src="<%= "/user_images/#{post.user.image_name}" %>">
+ <%=link_to(post.content,"/posts/#{post.id}")%>
 
+ <%=link_to(post.user.name, "/users/#{post.user.id}")%>
+ <% end %>
+ <%end%>
+
+    
+
+ 
 </div>
