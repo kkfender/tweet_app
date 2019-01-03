@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hoges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hoges.each do |hoge| %>
+      <tr>
+        <td><%= hoge.name %></td>
+        <td><%= hoge.age %></td>
+        <td><%= link_to 'Show', hoge %></td>
+        <td><%= link_to 'Edit', edit_hoge_path(hoge) %></td>
+        <td><%= link_to 'Destroy', hoge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hoge', new_hoge_path %>

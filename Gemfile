@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
+
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
 
 gem 'will_paginate','3.1.6'

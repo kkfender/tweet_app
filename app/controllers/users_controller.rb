@@ -110,7 +110,9 @@ end
     @current_user.stop_following(@users)
     redirect_to("/users/#{@users.id}")
     flash[:notice] = "#{@users.name}さんをフォローを解除しました"
-end
+  end
+  
+ 
     
 end
 

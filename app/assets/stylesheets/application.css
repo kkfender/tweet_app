@@ -1,7 +1,7 @@
 /************************共通**********************/
  * {
   box-sizing: border-box;
-/*border: solid red 1px;*/
+border: 1px solid #aaa;
 font-family: Impact,Charcoal ;
 }
 .main-top {
@@ -30,8 +30,19 @@ header {
 p {
   font-size:25px;
   font-family:sans-serif ; 
-  margin:auto;
+/*  margin:auto;*/
 }
+a {
+  text-decoration: none
+}
+a:hover {
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  /*画像を70%の不透明度に
+  もし50%にしたいときは
+  上から50、0.5、0.5にします*/
+  }
 .header-top {
   height: 55px;
   top: 0;
@@ -74,14 +85,14 @@ p {
   color: white;
   
 }
-.main {
+/*.main {
   color: #8899a6;
   position: relative;
   width:100%;
   margin: 0 auto;
   text-align:center;
 
-}
+}*/
 
 .like-btn {
   color: #8899a6;
@@ -90,7 +101,7 @@ p {
   color: #ff2581;
 }
 .posts-show-item .fa {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 3px;
 }
 input{
@@ -269,4 +280,76 @@ width: 150px;
    margin-left:auto;
    margin-right:auto;
    
+}
+
+/********   post/index  **************/
+.post-index-back {
+ width: 900px;
+ height:auto;
+ background-color: lightcyan ;
+ margin: auto;
+ padding-bottom: 5px;
+}
+.post-index-cover {
+  width:800px;
+
+  margin:auto;
+}
+.post-main {
+   width:800px;
+   background-color: white;
+   padding: 5px 0px 5px 0px;
+   margin-bottom: 5px;
+   box-shadow: 0 2px 10px #c1ced7;
+   border-radius:2%;
+}
+.post-main-box {
+ width: 760px;
+  margin: 10px 20px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  
+}
+.post-index-img {
+ width:130px;
+ height:130px;
+ text-align:center;
+ float:left;
+}
+.post-main-detail {
+   width :500px;
+   margin:0;
+   float:left;
+}
+.post-index-content {
+  width :500px;
+  margin:0;
+  float:left;
+  
+}
+.post-index-inner {
+  position:relative;
+  height:130px;
+  width:600px;
+  float:left;
+}
+.post-index-action {
+  width:600px;
+  float:left;
+  position: absolute;
+  
+
+  bottom: 0;
+
+  
+}
+.action-menus li {
+  float:left;
+  width:50px;
+  height:30px;
+  text-align:center;
 }

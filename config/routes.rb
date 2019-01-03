@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  resources :hoges
+  ActiveAdmin.routes(self)
  #####################   home   #####################
  
   get "/" => "home#top"

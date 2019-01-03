@@ -21,6 +21,11 @@
   <%end%>
 <%end%>
 <%= @likes_count %>
+<%if post.user_id==@current_user.id%>
+  <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail")%>
+  <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail"})%>
+<%end%>
+
   
   </div>
   <% end %>

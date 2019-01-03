@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
     if@current_user
       flash[:notice]="すでにログインしています"
       redirect_to("/posts/index")
+    end
   end
-end
 end
