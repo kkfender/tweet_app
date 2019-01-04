@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     @users = User.find_by(id: params[:id])
    @posts = Post.find_by(user_id: params[:id])
-     @branch = params[:select_id]
+    @branch = params[:select_id]
      
    
   if @posts !=nil
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
        flash[:notice]="ログイン成功しました"
        redirect_to("/users/index")
     else
-      @error_message ="メールアドレスかワードが間違っています。"
+      @error_message ="E-mail address or password is wrong"
       render("users/login_form") 
     end  
    end 

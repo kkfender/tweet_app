@@ -1,14 +1,14 @@
-<div class="main">
-<div class="main posts-new">
-  <div class="container">
-    <h1 class="form-heading">投稿する</h1>
+<div class="new-main">
+    <div class="resister-area">
+          <div class="inner-area">
+      <p font-size="20px">投稿する</p>
 <%=form_tag("/posts/create",class: "square_btn")do%>
 
   <%@posts.errors.full_messages.each do |message|%>
      <p class="errors"><%=message%></p>
    <%end%>
-  
-<textarea name="content"></textarea><br><br>
+ 
+<textarea name="content" class="text-area"></textarea><br><br>
 <input type="submit" value="投稿" class="button1">
 <%end%>
   </div>

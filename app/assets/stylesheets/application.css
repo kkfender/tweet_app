@@ -34,6 +34,7 @@ p {
 }
 a {
   text-decoration: none
+  
 }
 a:hover {
   filter: alpha(opacity=70);
@@ -43,6 +44,14 @@ a:hover {
   もし50%にしたいときは
   上から50、0.5、0.5にします*/
   }
+  a:active {color:#f7390e;} 
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+}  
 .header-top {
   height: 55px;
   top: 0;
@@ -65,12 +74,58 @@ a:hover {
   font-size: 22px;
   
 }
+input {
+-moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+-webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+width:300px;
+height:30px;
+}
+input:focus {
+    border:solid 1px #EEA34A;
+}
 
 
- /*****************************************************/
+ /******************** new ********************/
+
+.new-main {
+  width:100%;
+  margin:0;
+  background-color:white;
+  
+}
+.resister-area {
+background-color:#f4ffff;
+   width:70%;
+   margin:auto ;
+   padding:50px 0;
+   text-align:center;
+   
+}
+.inner-area {
+  width:500px;
+  margin:0 auto;
+  padding: 0;
+  text-align:center;
+  background-color:white;
+}
+.input-area {
+  background-color:white;
+  margin:auto ;
+ }
+ .text-area {
+  width:300px;
+  height:100px;
+  margin:0 auto;
+  font-size:20px;
+  
+ 
+  background-color:white;
+ }
+   
 
 
-
+/*********************************************************/
 .header-menus li{
   float: right;
  /* line-height: 64px;*/
@@ -104,15 +159,12 @@ a:hover {
   font-size: 20px;
   margin-right: 3px;
 }
-input{
-  font-size:2em;
-  background-color: transparent;
-}
+
 .flash {
   text-align:center;
   background-color:yellow;
 }
-.show-index,.show-users-identfy,.post-index,.post-detail,.post-edit {
+.show-index,.post-index,.post-detail,.post-edit {
   font-size:20px;
 }
 .main img {
@@ -123,18 +175,19 @@ input{
   margin: 20px 0 10px;
 }
 .button1  {
- font-size: 1em;
- font-weight: bold;
- padding: 10px 30px;
- background-color: #248;
+ font-size: 20px;
+ padding: 0;
+ background-color: #f7628c;
  color: #fff;
  border-style: none;
+  border-radius: 5%;
 }
 
 .button1:hover {
- background-color: #24d;
+ background-color: #f9cfed;
  transition: 1.0s ;
  color: #fff;
+  border-radius: 10%;
 }
 .errors  {
  color:red;
@@ -142,7 +195,7 @@ input{
 }
 .user-index-table{
  float:left; 
- 
+ /***********************************************************/
 }
 .caption-d p {
  color: #006633;
@@ -151,35 +204,60 @@ input{
  text-align:center;
 }
 .prof-show-container {
-  width:400px;
-  height:500px;
-  margin:15px;
-  float:left;
-  background-color:aliceblue; 
+  width: 900px;
+ height:auto;
+ background-color: lightcyan ;
+ margin: auto;
+ padding-bottom: 5px;
 }
 .prof-show-container li {
   float:left;
   list-style:none;
-  padding-left:15px;
+  padding-left:5px;
+  margin-top:70px;
 }
-.main-container {
+.user-main-prof {
+  margin:auto;
+  width:600px;
+  height:150px;
+}
+
+.prof-show-detail {
+  width :80%;
+  height:150px;
+  background-color :white;
+  margin: auto;
+}
+.show-users-identfy {
   float:left;
-  margin:15px;
-  width:68%;
-  height:600px;
-  background-color:lemonchiffon; 
+  
+   height:150px;
+  
+}
+
+.main-container {
+   width: 900px;
+   height:900px;
+   background-color: lightcyan ;
+   margin: auto;
+  padding-bottom: 5px;
 }
 .main-container li {
    font-size: 25px;
    float:left;
   list-style:none;
-  padding-left:150px;
-  
+  padding-left:130px;
+}
+.show-image {
+ float:left;
 }
 .mc-list {
+  background-color:#e8fffd;
   float:left;
-  width:100%;
+   width: 900px;
  border-bottom:solid 1px paleturquoise; 
+  box-shadow: 0 2px 6px #c1ced7;
+ margin-bottom:15px;
 }
 /******************      tweet               ********************/
 .tweet-container {
@@ -242,23 +320,23 @@ width:100%;
  
 }
 .user-image {
-  width: 100px;
+  width: 100%;
   float: left;
-   margin-left:70px;
+  
    
    
 }
 img {
-width: 150px;
-  height: 150px;
+width: 100px;
+  height: 100px;
   border-radius: 20%;
   box-shadow: 0 2px 6px #c1ced7;
   margin: 20px 0 10px;
   
 }
 .user-index-box {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border:solid white; 
   float:left;
   margin-left: 70px;
@@ -304,7 +382,7 @@ width: 150px;
    border-radius:2%;
 }
 .post-main-box {
- width: 760px;
+ 
   margin: 10px 20px;
   padding: 10px;
   border: 1px solid #aaa;
@@ -337,6 +415,10 @@ width: 150px;
   width:600px;
   float:left;
 }
+
+.show-menus ul{
+ float:left; 
+}
 .post-index-action {
   width:600px;
   float:left;
@@ -352,4 +434,8 @@ width: 150px;
   width:50px;
   height:30px;
   text-align:center;
+}
+p  {
+  white-space: pre-wrap;
+
 }

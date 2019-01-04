@@ -1,31 +1,38 @@
-<div class="main">
+
  <div class="prof-show-container">
-  <img src="<%= "/user_images/#{@users.image_name}" %>">
+  <div class="prof-show-detail">
+   <div class="show-image">
+      <img src="<%= "/user_images/#{@users.image_name}" %>">
+      </div>
 <div class="show-users-identfy">
   
-  <%if @current_user==@users%>
-  <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
-  <%=@users.name%>をフォローしています<br>
-  <%end%>
   
-  <%= "#{@users.name}" %><br>
-   <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %><br>
- 
+ <div class="user-main-prof"> 
+  <%= "#{@users.name}" %>
+    <%if @current_user==@users%>
+    <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
+      <%=@users.name%>をフォローしています
+    <%end%>
+      <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %>
+  
 
-<ul><li>フォロー</li>
-    <li><%=@users.follow_count%>人</li>
-  <% @users.all_following.each do |follow|%>
+  <ul class="show-menus">
+   <li>フォロー</li>
+      <li><%=@users.follow_count%>人</li>
+       <% @users.all_following.each do |follow|%>
+      <%end%>
+   <li>フォロワー </li>
+   <li><%=@users.followers_count%>人</li>
+    <%=render"users/follow"%>     <!--followのパーシャル-->
+  </ul>
  
-  <%end%>
-  
-  <li>フォロワー </li>
-  <li><%=@users.followers_count%>人</li></ul>
+ </div>
+ 
   <% @users.followers .each do |follow|%>
-  
-  <%end%>
-  
-  <%=render"users/follow"%>     <!--followのパーシャル-->
-    </div>
+   <%end%>
+  </div>
+   </div>
+   
 </div>
  <div class="main-container">   <!--main-->
   <div class="mc-list">         <!--↓-->
@@ -34,7 +41,7 @@
       <li><%= link_to("フォロー",:action=>"show", :select_id => "2") %></li>
       <li><%= link_to("フォロワー",:action=>"show", :select_id => "3") %></li>
      </ul>
-     </div>
+  </div>
   
 
 <% if @branch ==( "1" or nil) %>    <!--パ－シャルの切り替え-->
@@ -45,5 +52,3 @@
   <%=render"users/followd"%>
    <%end%>
    </div>
-
-</div>
