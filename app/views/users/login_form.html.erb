@@ -1,18 +1,21 @@
-<div class="flash"></div>
-<div class="new-main">
+<div class="flash">
+  </div>
+  <div class="new-main">
     <div class="resister-area">
-          <div class="inner-area">
-             <p font-size="20px">ログイン</p>
-
-<% if @error_message%>
-  <div class="errors"><%= @error_message %></div>
-<% end %>
-<%=form_tag("/login")do%>
-<div class="input-area">
-  メールアドレス<br>
-  <input name="email"><br>
-  パスワード<br>
-  <input type="password" name="password"><br><br>
-  <input type="submit" value="ログイン" class="button1">
-<% end %>  
-</div></div></div>
+      <div class="inner-area">
+        <p font-size="20px">ログイン</p>
+          <% if @error_message%>
+            <div class="errors"><%= @error_message %></div>
+          <% end %>
+            <%=form_tag("/login")do%>
+              <div class="input-area">
+              メールアドレス<br>
+              <input name="email"><br>
+              パスワード<br>
+              <input type="password" name="password"><br><br>
+              <input type="submit" value="ログイン" class="button1">
+          <% end %>  
+              </div>
+      </div>
+    </div>
+  </div>  

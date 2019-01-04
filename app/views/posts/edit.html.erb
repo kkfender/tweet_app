@@ -1,16 +1,16 @@
 <div class="new-main">
-    <div class="resister-area">
-          <div class="inner-area">
-<%=form_tag("/posts/#{@posts.id}/update")do%>
-
-  <p font-size="20px">編集する</p>
-    <%@posts.errors.full_messages.each do |message|%>
-      <p class="errors"><%=message%></p>
-    <%end%>
-<textarea name="content" class="text-area"><%=@posts.content%></textarea><br><br>
-  <input type="submit" value="投稿" class="button1"></input>
-<%end%>
-
+  <div class="resister-area">
+    <div class="inner-area">
+      <%=form_tag("/posts/#{@posts.id}/update")do%>
+        <p font-size="20px">編集する</p>
+          <%@posts.errors.full_messages.each do |message|%>
+            <p class="errors"><%=message%></p>
+         <%end%>
+           <textarea name="content" class="text-area"><%=@posts.content%></textarea><br><br>
+             <input type="submit" value="投稿" class="button1"></input>
+      <%end%>
+    </div>
+  </div>
 </div>
 
 

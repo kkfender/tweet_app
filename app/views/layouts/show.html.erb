@@ -1,42 +1,31 @@
 <div class="main">
  <div class="prof-show-container">
-  <img src="<%= "/user_images/#{@users.image_name}" %>">
-<div class="show-users-identfy">
-  
-  <%if @current_user==@users%>
-  <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
-  <%=@users.name%>をフォローしています<br>
-  <%end%>
-  
-  <%= "#{@users.name}" %><br>
-   <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %><br>
- 
-
-<ul><li>フォロー</li>
-    <li><%=@users.follow_count%>人</li>
-  <% @users.all_following.each do |follow|%>
- <li> <%= follow.name%></li>
-  <%end%>
-  
-  <li>フォロワー </li>
-  <li><%=@users.followers_count%>人</li></ul>
-  <% @users.followers .each do |follow|%>
-  <%= follow.name%>
-  <%end%>
-  
-  <%=render"users/follow"%>     <!--followのパーシャル-->
-    </div>
-</div>
- <div class="main-container">   <!--main-->
-  <div class="mc-list">         <!--↓-->
-     <ul><li><%=link_to("つぶやき","/users/#{@users.id}/tweet")%></li><li>フォロー</li><li>フォロワー</li></ul>
-     </div>
-  
-
- 
-   <%#=render"users/tweet"%>     <!--tweetのパーシャル-->
-   
-   <%#=render"users/followsPeople"%>    <!--フォローのアーシャル-->
+   <img src="<%= "/user_images/#{@users.image_name}" %>">
+     <div class="show-users-identfy">
+       <%if @current_user==@users%>
+       <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
+         <%=@users.name%>をフォローしています<br>
+       <%end%>
+        <%= "#{@users.name}" %><br>
+        <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %><br>
+          <ul>
+            <li>フォロー</li>
+            <li><%=@users.follow_count%>人</li>
+              <% @users.all_following.each do |follow|%>
+            <li> <%= follow.name%></li>
+              <%end%>
+            <li>フォロワー </li>
+            <li><%=@users.followers_count%>人</li></ul>
+              <% @users.followers .each do |follow|%>
+              <%= follow.name%>
+                <%end%>
+                  <%=render"users/follow"%>     <!--followのパーシャル-->
+      </div>
+  </div>
+    <div class="main-container">   <!--main-->
+      <div class="mc-list">         <!--↓-->
+        <ul>
+          <li><%=link_to("つぶやき","/users/#{@users.id}/tweet")%></li><li>フォロー</li><li>フォロワー</li></ul>
+      </div>
    </div>
-
 </div>

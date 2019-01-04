@@ -4,76 +4,66 @@
     <title>TweetApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
   </head>
-
   <body>
-  <div id="wrapper">
-
     <div class="header-top">
       <header>
          <div class="header-logo">
-        <%= link_to("TweetApp", "/") %>
-      </div>
-       <ul class="header-menus" style="list-style:none;">
-         <%current_user=User.find_by(id: session[:user_id])%>
-         <%if current_user%>       <!--ログイン状態で表示-->
+           <%= link_to("TweetApp", "/") %>
+         </div>
+           <ul class="header-menus" style="list-style:none;">
+             <%current_user=User.find_by(id: session[:user_id])%>
+               <%if current_user%>       <!--ログイン状態で表示-->
            <li>
-           <%= link_to(current_user.name+"さん","/users/#{current_user.id}",class:"button")%>
-         </li>
+             <%= link_to(current_user.name+"さん","/users/#{current_user.id}",class:"button")%>
+           </li>
            <li>
-           <%= link_to("新規投稿","/posts/new",class:"button")%>
-         </li>
-         <li>
-           <%= link_to("投稿一覧","/posts/index",class:"button")%>
-         </li>
+             <%= link_to("新規投稿","/posts/new",class:"button")%>
+           </li>
            <li>
-           <%= link_to("ユーザー一覧","/users/index",class:"button")%>
-         </li>
+             <%= link_to("投稿一覧","/posts/index",class:"button")%>
+           </li>
            <li>
-            <%=link_to("ログアウト","/logout",{method: :post})%>
-         </li>
-         <% else %>                         <!--ログアウト状態で表示-->
-        
-          <li>
-           <%= link_to("ログイン","/login",class:"button")%>
-         </li>
-          <li>
-           <%= link_to("About","/about",class:"button")%>
-         </li>
-         <li>
-           <%= link_to("新規登録","/signup",class:"button")%>
-         </li>
-         <%end%>
-          </ul>
-          </div>
+             <%= link_to("ユーザー一覧","/users/index",class:"button")%>
+           </li>
+           <li>
+             <%=link_to("ログアウト","/logout",{method: :post})%>
+           </li>
+             <% else %>                         <!--ログアウト状態で表示-->
+           <li>
+             <%= link_to("ログイン","/login",class:"button")%>
+           </li>
+           <li>
+             <%= link_to("About","/about",class:"button")%>
+           </li>
+           <li>
+             <%= link_to("新規登録","/signup",class:"button")%>
+           </li>
+             <%end%>
+           </ul>
+    </div>
       </header>
- <div class="flash"> 
-      <%if flash[:notice]%>
-<%=flash[:notice]%><br>
-<%end%>
-</div>
+        <div class="flash"> 
+          <%if flash[:notice]%>
+            <%=flash[:notice]%><br>
+          <%end%>
+        </div>
   
-    <%= yield %>
-      
- 
- <footer class="footer">
-  <nav class="nav">
-    <ul>
-      <li>TweetAppについて</li>
-      <li>お問い合わせ</li>
-      <li>利用規約</a></li>
-    </ul>
-  </nav>
-  <div class="link">
- 
-   CopyRight
- 
-</div>
+          <%= yield %>
 
-</footer>
-</body>
+         <footer class="footer">
+           <nav class="nav">
+              <ul>
+                <li>TweetAppについて</li>
+                <li>お問い合わせ</li>
+                <li>利用規約</a></li>
+              </ul>
+          </nav>
+            <div class="link">© 2019 tweetapp
+           </div>
+        </footer>
+  </body>
 </html>

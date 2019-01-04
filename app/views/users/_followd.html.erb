@@ -1,25 +1,20 @@
 <div class="follow-container">
-
-
   <% @users.followers.each do |f|%>
- <div class="user-profile">
-   
-   <div class="user-list-image">
-    <img src="<%= "/user_images/#{f.image_name}" %>">
-     <%if @current_user.following? (f)%>
-     <div class="back-message">フォローしています</div>
-     <%end%>
+    <div class="user-profile">
+      <div class="user-list-image">
+        <img src="<%= "/user_images/#{f.image_name}" %>">
+          <%if @current_user.following? (f)%>
+            <div class="back-message">フォローしています
+            </div>
+          <%end%>
+          </div>
+          <div class="prof"> 
+            <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
+          </div>
+           <div class="user-profile-page">
+             自己紹介してください。自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 
+             自己紹介してください。 自己紹介してください。 
+           </div> 
     </div>
-    
-  <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
-   <div class="user-profile-page">
- 自己紹介してください。自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 
- 自己紹介してください。 自己紹介してください。 
- 
- 
-</div> 
- </div>
- 
-    <%end%>
-    
+          <%end%>
 </div>

@@ -1,11 +1,9 @@
 <% if @users.id != @current_user.id %>
   <li class="collection-item">
-
     <% unless @current_user.following?(@users) %>
       <div class="action">
          <%= link_to 'Follow' ,"/users/#{@users.id}/follow",method: :post, class: "button1" ,remote: true %>
       </div>
-
     <% else %>
       <div class="action">
           <%= link_to 'Unfollow' ,"/users/#{@users.id}/unfollow", method: :post,class: "button1",remote: true %>

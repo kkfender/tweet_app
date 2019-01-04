@@ -1,6 +1,6 @@
 /************************共通**********************/
  * {
-  box-sizing: border-box;
+box-sizing: border-box;
 /*border: 1px solid #aaa;*/
 font-family: Impact,Charcoal ;
 }
@@ -16,14 +16,10 @@ height:500px;
 width:900px;
 height:500px;
 }
-
-
-
 html {
 /*background-image: url("/tweet.png");*/
 /*  background-size: cover;*/
   height: 100%;
-
 }
 body {
   color: #2d3133;
@@ -40,11 +36,13 @@ header {
 p {
   font-size:25px;
   font-family:sans-serif ; 
-
 }
 a {
-  text-decoration: none
-  
+  text-decoration: none;
+   color:#ffa500;
+}
+a:visited{
+  color: #ffa500;
 }
 a:hover {
   filter: alpha(opacity=70);
@@ -54,7 +52,6 @@ a:hover {
   もし50%にしたいときは
   上から50、0.5、0.5にします*/
   }
-  a:active {color:#f7390e;} 
 img {
   width: 100px;
   height: 100px;
@@ -70,7 +67,6 @@ img {
   margin:0 auto;
   padding:0;
 }
-
 .header-menus{
 /*float:left;*/
   margin:0 auto;
@@ -82,19 +78,17 @@ img {
   margin-top: 15px;
   color: white;
   font-size: 22px;
-  
 }
 input {
--moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
--webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
-width:300px;
-height:30px;
+  -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  width:300px;
+  height:30px;
 }
 input:focus {
-    border:solid 1px #EEA34A;
+  border:solid 1px #EEA34A;
 }
-
 
  /******************** new ********************/
 
@@ -105,12 +99,11 @@ input:focus {
   
 }
 .resister-area {
-background-color:#f4ffff;
-   width:900px;
-   margin:auto ;
-   padding:50px 0;
-   text-align:center;
-   
+  background-color:#f4ffff;
+  width:900px;
+  margin:auto ;
+  padding:50px 0;
+  text-align:center;
 }
 .inner-area {
   width:500px;
@@ -129,27 +122,20 @@ background-color:#f4ffff;
   height:100px;
   margin:0 auto;
   font-size:20px;
-  
- 
   background-color:white;
  }
-   
-
-
 /*********************************************************/
 .header-menus li{
   float: right;
- /* line-height: 64px;*/
+/* line-height: 64px;*/
   font-size: 13px;
   color: white;
   padding-left: 15px;
   margin-top:15px;
 }
-
 .header-menus a {
   font-size: 20px;
   color: white;
-  
 }
 /*.main {
   color: #8899a6;
@@ -157,9 +143,7 @@ background-color:#f4ffff;
   width:100%;
   margin: 0 auto;
   text-align:center;
-
 }*/
-
 .like-btn {
   color: #8899a6;
 }
@@ -170,10 +154,9 @@ background-color:#f4ffff;
   font-size: 20px;
   margin-right: 3px;
 }
-
 .flash {
   width:900px;
- font-size :20px;
+  font-size :20px;
   color:#01960b;
   background-color:#c2ead1;
   border-radius: 5%;
@@ -191,40 +174,39 @@ background-color:#f4ffff;
   margin: 20px 0 10px;
 }
 .button1  {
- font-size: 20px;
- padding: 0;
- background-color: #f7628c;
- color: #fff;
- border-style: none;
+  font-size: 20px;
+  padding: 0;
+  background-color: #f7628c;
+  color: #fff;
+  border-style: none;
   border-radius: 5%;
 }
-
 .button1:hover {
- background-color: #f9cfed;
- transition: 1.0s ;
- color: #fff;
+  background-color: #f9cfed;
+  transition: 1.0s ;
+  color: #fff;
   border-radius: 10%;
 }
 .errors  {
- color:red;
- 
+  color:red;
 }
 .user-index-table{
- float:left; 
+  float:left; 
+}  
  /***********************************************************/
-}
+
 .caption-d p {
- color: #006633;
- margin:0;
- width:100%;
- text-align:center;
+  color: #006633;
+  margin:0;
+  width:100%;
+  text-align:center;
 }
 .prof-show-container {
   width: 900px;
- height:auto;
- background-color: lightcyan ;
- margin: auto;
- padding-bottom: 5px;
+  height:auto;
+  background-color: lightcyan ;
+  margin: auto;
+  padding-bottom: 5px;
 }
 .prof-show-container li {
   float:left;
@@ -237,45 +219,45 @@ background-color:#f4ffff;
   width:600px;
   height:150px;
 }
-
 .prof-show-detail {
   width :80%;
   height:150px;
   background-color :white;
   margin: auto;
   position: relative;
-
 }
 .show-users-identfy {
   float:left;
-  
-   height:150px;
-  
+  height:150px;
 }
-
 .main-container {
-   width: 900px;
-   height:900px;
-   background-color: lightcyan ;
-   margin: auto;
+  width: 900px;
+  height:auto;
+  background-color: lightcyan ;
+  margin: auto;
   padding-bottom: 5px;
 }
 .main-container li {
-   font-size: 25px;
-   float:left;
+  font-size: 25px;
+  float:left;
   list-style:none;
   padding-left:130px;
 }
 .show-image {
- float:left;
+  float:left;
+  margin:auto;
+  height:150px;
+  position:relative;
+  width:190px;
+  text-align:center;
 }
 .mc-list {
   background-color:#e8fffd;
   float:left;
-   width: 900px;
- border-bottom:solid 1px paleturquoise; 
+  width: 900px;
+  border-bottom:solid 1px paleturquoise; 
   box-shadow: 0 2px 6px #c1ced7;
- margin-bottom:15px;
+  margin-bottom:15px;
 }
 /******************      tweet               ********************/
 .tweet-container {
@@ -285,12 +267,12 @@ background-color:#f4ffff;
   float:left;
 }
 .tweet-main {
-   width:85%;
-   margin-left:auto;
-   margin-right:auto;
-   text-align: left;
-   background-color:white;
-   border-bottom: solid 1px paleturquoise;
+  width:85%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+  background-color:white;
+  border-bottom: solid 1px paleturquoise;
   float:left;
 }
 .tweet-img {
@@ -306,20 +288,19 @@ background-color:#f4ffff;
 }
 .tweet-content {
   word-break : break-all;
-float: left;
-
+  float: left;
 }
 .tweet-user-time {
   font-size: 20px;
-  
 }
 /*****************      folloes           ******************/
-
 .follow-container {
-  width:98%;
-  margin-left:15px;
-  background-color: white;
+  width:100%;
+ /* margin-left:9px;*/
+  background-color: lightcyan;
   float:left;
+  padding-top:10px;
+  margin-top:-12px;
 }
 .user-box {
   width:250px;
@@ -332,25 +313,19 @@ float: left;
 }
 /*****************      user index           ******************/
 .user-container{
-width:100%;
- 
+  width:100%;
   background-color: beige;
- 
 }
 .user-image {
   width: 100%;
   float: left;
-  
-   
-   
 }
 img {
-width: 100px;
+  width: 100px;
   height: 100px;
   border-radius: 20%;
   box-shadow: 0 2px 6px #c1ced7;
   margin: 20px 0 10px;
-  
 }
 .user-index-box {
   height: 250px;
@@ -359,11 +334,11 @@ width: 100px;
   float:left;
   margin-left: 70px;
   margin-bottom:30px;
-   box-shadow: 0 2px 6px #c1ced7;
-   background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  background-color: white;
 }
 .user-table {
- background-color: white;
+  background-color: white;
 }
 .pagination {
   font-size:20px;
@@ -373,34 +348,30 @@ width: 100px;
 }
 .show-index {
   font-family: cursive; 
-   margin-left:auto;
-   margin-right:auto;
-   
+  margin-left:auto;
+  margin-right:auto;
 }
-
 /********   post/index  **************/
 .post-index-back {
- width: 900px;
- height:auto;
- background-color: lightcyan ;
- margin: auto;
- padding:  10px 0 10px 0px;
+  width: 900px;
+  height:auto;
+  background-color: lightcyan ;
+  margin: auto;
+  padding:  10px 0 10px 0px;
 }
 .post-index-cover {
   width:800px;
-margin:auto;
-  
-}
+  margin:auto;
+ }
 .post-main {
-   width:800px;
-   background-color: white;
-   padding: 5px 0px 5px 0px;
-   margin-bottom: 5px;
-   box-shadow: 0 2px 10px #c1ced7;
-   border-radius:2%;
+  width:800px;
+  background-color: white;
+  padding: 5px 0px 5px 0px;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 10px #c1ced7;
+  border-radius:2%;
 }
 .post-main-box {
- 
   margin: 10px 20px;
   padding: 10px;
   border: 1px solid #aaa;
@@ -408,18 +379,16 @@ margin:auto;
   display: flex;
   -webkit-align-items: center;
   align-items: center;
-  
 }
 .post-index-img {
- width:130px;
- height:130px;
- text-align:center;
- float:left;
+  width:130px;
+  text-align:center;
+  float:left;
 }
 .post-main-detail {
-   width :100%;
-   margin:0;
-   float:left;
+  width :100%;
+  margin:0;
+  float:left;
 }
 .post-index-content p{
   width :800px;
@@ -427,9 +396,6 @@ margin:auto;
   float:left;
   font-size:25px;
   word-break : break-all;
-
-
-  
 }
 .post-index-inner {
   position:relative;
@@ -437,17 +403,14 @@ margin:auto;
   width:600px;
   float:left;
 }
-
 .show-menus ul{
- float:left; 
+  float:left; 
 }
 .post-index-action {
   width:600px;
   float:left;
   position: absolute;
-    bottom:0;
-
-  
+  bottom:0;
 }
 .action-menus li {
   float:left;
@@ -457,19 +420,17 @@ margin:auto;
 }
 p  {
   white-space: pre-wrap;
-
 }
 /*********************   userlist  **********************/
-
 .user-list {
- width: 900px;
- height:auto;
- background-color: lightcyan ;
- margin: auto;
- padding-bottom: 5px;
+  width: 900px;
+  height:auto;
+  background-color: lightcyan ;
+  margin: auto;
+  padding-bottom: 5px;
 }
 .user-profile {
-     width:250px;
+  width:250px;
   height:312px;
   background-color: white;
   float:left;
@@ -478,16 +439,21 @@ p  {
   box-shadow: 0 2px 6px #c1ced7;
 }
 .user-list-image {
-     width:250px;
-  height:140px;
- text-align: center;
+  width:250px;
+  height:150px;
+  text-align: center;
+  position: relative;
+  margin:auto;
 }
 /*******************   pagination         *******************/
 .back-message {
   background-color: #eaebed;
   color:#838484;
-   font-size: 13px;
+  font-size: 13px;
   float:left;
+  position: absolute;
+  bottom:0;
+  margin:auto;
 }
 /***********************username*************************/
 .user-name {
@@ -495,11 +461,10 @@ p  {
   font-family: Segoe UI;
 }
 .follow-info {
-   width:400px;
-   height:50px;
-    
-    float:left;
-    position: absolute;
+  width:400px;
+  height:50px;
+  float:left;
+  position: absolute;
 	right: 0;
 	bottom: 0;
 }
@@ -512,14 +477,12 @@ p  {
   text-align:center;
 }
 .user-profile-page {
-   width: 100%;
+  width: 100%;
 }
 /**************************   footer   ********************************/
-
 .footer {
-  width:auto;
+  width:100%;
   text-align:center;
- 
   border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;;
   padding:10px 0; 
@@ -527,6 +490,8 @@ p  {
   margin:auto;
   height: 40px;
   background-color:white;
+  float:left;
+  
 }
 .nav {
   width:50%;

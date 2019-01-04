@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+閲覧ありがとうございます
+こちらはポートフォリオ用のツイッターの疑似サイトです。
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+-------------------
+実装した機能
+------------------
+投稿一覧表示機能
+投稿詳細表示機能
+投稿機能
+いいね機能
+フォローフォロワー機能
+画像ファイルアップロード機能
+ページネーション機能
+-------------------
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-------------------
+今後実装したい機能
+-------------------
+管理画面
+ソーティング
+単体テスト
+統合テスト
+確認画面
+検索機能
+メール送信機能
+--------------------

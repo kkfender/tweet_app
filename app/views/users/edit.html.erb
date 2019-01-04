@@ -1,23 +1,21 @@
 <div class="new-main">
-    <div class="resister-area">
-          <div class="inner-area">
-<p font-size="20px">アカウント編集</p>
- <% @users.errors.full_messages.each do |message| %>
-          <div class="errosr">
-            <%= message %>
-          </div>
-        <% end %>
-     
-       
-        <%= form_tag("/users/#{@users.id}/update",{multipart: true}) do %>
-          ユーザー名<br>
-          <input name="name" value="<%= @users.name %>"><br>
-          メールアドレス<br>
-          <input name="email" value="<%= @users.email %>"><br>
-          画像<br>
-          <input name="image" type="file">  <br><br>
-          <input type="submit" value="保存" class="button1">
-        <% end %>
-      </div>
+  <div class="resister-area">
+  <div class="inner-area">
+    <p font-size="20px">アカウント編集</p>
+       <% @users.errors.full_messages.each do |message| %>
+         <div class="errosr">
+           <%= message %>
+         </div>
+       <% end %>
+         <%= form_tag("/users/#{@users.id}/update",{multipart: true}) do %>
+        ユーザー名<br>
+         <input name="name" value="<%= @users.name %>"><br>
+         メールアドレス<br>
+         <input name="email" value="<%= @users.email %>"><br>
+         画像<br>
+         <input name="image" type="file">  <br><br>
+         <input type="submit" value="保存" class="button1">
+       <% end %>
     </div>
- </div>
+  </div>
+</div>

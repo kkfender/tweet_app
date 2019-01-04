@@ -1,41 +1,39 @@
-<div class="main">
-  <div class="post-index-back">
-   <% @users.posts.each do |post|%>   <!--modelのpostsメソッド-->
+<div class="post-index-back">
+  <% @users.posts.each do |post|%>   <!--modelのpostsメソッド-->
     <div class="post-index-cover">
-     <div class="post-main">
-       <div class="post-main-box">
-      <div class="post-index-img">
-       <img src="<%= "/user_images/#{post.user.image_name}" %>">
-      </div>
-      <div class="post-index-inner">
-       <div class="post-main-detail">
-        <%= "#{post.user.name}"+'  ' %>
-          <%= "#{post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})") }" %><br>
+      <div class="post-main">
+        <div class="post-main-box">
+          <div class="post-index-img">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
           </div>
-          <div class="post-index-content">
-           <div class="post-index-content"><%=post.content %></div>
-            </div>
-           <div class="post-index-action">
-          
-              <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
-               <%= link_to("/likes/#{post.id}/destroy", {method: "post"},class:"post-detail") do %>
-                  <span class="fa fa-heart like-btn-unlike"></span>
-             <%end%>
-            <%else%>
-          <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail") do %>
-              <span class="fa fa-heart like-btn"></span>
-           <%end%>
-             <%end%>
-               <%= post.like_count %>
-            <%if post.user_id==@current_user.id%>
-             <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail")%>
-             <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail"})%>
-             <%end%>
+            <div class="post-index-inner">
+              <div class="post-main-detail">
+                <%= "#{post.user.name}"+'  ' %>
+                <%= "#{post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})") }" %><br>
+              </div>
+                <div class="post-index-content">
+                  <div class="post-index-content"><%=post.content %></div>
+                </div>
+                  <div class="post-index-action">
+                    <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
+                      <%= link_to("/likes/#{post.id}/destroy", {method: "post"},class:"post-detail") do %>
+                      <span class="fa fa-heart like-btn-unlike"></span>
+                   <%end%>
+                   <%else%>
+                     <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail") do %>
+                     <span class="fa fa-heart like-btn"></span>
+                   <%end%>
+                   <%end%>
+                     <%= post.like_count %>
+                   <%if post.user_id==@current_user.id%>
+                     <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail")%>
+                     <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail"})%>
+                   <%end%>
            </div>
           </div>
         </div>
        </div>
+       </div>
      <% end %>
    </div>
- </div>
-  </div>
+ 

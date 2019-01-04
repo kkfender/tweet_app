@@ -3,20 +3,19 @@
     <%= @posts.content %><br>
     <%= @posts.created_at %>
   </div>
-
-<% if Like.find_by(user_id: @current_user.id,post_id: @posts.id)%>
-  <%= link_to("/likes/#{@posts.id}/destroy", {method: "post"},class:"post-detail") do %>
-    <span class="fa fa-heart like-btn-unlike"></span>
-  <%end%>
-<%else%>
-  <%= link_to("/likes/#{@posts.id}/create", {method: "post"},class:"post-detail") do %>
-    <span class="fa fa-heart like-btn"></span>
-  <%end%>
-<%end%>
-<%= @likes_count %>
-<%if @posts.user_id==@current_user.id%>
-  <%=link_to("編集","/posts/#{@posts.id}/edit",class:"post-detail")%>
-  <%=link_to("削除","/posts/#{@posts.id}/destroy",{method: "post",class:"post-detail"})%>
-<%end%>
-<%=link_to(@users.name,"/users/#{@users.id}")%>
+    <% if Like.find_by(user_id: @current_user.id,post_id: @posts.id)%>
+      <%= link_to("/likes/#{@posts.id}/destroy", {method: "post"},class:"post-detail") do %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+      <%end%>
+    <%else%>
+      <%= link_to("/likes/#{@posts.id}/create", {method: "post"},class:"post-detail") do %>
+        <span class="fa fa-heart like-btn"></span>
+      <%end%>
+    <%end%>
+      <%= @likes_count %>
+        <%if @posts.user_id==@current_user.id%>
+          <%=link_to("編集","/posts/#{@posts.id}/edit",class:"post-detail")%>
+          <%=link_to("削除","/posts/#{@posts.id}/destroy",{method: "post",class:"post-detail"})%>
+        <%end%>
+          <%=link_to(@users.name,"/users/#{@users.id}")%>
 </div>
