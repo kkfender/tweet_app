@@ -1,6 +1,7 @@
 <div class="main">
- <div class="post-index-back">
-   <% @posts.each do |post|%>
+
+  <% @posts.each do |post|%>
+   <div class="post-index-back">
    <div class="post-index-cover">
      <div class="post-main">
        <div class="post-main-box">
@@ -13,42 +14,32 @@
                <%=link_to(post.user.name, "/users/#{post.user.id}", class: "post-index-name")%>
                  <%= post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})")  %>
              </div>
-             <%=link_to(post.content,"/posts/#{post.id}", class: "post-index-content")%>
+            <p class="post-index-content"><%=post.content%></p>
              <div class="post-index-action">
               <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
-              
-              
-                  
-                <%= link_to("/likes/#{post.id}/destroy", {method: "post"},class:"post-detail") do %>
+                 <%= link_to("/likes/#{post.id}/destroy",{method: "post"},class:"post-detail") do %>
                   <span class="fa fa-heart like-btn-unlike"></span>
-                    
-              <%end%>
+                <%end%>
              <%else%>
-              <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail") do %>
+              <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail",:select_id => "a") do %>
                <span class="fa fa-heart like-btn"></span>
              <%end%>
         <%end%>
-                    
-         <%= post.like_count %>
-                   
-          <%if post.user_id==@current_user.id%>
-           
-           <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail")%>
-          
-          
-             <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail"})%>
-            
-           
-            
-          </div>
-          
-         <%end%>
-         
-        </div>
+                       <%= post.like_count %>   
+                       <%if post.user_id==@current_user.id%>
+                  <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail")%>
+                     <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail"})%>
+                  
+                  <%end%>
+                </div>
+       
+        
        <% end %>
-      </div>
+     </div> </div>
+     </div></div>
     </div>
-    </div>
+   
    <%end%>
- </div>
+
 </div>
+

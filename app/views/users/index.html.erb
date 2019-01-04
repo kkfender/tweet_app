@@ -1,5 +1,5 @@
 <div class="user-list">
-ユーザー一覧
+
 
 <%= will_paginate %>
 
@@ -9,11 +9,20 @@
    <div class="user-list-image">
     <img src="<%= "/user_images/#{user.image_name}"%>">
      </div>
-
+<div class="prof">
  <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>
+ </div>
+ <div class="user-profile-page">
+ 自己紹介してください。自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 
+ 自己紹介してください。 自己紹介してください。 
+ 
+</div> 
 </div>
+
 
 <%end%>
 
 <%= will_paginate %>
-<div>
+</div>
+ 
+ 

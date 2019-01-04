@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update]}
   
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 8)
+    @users = User.paginate(:page => params[:page], :per_page => 6)
     
 
   end
@@ -18,8 +18,6 @@ class UsersController < ApplicationController
   if @posts !=nil
   @likes_count = Like.where(post_id: @posts.id).count
   end
-     
-     
      
   end
   def new

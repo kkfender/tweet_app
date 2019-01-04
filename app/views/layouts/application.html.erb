@@ -11,7 +11,8 @@
   </head>
 
   <body>
- 
+  <div id="wrapper">
+
     <div class="header-top">
       <header>
          <div class="header-logo">
@@ -55,8 +56,24 @@
 <%=flash[:notice]%><br>
 <%end%>
 </div>
-    
+  
     <%= yield %>
-   
-  </body>
+      
+ 
+ <footer class="footer">
+  <nav class="nav">
+    <ul>
+      <li>TweetAppについて</li>
+      <li>お問い合わせ</li>
+      <li>利用規約</a></li>
+    </ul>
+  </nav>
+  <div class="link">
+ 
+   CopyRight
+ 
+</div>
+
+</footer>
+</body>
 </html>

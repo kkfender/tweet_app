@@ -1,25 +1,35 @@
 /************************共通**********************/
  * {
   box-sizing: border-box;
-border: 1px solid #aaa;
+/*border: 1px solid #aaa;*/
 font-family: Impact,Charcoal ;
 }
 .main-top {
 background-image: url("/haikei.jpg");
-  
+background-size:cover;
+margin:auto;
+width:900px;
+height:500px;
+}
+.main-main {
+  margin:auto;
+width:900px;
+height:500px;
 }
 
 
 
 html {
 /*background-image: url("/tweet.png");*/
-  background-size: cover;
+/*  background-size: cover;*/
+  height: 100%;
 
 }
 body {
   color: #2d3133;
   min-height: 1vh;
   margin: 0;
+  height: 100%;
 }
 header {
   margin:0 auto;
@@ -30,7 +40,7 @@ header {
 p {
   font-size:25px;
   font-family:sans-serif ; 
-/*  margin:auto;*/
+
 }
 a {
   text-decoration: none
@@ -96,7 +106,7 @@ input:focus {
 }
 .resister-area {
 background-color:#f4ffff;
-   width:70%;
+   width:900px;
    margin:auto ;
    padding:50px 0;
    text-align:center;
@@ -162,10 +172,15 @@ background-color:#f4ffff;
 }
 
 .flash {
+  width:900px;
+ font-size :20px;
+  color:#01960b;
+  background-color:#c2ead1;
+  border-radius: 5%;
+  margin:auto;
   text-align:center;
-  background-color:yellow;
 }
-.show-index,.post-index,.post-detail,.post-edit {
+.post-index,.post-detail,.post-edit {
   font-size:20px;
 }
 .main img {
@@ -215,7 +230,7 @@ background-color:#f4ffff;
   float:left;
   list-style:none;
   padding-left:5px;
-  margin-top:70px;
+  margin:auto;
 }
 .user-main-prof {
   margin:auto;
@@ -228,6 +243,8 @@ background-color:#f4ffff;
   height:150px;
   background-color :white;
   margin: auto;
+  position: relative;
+
 }
 .show-users-identfy {
   float:left;
@@ -299,8 +316,8 @@ float: left;
 /*****************      folloes           ******************/
 
 .follow-container {
-  width:90%;
-  margin-left:50px;
+  width:98%;
+  margin-left:15px;
   background-color: white;
   float:left;
 }
@@ -367,12 +384,12 @@ width: 100px;
  height:auto;
  background-color: lightcyan ;
  margin: auto;
- padding-bottom: 5px;
+ padding:  10px 0 10px 0px;
 }
 .post-index-cover {
   width:800px;
-
-  margin:auto;
+margin:auto;
+  
 }
 .post-main {
    width:800px;
@@ -400,14 +417,18 @@ width: 100px;
  float:left;
 }
 .post-main-detail {
-   width :500px;
+   width :100%;
    margin:0;
    float:left;
 }
-.post-index-content {
-  width :500px;
+.post-index-content p{
+  width :800px;
   margin:0;
   float:left;
+  font-size:25px;
+  word-break : break-all;
+
+
   
 }
 .post-index-inner {
@@ -424,9 +445,7 @@ width: 100px;
   width:600px;
   float:left;
   position: absolute;
-  
-
-  bottom: 0;
+    bottom:0;
 
   
 }
@@ -451,10 +470,10 @@ p  {
 }
 .user-profile {
      width:250px;
-  height:300px;
+  height:312px;
   background-color: white;
   float:left;
-  margin-left: 45px;
+  margin-left: 38px;
   margin-bottom: 45px;
   box-shadow: 0 2px 6px #c1ced7;
 }
@@ -467,7 +486,62 @@ p  {
 .back-message {
   background-color: #eaebed;
   color:#838484;
+   font-size: 13px;
+  float:left;
+}
+/***********************username*************************/
+.user-name {
+  font-size: 30px;
+  font-family: Segoe UI;
+}
+.follow-info {
+   width:400px;
+   height:50px;
+    
+    float:left;
+    position: absolute;
+	right: 0;
+	bottom: 0;
+}
+/****************************************************************/
+.show-index {
+  width:100%;
+}
+.prof {
+  width: 100%;
+  text-align:center;
+}
+.user-profile-page {
+   width: 100%;
+}
+/**************************   footer   ********************************/
+
+.footer {
+  width:auto;
+  text-align:center;
+ 
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;;
+  padding:10px 0; 
+  font-size:15px;
+  margin:auto;
+  height: 40px;
+  background-color:white;
+}
+.nav {
   width:50%;
-  font-size: 13px;
-  
+  float:left;
+}
+.footer li {
+  float:left;
+  list-style:none;
+  padding-left:20px;
+  font-size:15px;
+}
+.link {
+  padding-right:20px; 
+  float:right;
+}
+ul {
+  margin: 0;
 }

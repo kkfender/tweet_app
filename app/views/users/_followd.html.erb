@@ -6,12 +6,20 @@
    
    <div class="user-list-image">
     <img src="<%= "/user_images/#{f.image_name}" %>">
-    </div>
-  <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
-    <%if @current_user.following? (f)%>
+     <%if @current_user.following? (f)%>
      <div class="back-message">フォローしています</div>
      <%end%>
+    </div>
+    
+  <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
+   <div class="user-profile-page">
+ 自己紹介してください。自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 
+ 自己紹介してください。 自己紹介してください。 
+ 
+ 
+</div> 
  </div>
+ 
     <%end%>
     
 </div>

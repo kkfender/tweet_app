@@ -7,32 +7,26 @@
 <div class="show-users-identfy">
   
   
- <div class="user-main-prof"> 
-  <%= "#{@users.name}" %>
+
+  <din class="user-name"><%= "#{@users.name}" %></div>
     <%if @current_user==@users%>
-    <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
-      <%=@users.name%>をフォローしています
+    <%elsif @current_user.following? @users%>  <!--もしフォろーしてたら-->
+     <div class="back-message"> <%=@users.name%>をフォローしています</div>
     <%end%>
       <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %>
   
-
+<div class="follow-info">
   <ul class="show-menus">
    <li>フォロー</li>
       <li><%=@users.follow_count%>人</li>
-       <% @users.all_following.each do |follow|%>
-      <%end%>
+      
    <li>フォロワー </li>
    <li><%=@users.followers_count%>人</li>
     <%=render"users/follow"%>     <!--followのパーシャル-->
   </ul>
- 
- </div>
- 
-  <% @users.followers .each do |follow|%>
-   <%end%>
-  </div>
    </div>
-   
+   </div>
+   </div>
 </div>
  <div class="main-container">   <!--main-->
   <div class="mc-list">         <!--↓-->
@@ -44,11 +38,16 @@
   </div>
   
 
-<% if @branch ==( "1" or nil) %>    <!--パ－シャルの切り替え-->
-   <%=render"users/tweet"%>     <!--tweetのパーシャル-->
+   
+<% if @branch ==( "3" or nil) %> 
+    <%=render"users/followd"%>
+      
   <%elsif @branch == "2"%> 
    <%=render"users/follows"%>
   <%else%> 
-  <%=render"users/followd"%>
-   <%end%>
+ <%=render"users/tweet"%>  
+   <%end%>   
+   
+   
+   
    </div>

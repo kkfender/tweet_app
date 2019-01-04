@@ -3,14 +3,22 @@
 
   <% @users.all_following.each do |f|%>
  <div class="user-profile">
-   
+    
    <div class="user-list-image">
     <img src="<%= "/user_images/#{f.image_name}" %>">
- </div>
- <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
-    <%if @current_user.followed_by? (f)%>
+     <%if @current_user.followed_by? (f)%>
        <div class="back-message">フォローされています</div>
      <%end%>
+ </div>
+ <div class="prof">
+ <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
+ </div><div class="user-profile-page">
+ 自己紹介してください。自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 自己紹介してください。 
+ 自己紹介してください。 自己紹介してください。 
+ 
+ 
+</div> 
+  
  </div>
     <%end%>
     
