@@ -2,13 +2,14 @@
 
 
   <% @users.followers.each do |f|%>
- <div class="user-box">
-    <%= f.name%>
-  
+ <div class="user-profile">
+   
+   <div class="user-list-image">
     <img src="<%= "/user_images/#{f.image_name}" %>">
- 
+    </div>
+  <%=link_to(f.name,"/users/#{f.id}",class:"show-index")%>
     <%if @current_user.following? (f)%>
-     フォローしています
+     <div class="back-message">フォローしています</div>
      <%end%>
  </div>
     <%end%>

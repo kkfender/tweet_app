@@ -112,6 +112,7 @@ background-color:#f4ffff;
 .input-area {
   background-color:white;
   margin:auto ;
+  font-size:20px;
  }
  .text-area {
   width:300px;
@@ -348,7 +349,7 @@ width: 100px;
  background-color: white;
 }
 .pagination {
-  font-size:30px;
+  font-size:20px;
   text-align: center;
   clear: both;
   margin-bottom: 20px;
@@ -438,4 +439,35 @@ width: 100px;
 p  {
   white-space: pre-wrap;
 
+}
+/*********************   userlist  **********************/
+
+.user-list {
+ width: 900px;
+ height:auto;
+ background-color: lightcyan ;
+ margin: auto;
+ padding-bottom: 5px;
+}
+.user-profile {
+     width:250px;
+  height:300px;
+  background-color: white;
+  float:left;
+  margin-left: 45px;
+  margin-bottom: 45px;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+.user-list-image {
+     width:250px;
+  height:140px;
+ text-align: center;
+}
+/*******************   pagination         *******************/
+.back-message {
+  background-color: #eaebed;
+  color:#838484;
+  width:50%;
+  font-size: 13px;
+  
 }

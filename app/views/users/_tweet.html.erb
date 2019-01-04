@@ -13,7 +13,7 @@
           <%= "#{post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})") }" %><br>
           </div>
           <div class="post-index-content">
-           <%= "#{post.content}" %>
+           <%=link_to(post.content,"/posts/#{post.id}", class: "post-index-content")%>
             </div>
            <div class="post-index-action">
               <% if Like.find_by(user_id: @current_user.id,post_id: @posts.id)%>

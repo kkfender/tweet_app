@@ -1,24 +1,19 @@
-
- <div class="post-index-back">
+<div class="user-list">
 ユーザー一覧
 
 <%= will_paginate %>
 
 
 <% @users.each do |user| %>
- <div class="post-index-back">
-<div class="user-table">
-<div class="user-index-box">
-<div class="user-image">
+<div class="user-profile">
+   <div class="user-list-image">
     <img src="<%= "/user_images/#{user.image_name}"%>">
-    
- </div>
- <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>
+     </div>
 
-</div> 
+ <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>
 </div>
+
 <%end%>
 
 <%= will_paginate %>
-
-</div>
+<div>
