@@ -1,0 +1,17 @@
+<p>検索</p>
+<%= form_tag("/posts/search",:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+<%if @posts.present?%>
+<ul><% @posts.each do |post| %>
+  <li>
+    
+    <%= post.created_at %>
+    <%= post.content %>
+  </li>
+ 
+  <% end %>
+   <% end %>
+</ul>

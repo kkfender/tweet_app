@@ -13,29 +13,84 @@
             </div>
               <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %>
                 <div class="follow-info">
-                  <ul class="show-menus">
+                  <ul  class="show-menus">
                    <li>フォロー</li>
                    <li><%=@users.follow_count%>人</li>
                    <li>フォロワー </li>
                    <li><%=@users.followers_count%>人</li>
                      <%=render"users/follow"%>     <!--followのパーシャル-->
+                     <li><span class="fa fa-heart like-btn-unlike"></span>
+                     </li>
+                    <li><%= Like.where(post_id: @users.id,post_id: @postall).count%>
+                    </li> 
                    </ul>
                 </div>
   </div>
-    <div class="main-container">   <!--main-->
+   <div class="main-container">   <!--main-->
       <div class="mc-list">         <!--↓-->
-        <ul>
-          <li><%= link_to("つぶやき",:action=>"show", :select_id => "1") %></li>
-          <li><%= link_to("フォロー",:action=>"show", :select_id => "2") %></li>
-          <li><%= link_to("フォロワー",:action=>"show", :select_id => "3") %></li>
-        </ul>
+      
+  <div class="tabs">
+<input id="all" type="radio" name="tab_item" checked>
+<label class="tab_item" for="all">つぶやき</label>
+ <input id="programming" type="radio" name="tab_item">
+<label class="tab_item" for="programming">フォロー</label>
+<input id="design" type="radio" name="tab_item">
+<label class="tab_item" for="design">フォロワー</label>
+<div class="tab_content" id="all_content">
+<div class="tab_content_description">
+<p class="c-txtsp"><%=render"users/tweet"%></p>
+</div>
+</div>
+<div class="tab_content" id="programming_content">
+<div class="tab_content_description">
+<p class="c-txtsp"><%=render"users/follows"%></p>
+</div>
+</div>
+<div class="tab_content" id="design_content">
+<div class="tab_content_description">
+<p class="c-txtsp"> <%=render"users/followd"%>  </p>
+</div>
+</div>
+</div> 
+    
+    
+    
+   
+       
       </div>
-        <% if @branch ==( "3" or nil) %> 
-          <%=render"users/followd"%>
-        <%elsif @branch == "2"%> 
-          <%=render"users/follows"%>
-        <%else%> 
-          <%=render"users/tweet"%>  
-        <%end%>   
+      
+      
+      
+      
+      
+      
+        
     
 </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

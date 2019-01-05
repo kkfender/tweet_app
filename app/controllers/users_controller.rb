@@ -12,9 +12,11 @@ class UsersController < ApplicationController
   def show
     @users = User.find_by(id: params[:id])
    @posts = Post.find_by(user_id: params[:id])
-    @branch = params[:select_id]
-     
+    @postall =Post.where(user_id: @users.id)
+    
    
+   
+ 
   if @posts !=nil
   @likes_count = Like.where(post_id: @posts.id).count
   end

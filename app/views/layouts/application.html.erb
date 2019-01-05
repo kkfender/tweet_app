@@ -18,29 +18,37 @@
              <%current_user=User.find_by(id: session[:user_id])%>
                <%if current_user%>       <!--ログイン状態で表示-->
            <li>
-             <%= link_to(current_user.name+"さん","/users/#{current_user.id}",class:"button")%>
-           </li>
+             <%= link_to(current_user.name,"/users/#{current_user.id}",class:"button")%>
+             <ul>
+               <li>
+                 <%= link_to("new","/posts/new",class:"button")%>
+               </li>
+               <li>
+                   <%=link_to("logout","/logout",{method: :post})%>
+               </li>
+             </ul>
+           </li> 
            <li>
-             <%= link_to("新規投稿","/posts/new",class:"button")%>
-           </li>
-           <li>
-             <%= link_to("投稿一覧","/posts/index",class:"button")%>
-           </li>
-           <li>
-             <%= link_to("ユーザー一覧","/users/index",class:"button")%>
-           </li>
-           <li>
-             <%=link_to("ログアウト","/logout",{method: :post})%>
-           </li>
+              <%= link_to("index","#",class:"button")%>
+             <ul>
+               <li>
+                 <%= link_to("post","/posts/index",class:"button")%>
+               </li>
+               <li>
+                 <%= link_to("users","/users/index",class:"button")%>
+               </li>
+             </ul>
+           </li> 
+             
              <% else %>                         <!--ログアウト状態で表示-->
            <li>
-             <%= link_to("ログイン","/login",class:"button")%>
+             <%= link_to("login","/login",class:"button")%>
            </li>
            <li>
-             <%= link_to("About","/about",class:"button")%>
+             <%= link_to("about","/about",class:"button")%>
            </li>
            <li>
-             <%= link_to("新規登録","/signup",class:"button")%>
+             <%= link_to("new","/signup",class:"button")%>
            </li>
              <%end%>
            </ul>
