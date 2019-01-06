@@ -27,19 +27,18 @@ AWSのcloud9でruby/RubyonRailsを使用しました。
 
 参考サイト、書籍
 <サイト>
-"Progate"  "https://prog-8.com/")%>
-"railsチュートリアル"  "https://railstutorial.jp/")%>
-"Qiita"  "https://qiita.com/")%>
-"teratail"  "https://teratail.com/")%>
+"Progate"  "https://prog-8.com/"
+"railsチュートリアル"  "https://railstutorial.jp/"
+"Qiita"  "https://qiita.com/"
+"teratail"  "https://teratail.com/"
 
 <書籍>
 
 
-<%=link_to("現場で使えるRuby on Rails5速習実践ガイド","https://www.amazon.co.jp/現場で使える-Ruby-Rails-5速習実践ガイド-大場寧子/dp/4839962227")%>
+"現場で使えるRuby on Rails5速習実践ガイド""https://www.amazon.co.jp/現場で使える-Ruby-Rails-5速習実践ガイド-大場寧子/dp/4839962227"
 
 結び
-
-　　テスト
+ テスト
   
   
     単体テストと統合テストに関して知識不足もあり、ほとんど行えていなえていません。

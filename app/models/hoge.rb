@@ -1,2 +1,0 @@
-class Hoge < ApplicationRecord
-end

@@ -1,10 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   
-  
   acts_as_followable # フォロワー機能
   acts_as_follower   # フォロー機能
-
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
@@ -12,9 +10,7 @@ class User < ApplicationRecord
 #  validates :password, length: { minimum: 8 }       # 「8文字のみ」
 #  validates :password, confirmation: true
   
- 
   def posts
-   return  Post.where(user_id: self.id)
+    return  Post.where(user_id: self.id)
   end  
-  
 end

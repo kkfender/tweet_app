@@ -1,36 +1,8 @@
-/************************共通**********************/
+/****************     共通      ****************/
  * {
 box-sizing: border-box;
 /*border: 1px solid #aaa;*/
 /*font-family: Impact,Charcoal ;*/
-}
-.main-top {
-background-image: url("/top.jpg");
-background-size:cover;
-margin:0 auto;
-width:900px;
-height:550px;
-}
-
-.main-inner {
-  text-align: center;
-margin:0 auto;
-width:50%;
-height:200px;
-background-color: white;
-border-radius: 5% ;
-opacity: 0.5;
-top:30%;
-position: relative
-
-}
-.infomation {
-   font-size:20px; 
-   font-weight: bold;
-   color:red;
-padding-top:60px;
-font-family: 'Hiragino Kaku Gothic ProN';
-  
 }
 html {
 /*background-image: url("/tweet.png");*/
@@ -45,7 +17,8 @@ body {
 }
 header {
   margin:0 auto;
-}h1,h2,h3 {
+}
+h1,h2,h3 {
   font-size:35px;
   font-family:fantasy ;
 }
@@ -57,40 +30,14 @@ a {
   text-decoration: none;
    color:#ffa500;
 }
-a:visited{
-  color: #ffa500;
-}
-a:hover {
-  filter: alpha(opacity=70);
-  -moz-opacity: 0.7;
-  opacity: 0.7;
-  /*画像を70%の不透明度に
-  もし50%にしたいときは
-  上から50、0.5、0.5にします*/
-  }
 img {
   width: 100px;
   height: 100px;
   border-radius: 20%;
   box-shadow: 0 2px 6px #c1ced7;
   margin: 20px 0 10px;
-}  
-.header-top {
-  height: 50px;
-  top: 0;
-  width: 100%;
-  background-color: #3ecdc6;
-  margin:0 auto;
-  padding:0;
-}
+} 
 
-.header-logo {
-  float: left;
-  padding-left: 22px;
-  margin-top: 13px;
-  color: white;
-  font-size: 22px;
-}
 input {
   -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
   -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
@@ -102,13 +49,169 @@ input:focus {
   border:solid 1px #EEA34A;
 }
 
+/****************     main      ****************/
+
+.main-top {
+background-image: url("/top.jpg");
+background-size:cover;
+margin:0 auto;
+width:900px;
+height:550px;
+}
+.main-inner {
+  text-align: center;
+  margin:0 auto;
+  width:50%;
+  height:200px;
+  background-color: white;
+  border-radius: 5% ;
+  opacity: 0.5;
+  top:30%;
+  position: relative
+
+}
+.infomation {
+  font-size:20px; 
+  font-weight: bold;
+  color:red;
+  padding-top:60px;
+  font-family: 'Hiragino Kaku Gothic ProN';
+}
+a:visited{
+  color: #ffa500;
+}
+a:hover {
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+.post-index,.post-detail,.post-edit {
+  font-size:20px;
+}
+
+/****************     header     ****************/
+
+.header-top {
+  height: 50px;
+  top: 0;
+  width: 100%;
+  background-color: #3ecdc6;
+  margin:0 auto;
+  padding:0;
+}
+.header-logo {
+  float: left;
+  padding-left: 22px;
+  margin-top: 13px;
+  color: white;
+  font-size: 22px;
+}
+.main img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+}
+.header-menus{
+/*float:left;*/
+  margin:0 auto;
+  padding-right: 20px;
+  font-size: 20px;
+}
+.header-menus li{
+  float: right;
+  line-height: 50px;
+  font-size: 13px;
+  color: white;
+  padding-left: 0;
+/*margin-top:13px;*/
+  position: relative;
+  list-style: none;
+	z-index:100
+}
+.header-menus a {
+  color: white;
+}
+.header-menus li a {
+  display: block;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background:  #3ecdc6;
+  transition: 0.5s;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 20px;
+ 
+}
+.header-menus > li:hover > a {/*layer-1*/
+  color: orange;
+  background: #afc6e2;
+}
+.header-menus > li li:hover > a {/*layer-2*/
+  color: olive;
+  background: #afc6e2;
+}
+.header-menus li ul {
+  top: 50px;
+  left: -50px;
+  position: absolute;
+}
+.header-menus li ul li {
+  overflow: hidden;
+  height: 0;
+  transition: 0.2s;
+}
+.header-menus li ul li a {
+  border-top: 1px solid #eee;
+}
+.header-menus li:hover > ul > li {
+  overflow: visible;
+  height: 50px;
+}
+.header-menus li ul li ul {
+  top: 0;
+  left: 110px;
+}
+.header-menus li ul li ul:before {/*layer-2▷*/
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  border: 5px solid transparent;
+  border-left: 5px solid #fff;
+}
+.header-menus li ul li ul li:hover > a {/*layer-3*/
+    color: pink;
+    background-color:cyan ;
+  }
+.header-menus li ul li ul.left {
+  top: 0;
+  left: -190px;
+}
+.header-menus li ul li ul.left:before,/*layer-2-left▷*/
+.header-menus li ul li ul li ul.left:before {/*layer-3-left▷*/
+  position: absolute;
+  top: 15px;
+  left: 190px;
+  border: 5px solid transparent;
+}
+.header-menus li ul li ul.left li:hover > a {/*layer-2-left*/
+  color: pink;
+  background:#e8fffd;
+  }
+.header-menus li ul li ul li ul.left li:hover > a {/*layer-3-left*/
+  color: purple;
+  background: #e8fffd;
+}
+  
  /******************** new ********************/
 
 .new-main {
   width:100%;
   margin:0;
   background-color:white;
-  
 }
 .resister-area {
   background-color:#f4ffff;
@@ -135,16 +238,10 @@ input:focus {
   margin:0 auto;
   font-size:20px;
   background-color:white;
- }
-/*********************************************************/
+}
+ 
+/******************     like      *********************/
 
-/*.main {
-  color: #8899a6;
-  position: relative;
-  width:100%;
-  margin: 0 auto;
-  text-align:center;
-}*/
 .like-btn {
   color: #8899a6;
 }
@@ -155,6 +252,9 @@ input:focus {
   font-size: 20px;
   margin-right: 3px;
 }
+
+/******************     flash      *********************/
+
 .flash {
   width:900px;
   font-size :20px;
@@ -164,16 +264,12 @@ input:focus {
   margin:auto;
   text-align:center;
 }
-.post-index,.post-detail,.post-edit {
-  font-size:20px;
+.errors  {
+  color:red;
 }
-.main img {
-  width: 100px;
-  height: 100px;
-  border-radius: 20%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-}
+
+/******************     button      *********************/
+
 .button1  {
   font-size: 20px;
   padding: 3px;
@@ -188,9 +284,7 @@ input:focus {
   color: #fff;
   border-radius: 10%;
 }
-.errors  {
-  color:red;
-}
+
 .user-index-table{
   float:left; 
 }  
@@ -202,12 +296,14 @@ input:focus {
   width:100%;
   text-align:center;
 }
+
+ /**************      prof user      **************/
+
 .prof-show-container {
   width: 900px;
   height:auto;
   background-color: lightcyan ;
   margin: auto;
- 
 }
 .prof-show-container li {
   float:left;
@@ -251,25 +347,20 @@ input:focus {
  /* float:left;*/
   width: 900px;
   border-bottom:solid 1px paleturquoise; 
- 
-  padding:15px 0 0 0;
+  padding: 15px 0 0 0;
   overflow: hidden;
 }
 .user-tabs {
- 
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
-
 .user-tabs li {
   float: left;
 }
-
 .user-tabs li:active {
   border-bottom: 2px solid #3ecdc6;
 }
-
 .user-tabs li:active a {
   color: #57575f;
 }
@@ -334,13 +425,7 @@ input:focus {
   width: 100%;
   float: left;
 }
-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 20%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-}
+
 .user-index-box {
   height: 250px;
   width: 250px;
@@ -520,65 +605,60 @@ img {
   font-size:15px;
    margin-bottom: 30px;
 }
+/******************  tabs  **********************/
 .link {
   padding-right:20px; 
   float:right;
 }
-ul {
-  
-}
-
-
-
 /*タブ切り替え全体のスタイル*/
 .tabs {
-margin-top: 50px;
-
-background-color: #fff;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-width: 900px;
-margin: 0 auto;}
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 900px;
+  margin: 0 auto;}
 /*タブのスタイル*/
 .tab_item {
-width: calc(100%/3);
-height: 50px;
-border-bottom: 3px solid #5ab4bd;
-background-color: #d9d9d9;
-line-height: 50px;
-font-size: 16px;
-text-align: center;
-color: #565656;
-display: block;
-float: left;
-text-align: center;
-font-weight: bold;
-transition: all 0.2s ease;
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
 }
 .tab_item:hover {
-opacity: 0.75;
+  opacity: 0.75;
 }
 /*ラジオボタンを全て消す*/
 input[name="tab_item"] {
-display: none;
+  display: none;
 }
 /*タブ切り替えの中身のスタイル*/
 .tab_content {
-display: none;
-background-color: lightcyan;
-clear: both;
-overflow: hidden;
+  display: none;
+  background-color: lightcyan;
+  clear: both;
+  overflow: hidden;
 }
 /*選択されているタブのコンテンツのみを表示*/
 #all:checked ~ #all_content,
 #programming:checked ~ #programming_content,
 #design:checked ~ #design_content {
-display: block;
+  display: block;
 }
 /*選択されているタブのスタイルを変える*/
 .tabs input:checked + .tab_item {
-background-color: #5ab4bd;
-color: #fff;
+  background-color: #5ab4bd;
+  color: #fff;
 }
+/************    serch    **************/
 .serch {
   width:100%;
   margin:auto;
@@ -597,117 +677,19 @@ color: #fff;
   padding: 0;
   text-align:center;
   background-color:white;
+}
+/**************      about     **************/
 
-}
-/*****************************************/
-.header-menus{
-/*float:left;*/
-  margin:0 auto;
-  padding-right: 20px;
-  font-size: 20px;
- 
-}
-.header-menus li{
-  float: right;
-  line-height: 50px;
-  font-size: 13px;
-  color: white;
-  padding-left: 0;
-/*margin-top:13px;*/
-  position: relative;
-  list-style: none;
-  	z-index:100
-}
-.header-menus a {
-  
-  color: white;
-}
-
-.header-menus li a {
-  display: block;
-  width: 150px;
-  height: 50px;
-  text-align: center;
-  color: #fff;
-  background:  #3ecdc6;
-  transition: 0.5s;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-size: 20px;
- 
-}
-.header-menus > li:hover > a {/*layer-1*/
-  color: orange;
-  background: #afc6e2;
-}
-.header-menus > li li:hover > a {/*layer-2*/
-  color: olive;
-  background: #afc6e2;
-}
-.header-menus li ul {
-  top: 50px;
-  left: -50px;
-  position: absolute;
-}
-.header-menus li ul li {
-  overflow: hidden;
-  height: 0;
-  transition: 0.2s;
-}
-.header-menus li ul li a {
-  border-top: 1px solid #eee;
-}
-.header-menus li:hover > ul > li {
-  overflow: visible;
-  height: 50px;
-}
-  .header-menus li ul li ul {
-    top: 0;
-    left: 110px;
-  }
-  .header-menus li ul li ul:before {/*layer-2▷*/
-    position: absolute;
-    top: 15px;
-    left: 30px;
-    border: 5px solid transparent;
-    border-left: 5px solid #fff;
-  }
-  .header-menus li ul li ul li:hover > a {/*layer-3*/
-    color: pink;
-    background-color:cyan ;
-  }
-  .header-menus li ul li ul.left {
-    top: 0;
-    left: -190px;
-  }
-  .header-menus li ul li ul.left:before,/*layer-2-left▷*/
-  .header-menus li ul li ul li ul.left:before {/*layer-3-left▷*/
-    position: absolute;
-    top: 15px;
-    left: 190px;
-    border: 5px solid transparent;
-    
-  }
-  .header-menus li ul li ul.left li:hover > a {/*layer-2-left*/
-    color: pink;
-    background:#e8fffd;
-  }
-  .header-menus li ul li ul li ul.left li:hover > a {/*layer-3-left*/
-    color: purple;
-    background: #e8fffd;
-  }
 .about {
-   width:100%;
+  width:100%;
   margin:0;
   background-color:white;
-  
 }
 .about-area {
  background-color:#f4ffff;
   width:900px;
   margin:auto ;
   padding:50px 0;
-  
 }
 .about-main {
   background-color:#f4ffff;
@@ -716,7 +698,7 @@ color: #fff;
   padding:50px 0;
 }
 
-
+/**************************************************/
 
 
 
