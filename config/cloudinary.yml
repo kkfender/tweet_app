@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hjkco9gaf
+  api_key: '894957171373911'
+  api_secret: 7kU1zzRqLLmKcEhHFpsWrpebEOI
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hjkco9gaf
+  api_key: '894957171373911'
+  api_secret: 7kU1zzRqLLmKcEhHFpsWrpebEOI
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hjkco9gaf
+  api_key: '894957171373911'
+  api_secret: 7kU1zzRqLLmKcEhHFpsWrpebEOI
+  enhance_image_tag: true
+  static_file_support: false

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'cloudinary'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
