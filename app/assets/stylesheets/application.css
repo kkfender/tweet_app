@@ -700,7 +700,11 @@ input[name="tab_item"] {
 
 /**************************************************/
 
-
+.sampleuser {
+  background-color: white;
+  margin:auto;
+  width:500px;
+}
 
 
 

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/gregbell/active_admin.git
-  revision: 989eaf9b0e50dfc668cf29760f56f3a0025fe1a3
+  revision: d5b4fd0f15e21140cb1573f5d817ebff0fd1f70f
   specs:
     activeadmin (2.0.0.alpha)
       arbre (~> 1.1, >= 1.1.1)
@@ -130,7 +130,7 @@ GEM
       activesupport (>= 4.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.4.0)
+    i18n (1.5.1)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.9.0)
       actionpack (>= 4.2, < 5.3)
