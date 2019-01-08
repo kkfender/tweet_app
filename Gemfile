@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
+
+gem 'fog'
 gem 'sprockets-rails'
 gem 'carrierwave'
 gem 'cloudinary'
