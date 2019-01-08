@@ -3,15 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'fog'
+gem 'sprockets-rails'
+gem 'carrierwave'
 gem 'cloudinary'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
-
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
-
 gem 'will_paginate','3.1.6'
-
 gem 'bcrypt'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 

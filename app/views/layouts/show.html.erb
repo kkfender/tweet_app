@@ -1,6 +1,6 @@
 <div class="main">
  <div class="prof-show-container">
-   <img src="<%= "/user_images/#{@users.image_name}" %>">
+   <%= image_tag @user.image.to_s %>
      <div class="show-users-identfy">
        <%if @current_user==@users%>
        <%elsif @current_user.following? @users%>  <!--もしおろーしてたら-->
