@@ -4,8 +4,9 @@ class User < ApplicationRecord
   acts_as_followable # フォロワー機能
   acts_as_follower   # フォロー機能
   
-  mount_uploader :photo, ImageUploader
-attr_accessor :photo
+   mount_uploader :image, ImageUploader
+
+attr_accessor :image
 
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
