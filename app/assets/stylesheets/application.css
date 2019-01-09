@@ -705,7 +705,10 @@ input[name="tab_item"] {
   margin:auto;
   width:500px;
 }
-
+.field_with_errors {
+ display: inline;
+}
+  
 
 
 

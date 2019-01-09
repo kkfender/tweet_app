@@ -2,27 +2,24 @@
   <div class="resister-area">
     <div class="inner-area">
       <p font-size="20px">新規ユーザー登録</p>
-        <%= form_tag("/users/create")do%>
+      
           <%@users.errors.full_messages.each do |message|%>
             <div class="errors"><%=message%></div>
           <%end%>
-        <div class="input-area">
-          ユーザー名<br>
-          <input type="text" name="name" value="<%= @users.name%>" placeholder="name">
-          <br>
-          メールアドレス<br>
-          <input type="text" name="email" value="<%= @users.email %>" placeholder="mailaddress">
-          <br>
-          パスワード<br>
-          <input type="password" name="password" value="" placeholder="password">
-          <br>
-          パスワード確認<br>
-          <input type="password" name="password_confirmation" value="" placeholder="password">
-          <br>
-          <br>
-          <input type="submit"  value="新規登録" class="button1">
+       <div class="input-area">
+       <%= form_for @users ,url: users_create_path do |f| %>
+        ユーザー名<br>
+        <%= f.text_field :name %><br/>
+         メールアドレス<br>
+        <%= f.text_field :email %><br />
+         パスワード<br>
+        <%= f.password_field :password %><br />
+        パスワード確認<br>
+        <%= f.password_field :password_confirmation%><br/><br/>
+        <%= f.submit "新規登録",:class =>"button1" %><br/>
         </div>
-        <%end%>
+      <% end %>
+
       </div>
     </div>
 </div>

@@ -21,11 +21,13 @@ class UsersController < ApplicationController
      @users = User.new
   end 
   
-  def create
-    @users = User.new(name: params[:name],email: params[:email],password: params[:password],password_confirmation: params[:password_confirmation],image:"nobunaga.png")
-    if @users.save
+  def create        
+    
+   @users =User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
+ 
+   if  @users.save
       session[:user_id]=@users.id
-      redirect_to("/users/#{@users.id}") 
+      redirect_to users_index_path(@users) 
       flash[:notice]="ユーザー登録を完了しました"
     else
       render("users/new")  
