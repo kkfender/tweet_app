@@ -2,14 +2,17 @@ class UsersController < ApplicationController
   
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
-  before_action :ensure_correct_user, {only: [:edit]}
+  before_action :ensure_correct_user, {only: [:edit,:update]}
   
   def index
+   
+
     @users = User.paginate(:page => params[:page], :per_page => 6)
   end
   
   def show
-    @users = User.find_by(id: params[:id])
+    
+    @users = User.find(params[:id])
     @posts = Post.find_by(user_id: params[:id])
    # @postall =Post.where(user_id: @users.id)
     if @posts !=nil
@@ -23,11 +26,11 @@ class UsersController < ApplicationController
   
   def create        
     
-   @users =User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
+   if @users =User.create(user_params)
  
-   if  @users.save
+   
       session[:user_id]=@users.id
-      redirect_to users_index_path(@users) 
+      redirect_to users_path(@users) 
       flash[:notice]="ユーザー登録を完了しました"
     else
       render("users/new")  
@@ -41,8 +44,6 @@ class UsersController < ApplicationController
     @users = User.find_by(email: params[:session][:email].downcase)
     if @users && @users.authenticate(params[:session][:password])
 
-  #  @users = User.find_by(email: params[:email])
-   # if @users && @users.authenticate(params[:password])
       session[:user_id]=@users.id
       flash[:notice]="ログイン成功しました"
       redirect_to("/users/index")
@@ -59,27 +60,16 @@ class UsersController < ApplicationController
   end
     
   def update
-     # raise.params.inspect
-
-   # if @users.present?
+     #raise.params.inspect
     @users = User.find_by(id: params[:id])
-    #@users.name = params[:name]
-    #@users.email = params[:email]
     
-    @users.update_attributes(user_params)
-    
-  #end
-    if params[:image]
-      @users.image = "#{@users.id}.jpg"
-      image = params[:image]
-      File.binwrite("app/assets/images/#{@users.image}", image.read)
-    end
-    #@users.update
+    if  @users.update_attributes(user_params)
+  
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to("/users/#{@users.id}")
-    #else
-      #render("users/edit")  
-   # end
+    else
+      render("users/edit")  
+    end
   
       
   end
@@ -116,11 +106,12 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@users.name}さんをフォローを解除しました"
   end
   
+  private
   def user_params
 
       params.require(:user).permit(
       :name, :email, :password, 
-      :password_confirmation)
+      :password_confirmation,:img,:image_cache,:remove_img)
 
     end
 end

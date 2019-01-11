@@ -1,11 +1,13 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
+   mount_uploader :img, ImgUploader
+
   has_secure_password
   
   
   acts_as_followable # フォロワー機能
   acts_as_follower   # フォロー機能
   
-   mount_uploader :image, ImageUploader
+ 
 
 attr_accessor :image
 

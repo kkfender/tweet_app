@@ -7,7 +7,7 @@
             <div class="errors"><%=message%></div>
           <%end%>
        <div class="input-area">
-       <%= form_for @users ,url: users_index_path  do |f| %>
+       <%= form_for @users, url: users_path do |f| %>
         ユーザー名<br>
         <%= f.text_field :name %><br/>
          メールアドレス<br>
@@ -16,6 +16,9 @@
         <%= f.password_field :password %><br />
         パスワード確認<br>
         <%= f.password_field :password_confirmation%><br/><br/>
+         サムネイル<br>
+        <%= f.label :img %>
+        <%= f.file_field :img %><br />
         <%= f.submit "新規登録",:class =>"button1" %><br/>
         </div>
       <% end %>

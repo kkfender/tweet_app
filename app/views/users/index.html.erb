@@ -3,7 +3,7 @@
     <% @users.each do |user| %>
       <div class="user-profile">
         <div class="user-list-image">
-          <%= image_tag user.image %>
+          <%= image_tag user.img.url %>
         </div>
           <div class="prof">
             <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>

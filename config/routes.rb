@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+ 
   resources :hoges
   ActiveAdmin.routes(self)
  #####################   home   #####################
@@ -21,16 +22,14 @@ Rails.application.routes.draw do
   
  #####################   users   #####################
   
- 
-  
-  get "users/index" => "users#index"
+   get "users/index" => "users#index"
   get "users/:id/likes" => "users#likes"
-  get "users/:id/edit" => "users#edit"
-  get "users/:id" => "users#show"
+  #get "users/:id/edit" => "users#edit"
+  #get "users/:id" => "users#show"
   
-  patch "users/:id/update" => "users#update"
-  post "users/create" => "users#create"
-   resources :users
+  #patch "users/:id/update" => "users#update"
+  #post "users/create" => "users#create"
+  resources :users
  #####################   users   #####################
 
   post "likes/:post_id/create" => "likes#create"  

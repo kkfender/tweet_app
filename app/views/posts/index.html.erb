@@ -17,7 +17,7 @@
           <div class="post-main-box">
             <% if post.user.present? %>
               <div class="post-index-img">
-                <%= image_tag post.user.image.to_s %>
+                <%= image_tag post.user.img.url %>
               </div>
                 <div class="post-index-inner">
                   <div class="post-main-detail">

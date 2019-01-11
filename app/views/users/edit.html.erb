@@ -10,11 +10,35 @@
         <%= @current_user.id%> 
         <%=params[:id]%>
          
-          <%= form_for @users ,url: "/users/#{@users.id}/update" do |f| %>
+          <%= form_for @users ,url: user_path  do |f| %>
      
             <%= f.text_field :name %>
             <%= f.email_field :email %>
-            <%= f.file_field :image %>
+            <div class="field">
+            <%= image_tag @users.img.url if @users.img? %>
+            <%= f.label :img %><br>
+            <%= f.file_field :img %>
+            <%#= f.hidden_field :img_cache %>
+            <p><%= f.check_box :remove_img %>画像を削除する</p>
+           <%= image_tag @users.img.url, id: :img_prev if @users.img? %>
+          <%= f.file_field :img, id: :users_img %>
+           <script type="text/javascript">
+$(function() {
+ function readURL(input) {
+   if (input.files && input.files[0]) {
+     var reader = new FileReader();
+     reader.onload = function (e) {
+       $('#img_prev').attr('src', e.target.result);
+     }
+     reader.readAsDataURL(input.files[0]);
+   }
+ }
+ $("#users_img").change(function(){
+   readURL(this);
+ });
+});
+</script>
+          </div>
             <%= f.submit "保存", class: "button1" %>
           <% end %>
 

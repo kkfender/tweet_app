@@ -1,7 +1,11 @@
 <div class="prof-show-container">
   <div class="prof-show-detail">
+     
     <div class="show-image">
-       <%= image_tag @users.image.to_s %>
+       <% if  @users.img.present? %>
+       <%= image_tag(url_for(@users.img.url)) %>
+      <% end%>
+      
         <%if @current_user==@users%>
         <%elsif @current_user.following? @users%>  <!--もしフォろーしてたら-->
           <div class="back-message"> <%=@users.name%>をフォローしています</div>
@@ -52,20 +56,8 @@
 </div>
 </div>
 </div> 
-    
-    
-    
-   
-       
-      </div>
-      
-      
-      
-      
-      
-      
-        
-    
+  </div>
+  
 </div></div>
 
 
