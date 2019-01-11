@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   
+  
   acts_as_followable # フォロワー機能
   acts_as_follower   # フォロー機能
   

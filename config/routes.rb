@@ -21,14 +21,16 @@ Rails.application.routes.draw do
   
  #####################   users   #####################
   
-  get "/users/index" => "users#index"
+ 
+  
+  get "users/index" => "users#index"
   get "users/:id/likes" => "users#likes"
   get "users/:id/edit" => "users#edit"
   get "users/:id" => "users#show"
   
-  post "users/:id/update" => "users#update"
+  patch "users/:id/update" => "users#update"
   post "users/create" => "users#create"
-  
+   resources :users
  #####################   users   #####################
 
   post "likes/:post_id/create" => "likes#create"  

@@ -7,7 +7,7 @@
             <div class="errors"><%=message%></div>
           <%end%>
        <div class="input-area">
-       <%= form_for @users ,url: users_create_path do |f| %>
+       <%= form_for @users ,url: users_index_path  do |f| %>
         ユーザー名<br>
         <%= f.text_field :name %><br/>
          メールアドレス<br>

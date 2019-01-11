@@ -7,15 +7,23 @@
            <%= message %>
          </div>
        <% end %>
-         <%= form_tag("/users/#{@users.id}/update",{multipart: true}) do %>
-        ユーザー名<br>
-         <input name="name" value="<%= @users.name %>"><br>
-         メールアドレス<br>
-         <input name="email" value="<%= @users.email %>"><br>
-         画像<br>
-         <input name="image" type="file">  <br><br>
-         <input type="submit" value="保存" class="button1">
-       <% end %>
+        <%= @current_user.id%> 
+        <%=params[:id]%>
+         
+          <%= form_for @users ,url: "/users/#{@users.id}/update" do |f| %>
+     
+            <%= f.text_field :name %>
+            <%= f.email_field :email %>
+            <%= f.file_field :image %>
+            <%= f.submit "保存", class: "button1" %>
+          <% end %>
+
+       
+    
+    
+        
+    
+    
     </div>
   </div>
 </div>

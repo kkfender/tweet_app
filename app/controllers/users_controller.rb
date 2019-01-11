@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
-  before_action :ensure_correct_user, {only: [:edit, :update]}
+  before_action :ensure_correct_user, {only: [:edit]}
   
   def index
     @users = User.paginate(:page => params[:page], :per_page => 6)
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @users = User.find_by(id: params[:id])
     @posts = Post.find_by(user_id: params[:id])
-    @postall =Post.where(user_id: @users.id)
+   # @postall =Post.where(user_id: @users.id)
     if @posts !=nil
       @likes_count = Like.where(post_id: @posts.id).count
     end
@@ -38,8 +38,11 @@ class UsersController < ApplicationController
   end
    
   def login
-    @users = User.find_by(email: params[:email])
-    if @users && @users.authenticate(params[:password])
+    @users = User.find_by(email: params[:session][:email].downcase)
+    if @users && @users.authenticate(params[:session][:password])
+
+  #  @users = User.find_by(email: params[:email])
+   # if @users && @users.authenticate(params[:password])
       session[:user_id]=@users.id
       flash[:notice]="ログイン成功しました"
       redirect_to("/users/index")
@@ -56,20 +59,29 @@ class UsersController < ApplicationController
   end
     
   def update
+     # raise.params.inspect
+
+   # if @users.present?
     @users = User.find_by(id: params[:id])
-    @users.name = params[:name]
-    @users.email = params[:email]
+    #@users.name = params[:name]
+    #@users.email = params[:email]
+    
+    @users.update_attributes(user_params)
+    
+  #end
     if params[:image]
       @users.image = "#{@users.id}.jpg"
       image = params[:image]
       File.binwrite("app/assets/images/#{@users.image}", image.read)
     end
-    if @users.save
+    #@users.update
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to("/users/#{@users.id}")
-    else
-      render("users/edit")  
-    end
+    #else
+      #render("users/edit")  
+   # end
+  
+      
   end
  
   def likes 
@@ -103,6 +115,14 @@ class UsersController < ApplicationController
     redirect_to("/users/#{@users.id}")
     flash[:notice] = "#{@users.name}さんをフォローを解除しました"
   end
+  
+  def user_params
+
+      params.require(:user).permit(
+      :name, :email, :password, 
+      :password_confirmation)
+
+    end
 end
 
 
