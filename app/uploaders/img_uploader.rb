@@ -1,10 +1,8 @@
 class ImgUploader < CarrierWave::Uploader::Base
-  if Rails.env.development?
-    storage :file
-  elsif Rails.env.test?
-    storage :file
-  else
+  if Rails.env.production? || Rails.env.staging?
     storage :fog
+  else
+    storage :file
   end
 
   def store_dir

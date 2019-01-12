@@ -1,3 +1,4 @@
+if Rails.env.production?
 CarrierWave.configure do |config|
  config.fog_provider = 'fog/aws' # 追加
   config.fog_credentials = {
@@ -14,4 +15,5 @@ CarrierWave.configure do |config|
   config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   config.asset_host = "https://s3.ap-northeast-1.amazonaws.com/rails-am05kk"
 config.storage :fog
+end
 end
