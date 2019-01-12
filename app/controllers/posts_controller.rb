@@ -19,9 +19,10 @@ class PostsController < ApplicationController
   end  
   
   def create
-    @posts=Post.new(content: params[:content],
-    user_id: @current_user.id)
-    if  @posts.save
+  if  @posts =Post.create(post_params)
+    #@posts=Post.new(content: params[:content],
+    #user_id: @current_user.id)
+   
       redirect_to("/posts/index")
       flash[:notice]="投稿を作成しました"
     else 
@@ -58,5 +59,17 @@ class PostsController < ApplicationController
       redirect_to("/posts/index")
     end
   end
+  
+    private
+  def post_params
+
+      params.require(:post).permit(
+      :content, :user_id, :postimage,:remove_postimage)
+      .merge(user_id: @current_user.id)
+
+
+    end
+    
+    
 end
  

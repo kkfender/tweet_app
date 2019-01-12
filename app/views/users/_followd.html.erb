@@ -2,7 +2,7 @@
   <% @users.followers.each do |f|%>
     <div class="user-profile">
       <div class="user-list-image">
-       <%= image_tag f.img.url %>
+       <%= image_tag f.img.url,:class => "user-image" %>
           <%if @current_user.following? (f)%>
             <div class="back-message">フォローしています
             </div>

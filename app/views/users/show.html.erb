@@ -3,7 +3,7 @@
      
     <div class="show-image">
        <% if  @users.img.present? %>
-       <%= image_tag(url_for(@users.img.url)) %>
+       <%= image_tag @users.img.url,:class => "user-image" %>
       <% end%>
       
         <%if @current_user==@users%>

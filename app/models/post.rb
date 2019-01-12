@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   validates :content,{presence: true,length:{maximum: 140}}
   validates :user_id,{presence: true}
- 
+ mount_uploader :postimage, PostimageUploader
  belongs_to :user
  
   def user

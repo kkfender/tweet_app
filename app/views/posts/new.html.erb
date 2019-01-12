@@ -2,13 +2,17 @@
   <div class="resister-area">
     <div class="inner-area">
       <p font-size="20px">投稿する</p>
-        <%=form_tag("/posts/create",class: "square_btn")do%>
-          <%@posts.errors.full_messages.each do |message|%>
+        
+        <%#=form_tag("/posts",class: "square_btn")do%>
+            <%@posts.errors.full_messages.each do |message|%>
              <p class="errors"><%=message%></p>
+          <%#end%>
           <%end%>
-           <textarea name="content" class="text-area"  rows="2" cols="60" wrap="hard" placeholder="今何してる？"></textarea><br><br>
-           <input type="submit" value="投稿" class="button1">
-        <%end%>
+          <%= form_for @posts, url: posts_path do |f| %>
+           <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"今何してる？"%><br><br>
+           <%= f.file_field :postimage %>
+           <%=f.submit value:"投稿", class:"button1"%>
+          <%end%>
     </div>
   </div>
 </div>

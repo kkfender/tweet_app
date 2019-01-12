@@ -9,17 +9,17 @@ Rails.application.routes.draw do
   get "/about" => "home#about"
   
  #####################   posts   #####################
-  
+   
   get  "posts/index" => "posts#index"
   get  "/posts/new" => "posts#new"
-  get  "posts/:id/edit" => "posts#edit"
+ # get  "posts/:id/edit" => "posts#edit"
   get  "posts/search" => "posts#index"
-  get  "/posts/:id"=> "posts#show"
+  #get  "/posts/:id"=> "posts#show"
  
-  post "/posts/create" => "posts#create"
-  post "/posts/:id/update"=> "posts#update"
-  post "/posts/:id/destroy"=> "posts#destroy"
-  
+ # post "/posts/create" => "posts#create"
+  #post "/posts/:id/update"=> "posts#update"
+  #post "/posts/:id/destroy"=> "posts#destroy"
+ resources :posts
  #####################   users   #####################
   
    get "users/index" => "users#index"
