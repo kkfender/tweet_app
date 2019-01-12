@@ -11,9 +11,9 @@
                 <%= "#{post.user.name}"+'  ' %>
                 <%= "#{post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})") }" %><br>
               </div>
-                <div class="post-index-content">
-                  <div class="post-index-content"><%=post.content %></div>
-                </div>
+               
+                  <p class="post-index-content"><%==simple_format(post.content) %></p>
+               
                   <div class="post-index-action">
                     <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
                       <%= link_to("/likes/#{post.id}/destroy", {method: "post"},class:"post-detail") do %>
