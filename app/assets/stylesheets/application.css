@@ -54,7 +54,7 @@ background-size:cover;
 margin:0 auto;
 width:1000px;
 height:550px;
-margin-top:50px;
+
 }
 .main-inner {
   text-align: center;
@@ -84,7 +84,9 @@ a:hover {
   opacity: 0.7;
 }
 .post-index,.post-detail,.post-edit {
-  font-size:20px;
+  font-size:15px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+
 }
 
 /****************     header     ****************/
@@ -211,7 +213,8 @@ a:hover {
   width:100%;
   margin:0;
   background-color:white;
-  margin-top:50px;
+  margin:0 auto;
+  
 }
 .resister-area {
   background-color:#f4ffff;
@@ -256,12 +259,14 @@ a:hover {
 /******************     flash      *********************/
 
 .flash {
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+
   width:1000px;
-  font-size :20px;
+  font-size :18px;
   color:#01960b;
   background-color:#c2ead1;
   border-radius: 5%;
-  margin:auto;
+  margin:58px 0px 10px 140px;
   text-align:center;
 }
 .errors  {
@@ -271,8 +276,9 @@ a:hover {
 /******************     button      *********************/
 
 .button1  {
-  font-size: 20px;
-  padding: 3px;
+  font-size:15px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+  padding: 6px;
   background-color: #f7628c;
   color: #fff;
   border-style: none;
@@ -285,8 +291,9 @@ a:hover {
   border-radius: 10%;
 }
 .button2 {
-  font-size: 20px;
-  padding: 3px;
+   font-size:15px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+  padding: 6px;
   background-color: #ff4500;
   color: #fff;
   border-style: none;
@@ -299,12 +306,14 @@ a:hover {
   border-radius: 10%;
 }
 .button3 {        /*skygreen*/
-  font-size: 20px;
-  padding: 3px;
-  background-color: #ff4500;
+  font-size:15px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+  padding: 6px;
+  background-color: lime;
   color: white !important;
   border-style: none;
   border-radius: 5%;
+  
 }
 .button3:hover {
   background-color: #f9cfed;
@@ -568,6 +577,7 @@ height: 130px;
   float:left;
   position: absolute;
   bottom:0;
+  
 }
 .action-menus li {
   float:left;
@@ -797,7 +807,12 @@ height: auto !important;
 height: 50px;
 background-color: pink;
  }
-
+.line {
+  width:400;
+  height:100px;
+  border-left-color: red;
+  border-right-color: red;
+}
 
 
 

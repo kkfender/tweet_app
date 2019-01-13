@@ -26,14 +26,15 @@ class UsersController < ApplicationController
   
   def create        
     
-   if @users =User.create(user_params)
- 
-   
+    @users =User.new(user_params)
+  if @users.save
       session[:user_id]=@users.id
-      redirect_to users_path(@users) 
+      
       flash[:notice]="ユーザー登録を完了しました"
+      redirect_to users_path(@users) 
     else
-      render("users/new")  
+      
+      render "users/new"
     end  
   end  
    

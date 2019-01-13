@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   #get "users/:id" => "users#show"
   
   #patch "users/:id/update" => "users#update"
-  #post "users/create" => "users#create"
+  post "users/create" => "users#create"
   resources :users
  #####################   users   #####################
 
