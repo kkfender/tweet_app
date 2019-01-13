@@ -5,6 +5,7 @@ class PostsController < ApplicationController
  
   def index
     @posts = Post.search(params[:search]).order(created_at: :desc) 
+    @returns = Return.all
   end
   
   def show

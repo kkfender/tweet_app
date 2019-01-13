@@ -1,16 +1,13 @@
-class Post < ApplicationRecord
-  validates :content,{presence: true,length:{maximum: 140}}
-  validates :user_id,{presence: true}
- mount_uploader :postimage, PostimageUploader
- belongs_to :user
- 
+class Return < ApplicationRecord
+  
+  
   def user
     return  User.find_by(id: self.user_id)
   end
   
-  def returns
-    return Return.find_by(post_id: self.id)
-  end
+  def posts
+    return  Post.find_by(user_id: self.id)
+  end  
   
   def like_count
     return   Like.where(post_id: self.id).count

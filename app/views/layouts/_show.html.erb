@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+id<%=@returns.id%><br>
+コメ<%=@returns.returncontent%><br>
+ユーザー<%=@returns.user_id%><br>
+被投稿<%=@returns.post_id%><br>
+<% if Like.find_by(user_id: @current_user.id,post_id: @returns.id)%>
+    <%= link_to("/likes/#{@returns.id}/destroy",{method: "post"},class:"post-detail") do %>
+    <span class="fa fa-heart like-btn-unlike"></span>
+  <%end%>
+  <%else%>
+    <%= link_to("/likes/#{@returns.id}/create", {method: "post"},class:"post-detail",:select_id => "a") do %>
+      <span class="fa fa-heart like-btn"></span>
+   <%end%>
+ <%end%>
+ <%= @returns.like_count %>   

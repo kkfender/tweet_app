@@ -1,0 +1,9 @@
+
+<br><br><br><br><br><br>
+
+<%= form_for @returns,  url: returns_path do |f| %>
+  <%= f.text_field :returncontent %>
+  <%= f.hidden_field :post_id, value: params[:p_id] %>
+
+  <%= f.submit "投稿する" %>
+ <% end %>

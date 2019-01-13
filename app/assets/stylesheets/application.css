@@ -788,8 +788,15 @@ p.standard-font {
   
 }
 
-
-
+/*************** return *********************/
+.return-index-cover {
+  width:800px;
+  margin:auto;
+  min-height: 50px;
+height: auto !important;
+height: 50px;
+background-color: pink;
+ }
 
 
 

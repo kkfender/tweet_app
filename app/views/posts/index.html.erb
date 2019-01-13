@@ -15,7 +15,9 @@
       <div class="post-index-cover">
         <div class="post-main">
           <div class="post-main-box">
+            
             <% if post.user.present? %>
+            
             <div class="post-index-img-cover">
               <div class="post-index-img">
                 <%= image_tag post.user.img.url, :class => "user-image" %>
@@ -47,13 +49,58 @@
                        <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail",class:"button1")%>
                        <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail",class:"button2"})%>
                      <%end%>
+                     <%=link_to("返信",new_return_path(p_id: post.id),class:"post-detail",class:"button2")%>
                     </div>
+                    
+                     
+                    
               <% end %>
          </div>
        </div>
      </div>
     </div>
   </div>
+  
+  
+  <!---------------     返信     --------------------->
+ 
+ <%unless post.returns == nil%>
+ <div class="post-index-back">
+      <div class="post-index-cover">
+        <div class="post-main">
+          <div class="post-main-box">
+            <%end%>
+           <%@returns.each do |r|%> 
+           <%if r.post_id == post.id%>
+            <%if r.present?%>
+             <div class="post-index-img-cover">
+              <div class="post-index-img">
+                <%= image_tag r.user.img.url, :class => "user-image" %>
+              </div>
+              </div>
+            
+        コメント<%=r.returncontent%><br>
+         
+       
+       <%end%>
+     
+     
+    返信番号<%=r.id%><br>
+      ユーザー<%=r.user.name%><br>
+    投稿された<%=r.post_id%><br>
+
+    <%end%>
+  <%end%>
+  
+  
+  
+  
+     </div>
+     </div>
+    </div>
+  </div>
+   <!--------------------------------------------->
+ 
    <%end%>
-</div>
+</div> 
 
