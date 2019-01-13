@@ -1,12 +1,35 @@
 <div class="new-main">
   <div class="resister-area">
     <div class="inner-area">
-      <%=form_tag("/posts/#{@posts.id}/update")do%>
+       <%= form_for @posts ,url: post_path,class:"edit-image"  do |f| %>
+     
         <p font-size="20px">編集する</p>
           <%@posts.errors.full_messages.each do |message|%>
             <p class="errors"><%=message%></p>
          <%end%>
            <textarea name="content" class="text-area"><%=@posts.content%></textarea><br><br>
+            
+             <%= image_tag @posts.postimage.url, id: :img_prev if @posts.postimage? %><br>
+            </div>
+           <%= f.check_box :remove_postimage %>画像を削除する<br><br>
+          <%= f.file_field :img, id: :users_img %><br><br>
+    <script type="text/javascript">
+$(function() {
+ function readURL(input) {
+   if (input.files && input.files[0]) {
+     var reader = new FileReader();
+     reader.onload = function (e) {
+       $('#img_prev').attr('src', e.target.result);
+     }
+     reader.readAsDataURL(input.files[0]);
+   }
+ }
+ $("#users_img").change(function(){
+   readURL(this);
+ });
+});
+</script>        
+            
              <input type="submit" value="投稿" class="button1"></input>
       <%end%>
     </div>

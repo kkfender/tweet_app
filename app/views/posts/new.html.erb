@@ -9,10 +9,15 @@
           <%#end%>
           <%end%>
           <%= form_for @posts, url: posts_path do |f| %>
-           <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"今何してる？"%><br><br>
-           <%= f.file_field :postimage %>
+           <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"今何してる？"%><br>
+           
+           <%= image_tag @posts.postimage.url %><br>
+
+           <%= f.file_field :postimage, id: :users_img %><br><br>
+            
            <%=f.submit value:"投稿", class:"button1"%>
           <%end%>
+          
     </div>
   </div>
 </div>

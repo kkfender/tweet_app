@@ -19,13 +19,13 @@ header {
   margin:0 auto;
 }
 h1,h2,h3 {
-  font-size:35px;
-  font-family:fantasy ;
+  font-size:25px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
-p {
-  /*font-size:25px;
-  font-family:sans-serif ; */
-}
+/*p {
+  font-size:25px;
+  font-family:Verdana,arial,helvetica,clean,sans-serif;
+}*/
 a {
   text-decoration: none;
    color:#ffa500;
@@ -41,7 +41,9 @@ input {
 input:focus {
   border:solid 1px #EEA34A;
 }
-
+.text {
+font-family :Verdana,arial,helvetica,clean,sans-serif;
+}
 /****************     main      ****************/
 .main {
   margin-top:50px;
@@ -74,7 +76,7 @@ margin-top:50px;
   font-family: 'Hiragino Kaku Gothic ProN';
 }
 a:visited{
-  color: #ffa500;
+  color: orange;
 }
 a:hover {
   filter: alpha(opacity=70);
@@ -144,7 +146,7 @@ a:hover {
  
 }
 .header-menus > li:hover > a {/*layer-1*/
-  color: orange;
+  color: white;
   background: #afc6e2;
 }
 .header-menus > li li:hover > a {/*layer-2*/
@@ -282,7 +284,34 @@ a:hover {
   color: #fff;
   border-radius: 10%;
 }
-
+.button2 {
+  font-size: 20px;
+  padding: 3px;
+  background-color: #ff4500;
+  color: #fff;
+  border-style: none;
+  border-radius: 5%;
+}
+.button2:hover {  /*orange*/
+  background-color: #f9cfed;
+  transition: 1.0s ;
+  color: #fff;
+  border-radius: 10%;
+}
+.button3 {        /*skygreen*/
+  font-size: 20px;
+  padding: 3px;
+  background-color: #ff4500;
+  color: white !important;
+  border-style: none;
+  border-radius: 5%;
+}
+.button3:hover {
+  background-color: #f9cfed;
+  transition: 1.0s ;
+  color: white;
+  border-radius: 10%;
+}
 .user-index-table{
   float:left; 
 }  
@@ -503,9 +532,7 @@ height: auto !important;
 .post-index-img {
   width:130px;
   text-align:center;
- 
-  
-  
+
 }
 .post-main-detail {
   width :100%;
@@ -551,9 +578,9 @@ height: 130px;
 img.post-image {
   text-align:center;
   
-  width:500px ;
-  height:500px ;
-  margin: 20px 0 20px;
+  max-width:500px ;
+  max-height:500px ;
+  margin:  0 0 50px;
 }
 
 /*********************   userlist  **********************/
@@ -744,11 +771,22 @@ input[name="tab_item"] {
 .field_with_errors {
  display: inline;
 }
-p {
+p.standard-font {
   font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
 
-
+.edit-image {
+ /* width:500px;
+  height:500px;*/
+/*  margin: auto 0;*/
+}
+#img_prev {
+ max-width:400px;
+  max-height:400px;
+ /*   margin: auto 0;*/
+ /* float:left;*/
+  
+}
 
 
 
