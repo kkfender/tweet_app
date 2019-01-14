@@ -17,6 +17,22 @@ class ReturnsController < ApplicationController
   def new
       @returns=Return.new
   end
+  
+   def edit
+    @returns=Return.find_by(id: params[:id])
+  end
+  
+   def update
+    @returns=Return.find_by(id: params[:id])
+   
+     if  @returns.update_attributes(return_params)
+   
+     flash[:notice]="投稿を編集しました"
+    redirect_to("/posts/index")
+    else
+      render("returns/edit")   
+    end
+  end
 # 
 #  def destroy
 #    @retuns = Return.find(params[:id]).destroy
@@ -32,7 +48,7 @@ class ReturnsController < ApplicationController
 
   private
   #ストロングパラメータ
-  #返信機能のためにreply_commentを追加
+
   def return_params
     return_params = params.require(:return).permit(:returncontent,:returnimage,:post_id)
     .merge(user_id: @current_user.id)

@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 gem 'byebug'
 gem 'fog-aws'
-
+gem 'bootstrap'
 gem 'sprockets-rails'
 gem 'carrierwave'
 gem 'cloudinary'

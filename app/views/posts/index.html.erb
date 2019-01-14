@@ -65,8 +65,10 @@
   <!---------------     返信     --------------------->
  
  <%unless post.returns == nil%>
-   <div class="line"></div> 
- <div class="post-index-back">
+ <div class="line-cover">
+   <div class="line"></div>
+   </div>
+ <div class="return-index-back">
       <div class="post-index-cover">
         <div class="post-main">
           <div class="post-main-box">
@@ -74,25 +76,21 @@
            <%@returns.each do |r|%> 
            <%if r.post_id == post.id%>
             <%if r.present?%>
-             <div class="post-index-img-cover">
-              <div class="post-index-img">
-                <%= image_tag r.user.img.url, :class => "user-image" %>
+             <div class="post-index-return-img-cover">
+              <div class="post-index-return-img">
+                <%= image_tag r.user.img.url, :class => "return-user-image" %>
               </div>
-              </div>
-            
-        コメント<%=r.returncontent%><br>
-         
-       
-       <%end%>
-     
-     
-    返信番号<%=r.id%><br>
-      ユーザー<%=r.user.name%><br>
-    投稿された<%=r.post_id%><br>
-
-    <%end%>
+             
+            <div class="post-index-return-name">
+        <%=link_to(r.user.name, "/users/#{r.user.id}", class: "post-index-name")%><br>
+           <%end%> </div><br>
+        <%=r.returncontent%><br>
+      <%=link_to("編集",edit_return_path(r.id),class:"post-detail",class:"button3")%>
+    </div>
+      <%end%>
+      
   <%end%>
-  
+   
   
   
   
@@ -100,6 +98,7 @@
      </div>
     </div>
   </div>
+  <div class="yohaku"></div>
    <!--------------------------------------------->
  
    <%end%>

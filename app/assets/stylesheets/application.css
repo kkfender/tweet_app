@@ -46,7 +46,7 @@ font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
 /****************     main      ****************/
 .main {
-  margin-top:50px;
+/*  margin-top:50px;*/
 }
 .main-top {
 background-image: url("/top.jpg");
@@ -498,7 +498,7 @@ img.user-image {
   height:auto;
   background-color: lightcyan ;
   margin: auto;
-  padding:  10px 0 10px 0px;
+ 
 }
 .post-index-cover {
   width:800px;
@@ -510,8 +510,7 @@ height: 50px;
 .post-main {
   width:800px;
   background-color: white;
-  padding: 5px 0px 5px 0px;
-  margin-bottom: 5px;
+
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
   min-height: 50px;
@@ -519,7 +518,7 @@ height: auto !important;
 height: 50px;
 }
 .post-main-box {
-  margin: 10px 20px;
+ 
   padding: 10px;
   border: 1px solid #aaa;
   display: -webkit-flex;
@@ -529,6 +528,14 @@ height: 50px;
   min-height: 50px;
 height: auto !important;
 height: 50px;
+ display: flex;
+
+  /* 横並びに表示する */
+  flex-direction: row;
+
+  /* 画面幅に収まらない場合は折り返す */
+  flex-wrap: wrap;
+
 
 }
 .post-index-img-cover {
@@ -809,15 +816,51 @@ background-color: pink;
  }
 .line {
   margin:0 auto;
-  background-color:grey; 
+  background-color:lightcyan; 
   width:700px;
   height:50px;
-  border-left: palegoldenrod  solid 10px;
-  border-right: palegoldenrod solid 10px;
+  border-left: pink  solid 5px;
+  border-right: pink solid  5px;
 }
-
-
-
+.line-cover {
+   width:1000px;
+  height:50px;
+   background-color:lightcyan; 
+  margin:0 auto;
+}
+.post-index-return-img-cover {
+   width:250px;
+  height:250px;
+  border:solid 3px black;
+}
+.post-index-return-img {
+   width:50px;
+  height:50px;
+   float:left;
+   
+}
+.return-user-image {
+   width:50px;
+  height:50px;
+  float:left;
+}
+.return-index-back {
+    min-height: 50px;
+height: auto !important;
+height: 50px;
+background-color: lightcyan;
+width :1000px;
+margin:0 auto;
+}
+.post-index-return-name {
+  float:left;
+}
+.yohaku {
+  width :1000px;
+  height: 50px;
+  margin:0 auto;
+  background-color: lightcyan;
+}
 
 
 
