@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   validates :user_id,{presence: true}
  mount_uploader :postimage, PostimageUploader
  belongs_to :user
- has_many :return
- has_many :return,  foreign_key: :returncontent, dependent: :destroy
+ has_many :return,dependent: :destroy
+
   def user
     return  User.find_by(id: self.user_id)
   end

@@ -68,16 +68,22 @@ class UsersController < ApplicationController
   
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to("/users/#{@users.id}")
-    else
+     else
       render("users/edit")  
+     end
     end
-   end
    def destroy
 
-    User.find(params[:id]).destroy
-   Post.find_by(user_id: params[:id]).destroy  
-   Return.find_by(user_id: params[:id]).destroy  
-    flash[:notice] = "ユーザーを削除しました"
+#  if  Return.find_by(user_id: params[:id])
+#   Return.where(user_id: params[:id]).destroy 
+#  end
+# if Post.find_by(user_id: params[:id])
+ #  Post.find_by(user_id).destroy  
+ #  end
+ 
+ 
+   User.find(params[:id]).destroy
+   flash[:notice] = "ユーザーを削除しました"
     redirect_to ("/login")
    end
  
