@@ -77,6 +77,7 @@
            <%if r.post_id == post.id%>
             <%if r.present?%>
              <div class="post-index-return-img-cover">
+               <div class="post-index-return-cover-aug">
               <div class="post-index-return-img">
                 <%= image_tag r.user.img.url, :class => "return-user-image" %>
               </div>
@@ -84,8 +85,9 @@
             <div class="post-index-return-name">
         <%=link_to(r.user.name, "/users/#{r.user.id}", class: "post-index-name")%><br>
            <%end%> </div><br>
-        <%=r.returncontent%><br>
-      <%=link_to("編集",edit_return_path(r.id),class:"post-detail",class:"button3")%>
+      <div class="post-index-return-content">  <%=r.returncontent%></div>
+      </div>
+      <%=link_to("編集",edit_return_path(r.id),class:"return-edit",class:"button-return-1")%>
     </div>
       <%end%>
       

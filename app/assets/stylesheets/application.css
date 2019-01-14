@@ -266,7 +266,7 @@ a:hover {
   color:#01960b;
   background-color:#c2ead1;
   border-radius: 5%;
-  margin:58px 0px 10px 140px;
+  margin:58px 0px 10px 210px;
   text-align:center;
 }
 .errors  {
@@ -829,9 +829,9 @@ background-color: pink;
   margin:0 auto;
 }
 .post-index-return-img-cover {
-   width:250px;
-  height:250px;
-  border:solid 3px black;
+   width:190px;
+  height:100px;
+  
 }
 .post-index-return-img {
    width:50px;
@@ -852,7 +852,18 @@ background-color: lightcyan;
 width :1000px;
 margin:0 auto;
 }
+.post-index-return-content {
+  min-height: 30px;
+  width:130px;
+  float: left;
+}
 .post-index-return-name {
+  float:left;
+}
+.post-index-return-cover-aug {
+  min-height: 60px;
+}
+.return-edit {
   float:left;
 }
 .yohaku {
@@ -861,6 +872,24 @@ margin:0 auto;
   margin:0 auto;
   background-color: lightcyan;
 }
+.button-return-1 {
+  float:left;
+  font-size:15px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+  padding: 3px;
+  background-color: blue;
+  color: #fff;
+  border-style: none;
+  border-radius: 5%;
+}
+.button-return-1:hover {
+  background-color: #f9cfed;
+  transition: 1.0s ;
+  color: #fff;
+  border-radius: 10%;
+}
+  
+
 
 
 

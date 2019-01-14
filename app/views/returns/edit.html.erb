@@ -4,6 +4,10 @@
        <%= form_for @returns ,url: return_path,class:"edit-image"  do |f| %>
      
       <p font-size="20px">編集する</p>
+       <%@returns.errors.full_messages.each do |message|%>
+            <div class="errors"><%=message%></div>
+          <%end%>
+      
        <div class="input-area">  
      <%= f.text_field :returncontent ,placeholder: @returns.returncontent %><br><br>
 
