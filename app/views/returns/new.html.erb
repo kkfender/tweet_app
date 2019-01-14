@@ -8,13 +8,11 @@
  <div class="new-main">
   <div class="resister-area">
     <div class="inner-area">
-      <p font-size="20px">投稿する</p>
+      <p font-size="20px">返信する</p>
         
        
-            
-            
            <%= form_for @returns,  url: returns_path do |f| %> 
-            <%= f.text_field :returncontent ,placeholder:"10文字以内"%> 
+            <%= f.text_field :returncontent ,placeholder:"8文字以内"%> 
           <%= f.hidden_field :post_id, value: params[:p_id] %>
           <br><br>
             

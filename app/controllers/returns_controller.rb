@@ -1,17 +1,10 @@
 class ReturnsController < ApplicationController
   
+   before_action :ensure_correct_user,{only:[:edit,:update,:destroy]}
  def show
   @returns = Return.find_by(id: params[:id])
 
-#   #指定のツイートのコメントを列挙
-#   @returns = Return.includes(:user).where(product_id: @product.id)
 
-#   #いいね機能
-#   @like = Like.find_by(user_id: current_user.id)
-#   @likes = Like.new(user_id: current_user.id, product_id: params[:product_id])
-
-#   #コメント追加
-#   @returns = Return.new
  end
   
   def new
@@ -33,19 +26,27 @@ class ReturnsController < ApplicationController
       render("returns/edit")   
     end
   end
-# 
-#  def destroy
-#    @retuns = Return.find(params[:id]).destroy
-#   redirect_to "/products/#{@comment.product.id}"
-# end
-#
+ def destroy
+    @returns=Return.find_by(id: params[:id]) 
+    @returns.destroy
+    redirect_to("/posts/index")
+    flash[:notice]="投稿を削除しました"
+  end 
+
   #コメント追加アクション
   def create
    @returns = Return.create(return_params)
        #raise.params.inspect
-    redirect_to return_path(@returns) 
+    redirect_to ("/posts/index")
   end
-
+   def ensure_correct_user
+    @returns=Return.find_by(id: params[:id])
+    if @returns.user_id !=@current_user.id
+      flash[:notice]="権限がありません"
+      redirect_to("/posts/index")
+    end
+  end
+  
   private
   #ストロングパラメータ
 

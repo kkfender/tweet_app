@@ -16,6 +16,9 @@
               </div>
             </div>
               <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %>
+              <%= link_to("削除", "/users/#{@users.id}/destroy",{method: "post",class:"return-edit",class:"button-return-2"}) %>
+
+ 
                 <div class="follow-info">
                   <ul  class="show-menus">
                    <li>フォロー</li>

@@ -71,9 +71,13 @@ class UsersController < ApplicationController
     else
       render("users/edit")  
     end
-  
-      
-  end
+   end
+   def destroy
+
+    User.find(params[:id]).destroy
+    flash[:notice] = "ユーザーを削除しました"
+    redirect_to ("/login")
+   end
  
   def likes 
     @users = User.find_by(id: params[:id])
@@ -114,8 +118,7 @@ class UsersController < ApplicationController
       :name, :email, :password, 
       :password_confirmation,:img,:image_cache,:remove_img)
 
-    end
-end
-
-
+  end
+ end
+ 
 

@@ -88,6 +88,7 @@
       <div class="post-index-return-content">  <%=r.returncontent%></div>
       </div>
       <%=link_to("編集",edit_return_path(r.id),class:"return-edit",class:"button-return-1")%>
+        <%=link_to("削除","/returns/#{r.id}/destroy",{method: "post",class:"return-edit",class:"button-return-2"})%>
     </div>
       <%end%>
       

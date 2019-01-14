@@ -18,10 +18,10 @@ Rails.application.routes.draw do
  
  # post "/posts/create" => "posts#create"
   #post "/posts/:id/update"=> "posts#update"
-  #post "/posts/:id/destroy"=> "posts#destroy"
+  post "/posts/:id/destroy"=> "posts#destroy"
  resources :posts
  #####################   users   #####################
-  
+ 
    get "users/index" => "users#index"
   get "users/:id/likes" => "users#likes"
   #get "users/:id/edit" => "users#edit"
@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   
   #patch "users/:id/update" => "users#update"
   post "users/create" => "users#create"
-  resources :users
+   post "/users/:id/destroy"=> "users#destroy"
+   resources :users
  #####################   users   #####################
 
   post "likes/:post_id/create" => "likes#create"  
@@ -47,5 +48,6 @@ Rails.application.routes.draw do
 
 ######################### return ########################
 resources :returns
+post "/returns/:id/destroy"=> "returns#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
