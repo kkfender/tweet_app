@@ -4,6 +4,7 @@ class Post < ApplicationRecord
  mount_uploader :postimage, PostimageUploader
  belongs_to :user
  has_many :return
+ has_many :return,  foreign_key: :returncontent, dependent: :destroy
   def user
     return  User.find_by(id: self.user_id)
   end

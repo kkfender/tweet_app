@@ -75,11 +75,13 @@
             <%end%>
            <%@returns.each do |r|%> 
            <%if r.post_id == post.id%>
-            <%if r.present?%>
+            <%if r.user.present?%>
              <div class="post-index-return-img-cover">
                <div class="post-index-return-cover-aug">
               <div class="post-index-return-img">
+                 
                 <%= image_tag r.user.img.url, :class => "return-user-image" %>
+               
               </div>
              
             <div class="post-index-return-name">
@@ -94,10 +96,7 @@
       
   <%end%>
    
-  
-  
-  
-     </div>
+       </div>
      </div>
     </div>
   </div>

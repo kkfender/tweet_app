@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
-  before_action :ensure_correct_user, {only: [:edit,:update]}
+  before_action :ensure_correct_user, {only: [:edit,:update,:destroy]}
   
   def index
    
@@ -75,6 +75,8 @@ class UsersController < ApplicationController
    def destroy
 
     User.find(params[:id]).destroy
+   Post.find_by(user_id: params[:id]).destroy  
+   Return.find_by(user_id: params[:id]).destroy  
     flash[:notice] = "ユーザーを削除しました"
     redirect_to ("/login")
    end
@@ -89,9 +91,10 @@ class UsersController < ApplicationController
   end
     
   def ensure_correct_user
-    if @current_user.id != params[:id].to_i
-      flash[:notice] = "権限がありません"
-     redirect_to("/posts/index")
+     @users=User.find_by(id: params[:id])
+    if @users.id !=@current_user.id
+      flash[:notice]="権限がありません"
+      redirect_to("/posts/index")
     end
   end 
  
