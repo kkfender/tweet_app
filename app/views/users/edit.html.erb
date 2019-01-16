@@ -38,6 +38,8 @@ $(function() {
 });
 </script>
               </div>
+                    <%= f.label :tag_list, "分野" %><br>
+    <%= text_field_tag 'user[tag_list]', @users.tag_list.join(',') %>
             <%= f.submit "保存", class: "button1" %>
           <% end %>
 

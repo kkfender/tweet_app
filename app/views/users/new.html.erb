@@ -18,9 +18,13 @@
         <%= f.password_field :password_confirmation%><br/>
          サムネイル画像<br/>
         <%= f.file_field :img %><br/><br/>
+        <%= f.label :tag_list, "分野" %><br>
+    <%= text_field_tag 'user[tag_list]', @users.tag_list.join(',') %>
         <%= f.submit "新規登録",:class =>"button1" %><br/>
         </div>
+        
       <% end %>
+   
 
       </div>
     </div>

@@ -14,6 +14,9 @@
            <%= image_tag @posts.postimage.url %><br>
 
            <%= f.file_field :postimage, id: :users_img %><br><br>
+           
+            
+            <%= text_field_tag 'post[tag_list]', @posts.tag_list.join(',') %>
             
            <%=f.submit value:"投稿", class:"button1"%>
           <%end%>

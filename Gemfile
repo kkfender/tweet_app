@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
+
+gem 'jquery-rails'
+gem 'acts-as-taggable-on'
 gem 'byebug'
 gem 'fog-aws'
 gem 'bootstrap'

@@ -4,10 +4,23 @@ class PostsController < ApplicationController
   before_action :authenticate_user
  
   def index
-    @posts = Post.search(params[:search]).order(created_at: :desc) 
-    @returns = Return.all
+    
+    
+     @returns = Return.all
+     @tags = ActsAsTaggableOn::Tag.most_used
+   #raise.params.inspect
+   if params[:tagsearch]
+     @posts =Post.tagged_with( params[:tagsearch])
+      params[:tagsearch]=nil
+  elsif params[:search]
+     @posts = Post.search(params[:search])
+     params[:search]=nil
+   else
+      @posts = Post.all.order(created_at: :desc)
+       
   end
-  
+end  
+
   def show
     @posts =Post.find_by(id: params[:id])
     @users = User.find_by(id: @posts.user_id)
@@ -65,7 +78,7 @@ class PostsController < ApplicationController
   def post_params
 
       params.require(:post).permit(
-      :content, :user_id, :postimage,:remove_postimage)
+      :content, :user_id, :postimage,:remove_postimage,:interests,:tag_list)
       .merge(user_id: @current_user.id)
 
 

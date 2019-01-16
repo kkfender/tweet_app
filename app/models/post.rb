@@ -4,7 +4,11 @@ class Post < ApplicationRecord
  mount_uploader :postimage, PostimageUploader
  belongs_to :user
  has_many :return,dependent: :destroy
-
+ acts_as_taggable_on :labels,:tag_list # post.label_list が追加される
+  acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
+                              # つまり、post.tag_list が追加される
+    acts_as_taggable_on :interests  
+    
   def user
     return  User.find_by(id: self.user_id)
   end
@@ -17,11 +21,23 @@ class Post < ApplicationRecord
     return   Like.where(post_id: self.id).count
   end
 
-  def self.search(search)
+ # def self.search(search)
+ #   if search
+ #    Post.where(['content LIKE ?', "%#{search}%"])
+ #          # raise.params.inspect
+ #   else
+ #     Post.all
+ #   end
+ #   end
+ #   
+      def self.search(search)
+           
     if search
-      Post.where(['content LIKE ?', "%#{search}%"])
+     Post.tagged_with("%#{search}%").ids
+       # raise.params.inspect
     else
       Post.all
     end
+    
   end
 end

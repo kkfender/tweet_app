@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end 
   
   def create        
-    
+    #raise.params.inspect
     @users =User.new(user_params)
   if @users.save
       session[:user_id]=@users.id
@@ -74,12 +74,7 @@ class UsersController < ApplicationController
     end
    def destroy
 
-#  if  Return.find_by(user_id: params[:id])
-#   Return.where(user_id: params[:id]).destroy 
-#  end
-# if Post.find_by(user_id: params[:id])
- #  Post.find_by(user_id).destroy  
- #  end
+
  
  
    User.find(params[:id]).destroy
@@ -120,12 +115,18 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@users.name}さんをフォローを解除しました"
   end
   
+    def tag_list
+    # order('count DESC')でカウントの多い順にタグを並べています
+    @tags = User.tag_counts_on(:tags).order('count DESC')
+  end
+  def tag_list
+end
   private
   def user_params
 
       params.require(:user).permit(
       :name, :email, :password, 
-      :password_confirmation,:img,:image_cache,:remove_img)
+      :password_confirmation,:img,:image_cache,:remove_img,:tag_list)
 
   end
  end

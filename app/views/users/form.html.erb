@@ -1,0 +1,11 @@
+<%= form_for(@users) do |f| %>
+ 
+
+  <div class="field">
+    <%= f.label :interest_list, "興味・関心（カンマ区切り）" %><br>
+    <%= text_field_tag 'user[interest_list]', @users.interest_list.join(',') %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   post "users/create" => "users#create"
    post "/users/:id/destroy"=> "users#destroy"
    resources :users
+   resources :tags
+  
+
  #####################   users   #####################
 
   post "likes/:post_id/create" => "likes#create"  
@@ -40,7 +43,7 @@ Rails.application.routes.draw do
   
   get "signup"=> "users#new"                   ##ユーザー登録ページ
   get  "login"=> "users#login_form"
-
+ 
  ##################### follow    #########################
  
   post  "users/:id/follow" =>   "users#follow"
