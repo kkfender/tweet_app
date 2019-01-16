@@ -32,8 +32,7 @@ class PostsController < ApplicationController
   
   def create
   if  @posts =Post.create(post_params)
-    #@posts=Post.new(content: params[:content],
-    #user_id: @current_user.id)
+   
    
       redirect_to("/posts/index")
       flash[:notice]="投稿を作成しました"
@@ -59,9 +58,14 @@ class PostsController < ApplicationController
   
   def destroy
     @posts=Post.find_by(id: params[:id]) 
-    @posts.destroy
+    
+   if @posts.destroy
+     @posts.tag_list.remove(@posts.all_tags_list)
+   
     redirect_to("/posts/index")
     flash[:notice]="投稿を削除しました"
+   
+ end
   end 
   
   def ensure_correct_user

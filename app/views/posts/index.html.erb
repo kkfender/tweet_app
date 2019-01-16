@@ -7,13 +7,15 @@
         <%= text_field_tag :search,"",:placeholder => "投稿内容を検索してください" %><br><br>
         <%= submit_tag 'Search', :name => nil ,class: "button1" %><br><br>
       <% end %>  
-      
-      
+     <div class="tag">
+      <ul>
        <%- @tags.each do |tag| %>
-<%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %>
+      <li>  <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %></li>
    <%#= link_to tag_path(tag.id) do %>
      <%#= tag.taggings.count %>  
-     <% end %>      
+     <% end %>
+     </ul>
+     </div>
       </div>
     </div>
   </div>
@@ -43,12 +45,14 @@
                     <% if post.postimage.present? %>
          <!--画像--><%= image_tag post.postimage.url,:class => "post-image"%>
                    <%end%>
-                  
+                   <div class="tag">  
+                   <ul>
       <!--タグ-->    <% post.tags.each do |tag| %>
-               
-        <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %>    
+                
+  <li>    <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %>    </li>
                   <% end %>
-                  
+                     </ul>
+                     </div>
                    <div class="post-index-action">
                      <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
                        <%= link_to("/likes/#{post.id}/destroy",{method: "post"},class:"post-detail", remote: true) do %>

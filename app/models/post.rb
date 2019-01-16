@@ -4,6 +4,7 @@ class Post < ApplicationRecord
  mount_uploader :postimage, PostimageUploader
  belongs_to :user
  has_many :return,dependent: :destroy
+ 
  acts_as_taggable_on :labels,:tag_list # post.label_list が追加される
   acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
                               # つまり、post.tag_list が追加される
