@@ -21,23 +21,14 @@ class Post < ApplicationRecord
     return   Like.where(post_id: self.id).count
   end
 
- # def self.search(search)
- #   if search
- #    Post.where(['content LIKE ?', "%#{search}%"])
- #          # raise.params.inspect
- #   else
- #     Post.all
- #   end
- #   end
- #   
-      def self.search(search)
-           
-    if search
-     Post.tagged_with("%#{search}%").ids
-       # raise.params.inspect
-    else
-      Post.all
-    end
-    
+def self.search(search)
+  if search
+   Post.where(['content LIKE ?', "%#{search}%"])
+         # raise.params.inspect
+  else
+    Post.all
   end
+  end
+  
+     
 end

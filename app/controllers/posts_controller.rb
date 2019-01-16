@@ -8,18 +8,16 @@ class PostsController < ApplicationController
     
      @returns = Return.all
      @tags = ActsAsTaggableOn::Tag.most_used
-   #raise.params.inspect
+  
    if params[:tagsearch]
      @posts =Post.tagged_with( params[:tagsearch])
       params[:tagsearch]=nil
-  elsif params[:search]
-     @posts = Post.search(params[:search])
+   
+  else
+     @posts = Post.search(params[:search]).order(created_at: :desc) 
      params[:search]=nil
-   else
-      @posts = Post.all.order(created_at: :desc)
-       
-  end
-end  
+  end 
+  end  
 
   def show
     @posts =Post.find_by(id: params[:id])
