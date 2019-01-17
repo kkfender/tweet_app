@@ -103,6 +103,8 @@ a:hover {
  position:fixed;
  z-index: 100;
 }
+.header-inner {
+}
 .header-logo {
   float: left;
   padding-left: 260px;
@@ -956,6 +958,24 @@ margin:0 auto;
   border-right-color: #555;
 }
 
+.post-detail {
+  float:left;
+} 
+.fbut {
+  float:left;
+  min-width:50px;
+}
+.user_tag {
+   float:left;
+  min-width:50px;
+}
+.tagf {
+ float:left;
+ height:35px;
+}
+.action_height {
+  margin-top: 8px;
+}
 
 
 

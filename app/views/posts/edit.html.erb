@@ -29,7 +29,7 @@ $(function() {
  });
 });
 </script>        
-            
+             <%= text_field_tag 'post[tag_list]', @posts.tag_list.join(',') %>
              <input type="submit" value="投稿" class="button1"></input>
       <%end%>
     </div>

@@ -45,30 +45,31 @@
                     <% if post.postimage.present? %>
          <!--画像--><%= image_tag post.postimage.url,:class => "post-image"%>
                    <%end%>
-                   <div class="tag">  
-                   <ul>
-      <!--タグ-->    <% post.tags.each do |tag| %>
-                
-  <li>    <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %>    </li>
-                  <% end %>
-                     </ul>
-                     </div>
+                  
                    <div class="post-index-action">
                      <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
                        <%= link_to("/likes/#{post.id}/destroy",{method: "post"},class:"post-detail", remote: true) do %>
-                       <span class="fa fa-heart like-btn-unlike"></span>
+                       <span class="fa fa-heart like-btn-unlike fbut action_height"></span>
                      <%end%>
                      <%else%>
                        <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail",:select_id => "a") do %>
-                         <span class="fa fa-heart like-btn"></span>
+                         <span class="fa fa-heart like-btn fbut action_height"></span>
                       <%end%>
                     <%end%>
-                       <%= post.like_count %>   
+                      <div class="tagf action_height"> <%= post.like_count %>  </div> 
                      <%if post.user_id==@current_user.id%>
-                       <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail",class:"button1")%>
-                       <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail",class:"button2"})%>
+                       <%=link_to("編集","/posts/#{post.id}/edit",class:"button1 tagf")%>
+                       <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"button2 tagf"})%>
                      <%end%>
-                     <%=link_to("返信",new_return_path(p_id: post.id),class:"post-detail",class:"button3")%>
+                     <%=link_to("返信",new_return_path(p_id: post.id),class:"button3 tagf")%>
+                        <div class="tag tagf">  
+                   <ul>
+      <!--タグ-->    <% post.tags.each do |tag| %>
+                
+  <li>    <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20"),class:"tagf" %>    </li>
+                  <% end %>
+                     </ul>
+                     </div>
                     </div>
                     
                      

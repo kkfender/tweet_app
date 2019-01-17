@@ -43,12 +43,19 @@ class PostsController < ApplicationController
   
   def edit
     @posts=Post.find_by(id: params[:id])
+    
   end
   
   def update
     @posts=Post.find_by(id: params[:id])
     @posts.content=params[:content]
+    #@posts.tag_list.remove(@posts.all_tags_list) 
+    
+    @posts.tag_list=["%#{@posts.tag_list}%"] 
+    
+
     if  @posts.save
+      
      flash[:notice]="投稿を編集しました"
     redirect_to("/posts/index")
     else
