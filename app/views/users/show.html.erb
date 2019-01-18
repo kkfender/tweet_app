@@ -16,7 +16,7 @@
               </div>
             </div>
               <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %>
-              <%= link_to("削除", "/users/#{@users.id}/destroy",{method: "post",class:"return-edit",class:"button-return-2"}) %>
+              <%= link_to("削除", "/users/#{@users.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？",class:"return-edit",class:"button-return-2"}) %>
 
  
                 <div class="follow-info">
@@ -35,13 +35,14 @@
   </div>
    <div class="main-container">   <!--main-->
       <div class="mc-list">         <!--↓-->
-      
-  <div class="tabs">
+    <div class="tabs">
 <input id="all" type="radio" name="tab_item" checked>
 <label class="tab_item" for="all">つぶやき</label>
  <input id="programming" type="radio" name="tab_item">
+ 
 <label class="tab_item" for="programming">フォロー</label>
 <input id="design" type="radio" name="tab_item">
+
 <label class="tab_item" for="design">フォロワー</label>
 <div class="tab_content" id="all_content">
 <div class="tab_content_description">

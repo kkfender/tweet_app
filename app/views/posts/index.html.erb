@@ -1,16 +1,35 @@
 <div class="main">
   <div class="index-user">
-    <%= @current_user.name %>
    
+    <div class="user-list-image">
     <%= image_tag  @current_user.img.url,:class => "user-image"%>
-    <li>フォロー</li>
-            <li><%=@current_user.follow_count%>人</li>
-              <% @current_user.all_following.each do |follow|%>
-            <li> <%= follow.name%></li>
-              <%end%>
-            <li>フォロワー </li>
-            <li><%=@current_user.followers_count%>人</li>
-            </ul>
+     
+     </div>
+     <div class="show-index">
+     
+    <%=link_to( "/users/#{@current_user.id}", class: "post-index-name") do%>
+    <i class="far fa-user"><%=" "+@current_user.name%></i>
+    <%end%>
+      </div>
+    
+    <div class="follow-cover"> 
+     <table class="follow-table">
+
+    <tr><td>投稿数</td>
+      <script>
+	  console.log(document.getElementById("design_content"));
+    </script>
+    <td>フォロー</td>
+    <td>フォロワー</td>
+    </tr>
+
+      <tr><td><%=@current_user.posts.count%></td><td>
+
+       <%=@current_user.follow_count%>人</td><td>
+
+              <%=@current_user.followers_count%>人</td></tr>
+        </table>
+</div>
      </div>
       
         
@@ -53,7 +72,10 @@
       <ul class="ultag">
          <p font-size="10px">人気タグ</p>
        <%- @tags.each do |tag| %> <!--タグサ--->
-      <li>  <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %></li>
+      <li>  <%=link_to (posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20")) do%>
+        
+         <p class="itext"> <i class="fas fa-leaf"></i> <%=tag.name%> </p></li>
+      <% end %> 
       <% end %>
      </ul>
      </div>
@@ -107,17 +129,19 @@
                        <%=link_to("/posts/#{post.id}/edit",class:"tagf")do%>
                    <li><p class="itext">    <i class="fas fa-edit"></i>編集</p></li>
                         <%end%>
-                       <%=link_to("/posts/#{post.id}/destroy",{method: "post",class:" tagf"}) do%>
+                       <%=link_to("/posts/#{post.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？",class:" tagf"} ) do%>
                    <li><p class="itext"><i class="far fa-trash-alt"></i>削除</p></li>
                         <%end%>
                      <%end%>
                     
                
-                   
-      <!--タグ-->    <% post.tags.each do |tag| %>
-                
-  <li>    <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20"),class:"tagf" %>    </li>
-                  <% end %>
+                    <%- post.tags.each do |tag| %> <!--タグサ--->
+      <li>  <%=link_to posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") do%>
+        
+         <p class="itext"> <i class="fas fa-leaf"></i> <%=tag.name%> </p></li>
+      <% end %> 
+      <% end %>
+      
                      
                    
                     </ul>
@@ -162,7 +186,7 @@
       <%=link_to(edit_return_path(r.id),class:"return-edit")do%>
        <i class="fas fa-edit"></i>
           <%end%>
-        <%=link_to("/returns/#{r.id}/destroy",{method: "post",class:"return-edit"})do%>
+        <%=link_to("/returns/#{r.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？",class:"return-edit"})do%>
         <i class="far fa-trash-alt"></i>
                         <%end%>
     </div>

@@ -206,7 +206,9 @@ a:hover {
   font-size: 20px;
   margin-right: 3px;
 }
-
+.fa-leaf {
+  color:#53ad00;
+}
 /******************     flash      *********************/
 
 .flash {
@@ -555,9 +557,9 @@ img.post-image {
 
 /*********************   userlist  **********************/
 .user-list {
-  width: 1000px;
+  width: 80%;
   height:auto;
-  background-color: lightcyan ;
+  background-color: white ;
   margin: auto;
   padding-bottom: 5px;
 }
@@ -578,6 +580,39 @@ img.post-image {
   margin:auto;
 }
 /*******************   pagination         *******************/
+.pagination {
+ width:500px;
+  height:auto;
+ font-size:26px;
+ text-align: center;
+ vertical-align: middle;
+ margin: auto;
+   font-family :Verdana,arial,helvetica,clean,sans-serif;
+
+  
+}
+.pagination a{
+  width:20%;
+  background-color: white;
+  
+  margin:auto;
+  text-align: center;
+}
+.pagination a:hover {
+  background-color: #eaeaea;
+}
+/*
+.previous_page  {
+  border-right: 1px solid   #eaeaea;
+
+}
+.current {
+  border-right: 1px solid   #eaeaea;
+
+}
+.next_page {
+  
+}*/
 .back-message {
   background-color: #eaebed;
   color:#838484;
@@ -603,6 +638,8 @@ img.post-image {
 /****************************************************************/
 .show-index {
   width:100%;
+  font-size: 30px;
+  color:#565656;
 }
 .prof {
   width: 100%;
@@ -946,7 +983,7 @@ ul.ultag li:hover span {
   list-style: none;
 }
 .index-inner-area {
-  width:600px;
+  width:635px;
   margin:0 auto;
   padding: 0;
   text-align:center;
@@ -954,7 +991,7 @@ ul.ultag li:hover span {
   float: left;
    box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-  margin: 20px 10px 20px 20px;
+  margin: 20px 10px 20px 50px;
   height:350px;
 }
 .serch-main {
@@ -984,6 +1021,17 @@ ul.ultag li:hover span {
 .itext {
   margin:0 auto;
   font-size:18px;
+}
+.follow-cover {
+  margin-top:10px;
+}
+table.follow-table {
+  border-top:10px;
+  font-size:24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  color: #565656;
 }
 
 
