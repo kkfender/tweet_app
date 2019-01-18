@@ -1,0 +1,10 @@
+ <div class="post-index-action">
+                     <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
+                       <%= link_to("/likes/#{post.id}/destroy",{method: "post"},class:"post-detail", remote: true) do %>
+         <!--いいね--> <span class="fa fa-heart like-btn-unlike fbut action_height"></i></span>
+                     <%end%>
+                     <%else%>
+                       <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail",:select_id => "a", remote: true) do %>
+                         <span class="fa fa-heart like-btn fbut action_height"></span>
+                      <%end%>
+                    <%end%>

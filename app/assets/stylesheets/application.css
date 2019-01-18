@@ -1,5 +1,8 @@
 /****************     共通      ****************/
 
+/*
+ *= @import font-awesome
+ */
 * {
 box-sizing: border-box;
 /*border: 1px solid #aaa;*/
@@ -93,10 +96,10 @@ a:hover {
 /****************     header     ****************/
 
 .header-top {
-  height: 50px;
+  height: 40px;
   top: 0;
   width: 100%;
-  background-color: #3ecdc6;
+  background-color: white;
   margin:0 auto;
   padding:0;
    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
@@ -142,73 +145,15 @@ a:hover {
   width: 150px;
   height: 50px;
   text-align: center;
-  color: #fff;
-  background:  #3ecdc6;
+  color: black;
+ 
   transition: 0.5s;
   text-decoration: none;
   box-sizing: border-box;
   font-size: 18px;
  
 }
-.header-menus > li:hover > a {/*layer-1*/
-  color: white;
-  background: #afc6e2;
-}
-.header-menus > li li:hover > a {/*layer-2*/
-  color: olive;
-  background: #afc6e2;
-}
-.header-menus li ul {
-  top: 50px;
-  left: -50px;
-  position: absolute;
-}
-.header-menus li ul li {
-  overflow: hidden;
-  height: 0;
-  transition: 0.2s;
-}
-.header-menus li ul li a {
-  border-top: 1px solid #eee;
-}
-.header-menus li:hover > ul > li {
-  overflow: visible;
-  height: 50px;
-}
-.header-menus li ul li ul {
-  top: 0;
-  left: 110px;
-}
-.header-menus li ul li ul:before {/*layer-2▷*/
-  position: absolute;
-  top: 15px;
-  left: 30px;
-  border: 5px solid transparent;
-  border-left: 5px solid #fff;
-}
-.header-menus li ul li ul li:hover > a {/*layer-3*/
-    color: pink;
-    background-color:cyan ;
-  }
-.header-menus li ul li ul.left {
-  top: 0;
-  left: -190px;
-}
-.header-menus li ul li ul.left:before,/*layer-2-left▷*/
-.header-menus li ul li ul li ul.left:before {/*layer-3-left▷*/
-  position: absolute;
-  top: 15px;
-  left: 190px;
-  border: 5px solid transparent;
-}
-.header-menus li ul li ul.left li:hover > a {/*layer-2-left*/
-  color: pink;
-  background:#e8fffd;
-  }
-.header-menus li ul li ul li ul.left li:hover > a {/*layer-3-left*/
-  color: purple;
-  background: #e8fffd;
-}
+
   
  /******************** new ********************/
 
@@ -497,9 +442,9 @@ img.user-image {
 /********   post/index  **************/
 
 .post-index-back {
-  width: 1000px;
+ 
   height:auto;
-  background-color: lightcyan ;
+ 
   margin: auto;
  
 }
@@ -511,8 +456,9 @@ height: auto !important;
 height: 50px;
  }
 .post-main {
-  width:800px;
+  width:80%;
   background-color: white;
+  margin:0 auto;
 
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
@@ -532,6 +478,7 @@ height: 50px;
 height: auto !important;
 height: 50px;
  display: flex;
+ position: relative;
 
   /* 横並びに表示する */
   flex-direction: row;
@@ -541,17 +488,14 @@ height: 50px;
 
 
 }
-.post-index-img-cover {
-  position: relative;
-    min-height: 140px;
-height: auto !important;
- width:120px;
 
-}
 .post-index-img {
   width:130px;
   text-align:center;
-
+  min-height: 50px;
+  height: auto !important;
+  position:absolute;
+  top:0px;
 }
 .post-main-detail {
   width :100%;
@@ -560,7 +504,8 @@ height: auto !important;
 }
 .post-index-content p{
   width :800px;
-  margin:10px;
+  min-height:100px;
+  margin:0;
   float:left;
   font-size:15px;
   word-break : break-all;
@@ -571,6 +516,7 @@ height: auto !important;
   width:600px;
   float:left;
   font-size: 20px;
+  margin-left: 130px;
   
   min-height: 130px;
 height: auto !important;
@@ -585,7 +531,7 @@ height: 130px;
 .post-index-action {
   width:600px;
   float:left;
-  position: absolute;
+/*  position: absolute;*/
   bottom:0;
   
 }
@@ -598,8 +544,8 @@ height: 130px;
 img.post-image {
   text-align:center;
   
-  max-width:500px ;
-  max-height:500px ;
+  max-width:350px ;
+  max-height:350px ;
   margin:  0 0 50px;
 }
 
@@ -742,18 +688,20 @@ input[name="tab_item"] {
 }
 /************    serch    **************/
 .serch {
-  width:100%;
+  width:50%;
   margin:auto;
   text-align:center;
 }
 .serch-form {
   background-color:lightcyan;
-  width:1000px;
+  
   margin:auto ;
   padding:50px 0;
   text-align:center;
 }
 .serch-main {
+   box-shadow: 0 2px 10px #c1ced7;
+  border-radius:2%;
    width:500px;
   margin:0 auto;
   padding: 0;
@@ -818,16 +766,17 @@ background-color: pink;
  }
 .line {
   margin:0 auto;
-  background-color:lightcyan; 
-  width:700px;
+  background-color:white; 
+  width:500px;
   height:50px;
-  border-left: pink  solid 5px;
-  border-right: pink solid  5px;
+  border-left: black  solid 1px;
+  border-right: black solid  1px;
+   box-shadow: 0 2px 10px #c1ced7;
 }
 .line-cover {
-   width:1000px;
+   
   height:50px;
-   background-color:lightcyan; 
+   background-color:white; 
   margin:0 auto;
 }
 .post-index-return-img-cover {
@@ -850,8 +799,7 @@ background-color: pink;
     min-height: 50px;
 height: auto !important;
 height: 50px;
-background-color: lightcyan;
-width :1000px;
+background-color: white;
 margin:0 auto;
 }
 .post-index-return-content {
@@ -869,10 +817,10 @@ margin:0 auto;
   float:left;
 }
 .yohaku {
-  width :1000px;
+  width :500px;
   height: 50px;
   margin:0 auto;
-  background-color: lightcyan;
+  background-color: white;
 }
 .button-return-1 {
   float:left;
@@ -893,69 +841,78 @@ margin:0 auto;
   /********* タグ*********/
 
 
-.tag ul {
-  margin: 0;
+ ul.ultag {
+  margin: 10px;
   padding: 0;
   list-style: none;
 }
-.tag ul li {
-  display: inline-block;
-  margin: 0 0 .3em 1em;
-  padding: 0;
-}
-.tag ul li a {
+ ul.ultag li {
   position: relative;
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
+  margin: 0 .75em .5em 0;
+  padding: 0;
+}
+ul.ultag li a {
+  position: relative;
+  display: inline-block;
+  max-width: 100px;
+  height: 28px;
+  line-height: 28px;
   padding: 0 1em;
-  background-color: #3498db;
-  border-radius: 0 3px 3px 0;
-  color: #fff;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #555;
   font-size: 13px;
   text-decoration: none;
   -webkit-transition: .2s;
   transition: .2s;
 }
-.tag ul li a::before {
+ul.ultag li span {
   position: absolute;
   top: 0;
-  left: -15px;
+  right: -10px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transform: scale(.4);
+  transform: scale(.4);
+}
+ul.ultag li span::after {
+  position: absolute;
+  top: 50%;
+  left: -8px;
   content: '';
   width: 0;
   height: 0;
+  margin-top: -7px;
   border-color: transparent #3498db transparent transparent;
   border-style: solid;
-  border-width: 15px 15px 15px 0;
-  -webkit-transition: .2s;
-  transition: .2s;
+  border-width: 7px 14px 7px 0;
 }
-.tag ul li a::after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 2;
-  display: block;
-  content: '';
-  width: 6px;
-  height: 6px;
-  margin-top: -3px;
-  background-color: #fff;
-  border-radius: 100%;
+ul.ultag li a:hover {
+  border: 1px solid #3498db;
+  color: #3498db;
 }
-.tag ul li span {
-  display: block;
-  max-width: 100px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.tag ul li a:hover {
-  background-color: #555;
-  color: #fff;
-}
-.tag ul li a:hover::before {
-  border-right-color: #555;
+ul.ultag li:hover span {
+  right: -26px;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .post-detail {

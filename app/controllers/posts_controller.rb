@@ -5,7 +5,7 @@ class PostsController < ApplicationController
  
   def index
     
-    
+     @posts = Post.find_by(id: params[:id])
      @returns = Return.all
      @tags = ActsAsTaggableOn::Tag.most_used
   

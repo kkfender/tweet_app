@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   has_many :posts,dependent: :destroy
   has_many :returns,dependent: :destroy
+   has_many :likes, dependent: :destroy
+
   acts_as_tagger
 
   acts_as_taggable # acts_as_taggable_on :tags のエイリアス

@@ -8,7 +8,7 @@
         <%= submit_tag 'Search', :name => nil ,class: "button1" %><br><br>
       <% end %>  
      <div class="tag">
-      <ul>
+      <ul class="ultag">
        <%- @tags.each do |tag| %>
       <li>  <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %></li>
    <%#= link_to tag_path(tag.id) do %>
@@ -40,37 +40,45 @@
                     <%=link_to(post.user.name, "/users/#{post.user.id}", class: "post-index-name")%>
                     <%= post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})")  %>
                   </div>
-                    <p class="post-index-content"><%=simple_format(post.content)%></p>
+                    <div class="post-index-content"><%=simple_format(post.content)%></div>
                    
                     <% if post.postimage.present? %>
          <!--画像--><%= image_tag post.postimage.url,:class => "post-image"%>
                    <%end%>
-                  
-                   <div class="post-index-action">
+                  <div class="post-index-action">
+            
+            <ul class="ultag">
+                   
+                    
+                     <%if post.user_id==@current_user.id%>
+                       <%=link_to("/posts/#{post.id}/edit",class:"tagf")do%>
+                   <li>    <i class="fas fa-edit"></i></li>
+                        <%end%>
+                       <%=link_to("/posts/#{post.id}/destroy",{method: "post",class:" tagf"}) do%>
+                   <li>    <i class="far fa-trash-alt"></i></li>
+                        <%end%>
+                     <%end%>
+                     <%=link_to(new_return_path(p_id: post.id),class:"tagf")do%>
+                   <li>  <i class="fas fa-reply"></i></li>
+                      <%end%>
                      <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
-                       <%= link_to("/likes/#{post.id}/destroy",{method: "post"},class:"post-detail", remote: true) do %>
-                       <span class="fa fa-heart like-btn-unlike fbut action_height"></span>
+                       <%= link_to("/likes/#{post.id}/destroy",{method: "post",class:"tagf"}, remote: true) do %>
+         <!--いいね--><li> <i class="fas fa-heart "></i></li>
                      <%end%>
                      <%else%>
-                       <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail",:select_id => "a") do %>
-                         <span class="fa fa-heart like-btn fbut action_height"></span>
+                       <%= link_to("/likes/#{post.id}/create", {method: "post",class:"tagf"},:select_id => "a") do %>
+                      <li> <i class="far fa-heart "></i></li>
                       <%end%>
                     <%end%>
-                      <div class="tagf action_height"> <%= post.like_count %>  </div> 
-                     <%if post.user_id==@current_user.id%>
-                       <%=link_to("編集","/posts/#{post.id}/edit",class:"button1 tagf")%>
-                       <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"button2 tagf"})%>
-                     <%end%>
-                     <%=link_to("返信",new_return_path(p_id: post.id),class:"button3 tagf")%>
-                        <div class="tag tagf">  
-                   <ul>
+               <div class="tagf">   <li>     <%= post.like_count %>   </li> </div>   
+                   
       <!--タグ-->    <% post.tags.each do |tag| %>
                 
   <li>    <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20"),class:"tagf" %>    </li>
                   <% end %>
-                     </ul>
-                     </div>
-                    </div>
+                     
+                   
+                    </ul>
                     
                      
                     
@@ -109,8 +117,12 @@
            <%end%> </div><br>
       <div class="post-index-return-content">  <%=r.returncontent%></div>
       </div>
-      <%=link_to("編集",edit_return_path(r.id),class:"return-edit",class:"button-return-1")%>
-        <%=link_to("削除","/returns/#{r.id}/destroy",{method: "post",class:"return-edit",class:"button-return-2"})%>
+      <%=link_to(edit_return_path(r.id),class:"return-edit")do%>
+       <i class="fas fa-edit"></i>
+          <%end%>
+        <%=link_to("/returns/#{r.id}/destroy",{method: "post",class:"return-edit"})do%>
+        <i class="far fa-trash-alt"></i>
+                        <%end%>
     </div>
       <%end%>
       

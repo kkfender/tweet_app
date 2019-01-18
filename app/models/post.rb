@@ -3,7 +3,9 @@ class Post < ApplicationRecord
   validates :user_id,{presence: true}
  mount_uploader :postimage, PostimageUploader
  belongs_to :user
- has_many :return,dependent: :destroy
+ has_many :returns,dependent: :destroy
+ has_many :likes, dependent: :destroy
+
  
  acts_as_taggable_on :labels,:tag_list # post.label_list が追加される
   acts_as_taggable            # acts_as_taggable_on :tags のエイリアス

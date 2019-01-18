@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'acts-as-taggable-on'
 gem 'byebug'
