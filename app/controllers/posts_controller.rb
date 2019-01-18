@@ -4,8 +4,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user
  
   def index
+     
+     
+     if  params[:id].present?
+        @posts = Post.find_by(id: params[:id])
+      else
+     @post=Post.new
+   end
     
-     @posts = Post.find_by(id: params[:id])
      @returns = Return.all
      @tags = ActsAsTaggableOn::Tag.most_used
   
@@ -43,6 +49,7 @@ class PostsController < ApplicationController
   
   def edit
     @posts=Post.find_by(id: params[:id])
+  
     
   end
   

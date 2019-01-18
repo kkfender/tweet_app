@@ -3,10 +3,10 @@
     <div class="inner-area">
       <p font-size="20px">投稿する</p>
         
-        <%#=form_tag("/posts",class: "square_btn")do%>
-            <%@posts.errors.full_messages.each do |message|%>
+        
+            <%@posts.errors.full_messages.each do |message| %>
              <p class="errors"><%=message%></p>
-          <%#end%>
+         
           <%end%>
           <%= form_for @posts, url: posts_path do |f| %>
            <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"今何してる？"%><br>

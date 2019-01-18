@@ -1,26 +1,68 @@
 <div class="main">
-  <div class="serch">
-    <div class="serch-form">
-      <div class="serch-main">
+  <div class="index-user">
+    <%= @current_user.name %>
+   
+    <%= image_tag  @current_user.img.url,:class => "user-image"%>
+    <li>フォロー</li>
+            <li><%=@current_user.follow_count%>人</li>
+              <% @current_user.all_following.each do |follow|%>
+            <li> <%= follow.name%></li>
+              <%end%>
+            <li>フォロワー </li>
+            <li><%=@current_user.followers_count%>人</li>
+            </ul>
+     </div>
+      
+        
+
+    <div class="index-inner-area">
+      <p font-size="20px">投稿する</p>
+        
+      
+            <%@post.errors.full_messages.each do |message|%>
+             <p class="errors"><%=message%></p>
+          
+          <%end%>
+            <%= form_for @post, url: posts_path do |f| %>
+           <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"今何してる？"%><br>
+           <%= image_tag @post.postimage.url %><br>
+           画像<br>
+       <%= f.file_field :postimage, id: :users_img %><br>
+       タグ<br>
+            <%= text_field_tag 'post[tag_list]', @post.tag_list.join(' '), placeholder:"半角入力で複数タグになります" %><br><br>
+           <%=f.submit value:"投稿", class:"button1"%>
+          <%end%>
+  </div>
+
+
+     
+    <div class="serch-main">
     <p font-size="10px">検索</p>
       <%= form_tag("/posts/search",:method => 'get') do %>
         <%= text_field_tag :search,"",:placeholder => "投稿内容を検索してください" %><br><br>
         <%= submit_tag 'Search', :name => nil ,class: "button1" %><br><br>
       <% end %>  
-     <div class="tag">
+     </div>
+
+
+ 
+  
+  
+    
+      <div class="tag-serch-main">
+   <div class="tag">
       <ul class="ultag">
-       <%- @tags.each do |tag| %>
+         <p font-size="10px">人気タグ</p>
+       <%- @tags.each do |tag| %> <!--タグサ--->
       <li>  <%=link_to "#{tag.name}", posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") %></li>
-   <%#= link_to tag_path(tag.id) do %>
-     <%#= tag.taggings.count %>  
-     <% end %>
+      <% end %>
      </ul>
      </div>
-      </div>
-    </div>
-  </div>
-  
-  
+       </div>
+       
+       
+
+
   
   <% @posts.each do |post|%>
     <div class="post-index-back">
@@ -136,5 +178,5 @@
    <!--------------------------------------------->
  
    <%end%>
-</div> 
+</div> </div> 
 

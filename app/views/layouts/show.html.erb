@@ -15,7 +15,8 @@
             <li> <%= follow.name%></li>
               <%end%>
             <li>フォロワー </li>
-            <li><%=@users.followers_count%>人</li></ul>
+            <li><%=@users.followers_count%>人</li>
+            </ul>
               <% @users.followers .each do |follow|%>
               <%= follow.name%>
                 <%end%>

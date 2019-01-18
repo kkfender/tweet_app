@@ -18,6 +18,7 @@ body {
   min-height: 1vh;
   margin: 0;
   height: 100%;
+  background-color: #edffd3;
 }
 header {
   margin:0 auto;
@@ -51,6 +52,7 @@ font-family :Verdana,arial,helvetica,clean,sans-serif;
 /****************     main      ****************/
 .main {
 /*  margin-top:50px;*/
+
 }
 .main-top {
 background-image: url("/top.jpg");
@@ -449,7 +451,7 @@ img.user-image {
  
 }
 .post-index-cover {
-  width:800px;
+  width:50%;
   margin:auto;
   min-height: 50px;
 height: auto !important;
@@ -465,6 +467,7 @@ height: 50px;
   min-height: 50px;
 height: auto !important;
 height: 50px;
+clear: both;
 }
 .post-main-box {
  
@@ -503,8 +506,8 @@ height: 50px;
   float:left;
 }
 .post-index-content p{
-  width :800px;
-  min-height:100px;
+  width :80%;
+  min-height:70px;
   margin:0;
   float:left;
   font-size:15px;
@@ -529,7 +532,7 @@ height: 130px;
    
 }
 .post-index-action {
-  width:600px;
+  width:500px;
   float:left;
 /*  position: absolute;*/
   bottom:0;
@@ -544,9 +547,9 @@ height: 130px;
 img.post-image {
   text-align:center;
   
-  max-width:350px ;
+  max-width:400px ;
   max-height:350px ;
-  margin:  0 0 50px;
+  margin:  0 0 10px;
 }
 
 /*********************   userlist  **********************/
@@ -687,27 +690,19 @@ input[name="tab_item"] {
   color: #fff;
 }
 /************    serch    **************/
-.serch {
+/*.serch {
   width:50%;
   margin:auto;
   text-align:center;
 }
 .serch-form {
   background-color:lightcyan;
-  
   margin:auto ;
-  padding:50px 0;
+ 
   text-align:center;
-}
-.serch-main {
-   box-shadow: 0 2px 10px #c1ced7;
-  border-radius:2%;
-   width:500px;
-  margin:0 auto;
-  padding: 0;
-  text-align:center;
-  background-color:white;
-}
+}*/
+
+/**/
 /**************      about     **************/
 
 .about {
@@ -766,7 +761,7 @@ background-color: pink;
  }
 .line {
   margin:0 auto;
-  background-color:white; 
+  background-color:#edffd3; 
   width:500px;
   height:50px;
   border-left: black  solid 1px;
@@ -776,7 +771,7 @@ background-color: pink;
 .line-cover {
    
   height:50px;
-   background-color:white; 
+   background-color:#edffd3; 
   margin:0 auto;
 }
 .post-index-return-img-cover {
@@ -799,7 +794,7 @@ background-color: pink;
     min-height: 50px;
 height: auto !important;
 height: 50px;
-background-color: white;
+background-color: #edffd3;
 margin:0 auto;
 }
 .post-index-return-content {
@@ -817,10 +812,10 @@ margin:0 auto;
   float:left;
 }
 .yohaku {
-  width :500px;
+/*  width :500px;*/
   height: 50px;
   margin:0 auto;
-  background-color: white;
+  background-color: #edffd3;
 }
 .button-return-1 {
   float:left;
@@ -934,9 +929,56 @@ ul.ultag li:hover span {
   margin-top: 8px;
 }
 
+/***********************************************/
 
+.index-user {
+  box-shadow: 0 2px 10px #c1ced7;
+  border-radius:2%;
+   width:350px;
+   height:300px;
+  margin:0 auto;
+  padding: 0;
+  text-align:center;
+  background-color:white;
+  margin: 20px 30px 20px 45px;
+  float:left;
+  list-style: none;
+}
+.index-inner-area {
+  width:600px;
+  margin:0 auto;
+  padding: 0;
+  text-align:center;
+  background-color:white;
+  float: left;
+   box-shadow: 0 2px 10px #c1ced7;
+  border-radius:2%;
+  margin: 20px 10px 20px 20px;
+  height:350px;
+}
+.serch-main {
+  box-shadow: 0 2px 10px #c1ced7;
+  border-radius:2%;
+  width:400px;
+  margin:0 auto;
+  padding: 0;
+  text-align:center;
+  background-color:white;
+  margin: 20px 20px 20px 20px;
+  float:right;
+}
 
+.tag-serch-main {
+   box-shadow: 0 2px 10px #c1ced7;
+  border-radius:2%;
+  width:400px;
+  padding: 0;
+  text-align:center;
+  background-color:white;
+  float:right;
+  margin-right: 20px;
 
+}
 
 
 
