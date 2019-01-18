@@ -33,7 +33,7 @@ h1,h2,h3 {
 }*/
 a {
   text-decoration: none;
-   color:#ffa500;
+   color:#8899a6;
 }
 
 input {
@@ -81,9 +81,9 @@ height:550px;
   padding-top:60px;
   font-family: 'Hiragino Kaku Gothic ProN';
 }
-a:visited{
+/*a:visited{
   color: orange;
-}
+}*/
 a:hover {
   filter: alpha(opacity=70);
   -moz-opacity: 0.7;
@@ -179,6 +179,7 @@ a:hover {
   padding: 0;
   text-align:center;
   background-color:white;
+  font-size: 15px;
 }
 .input-area {
   background-color:white;
@@ -506,7 +507,7 @@ height: 50px;
   float:left;
 }
 .post-index-content p{
-  width :80%;
+  width :100%;
   min-height:70px;
   margin:0;
   float:left;
@@ -532,10 +533,10 @@ height: 130px;
    
 }
 .post-index-action {
-  width:500px;
+  width:450px;
   float:left;
 /*  position: absolute;*/
-  bottom:0;
+ margin-bottom:-20px;
   
 }
 .action-menus li {
@@ -837,7 +838,7 @@ margin:0 auto;
 
 
  ul.ultag {
-  margin: 10px;
+  margin: 0px;
   padding: 0;
   list-style: none;
 }
@@ -980,31 +981,10 @@ ul.ultag li:hover span {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.itext {
+  margin:0 auto;
+  font-size:18px;
+}
 
 
 
