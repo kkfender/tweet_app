@@ -8,8 +8,7 @@ class Post < ApplicationRecord
 
  
  acts_as_taggable_on :labels,:tag_list # post.label_list が追加される
-  acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
-                              # つまり、post.tag_list が追加される
+  acts_as_taggable            
     acts_as_taggable_on :interests  
     
   def user

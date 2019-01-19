@@ -3,9 +3,9 @@
   <div class="inner-area">
     <h1>アカウント編集</h1>
        <% @users.errors.full_messages.each do |message| %>
-         <div class="errors">
+         <p class="errors">
            <%= message %>
-         </div>
+         </p>
        <% end %>
           <%= form_for @users ,url: user_path,class:"edit-image"  do |f| %>
            <p class="standard-font">ユーザー名</p>
@@ -38,8 +38,7 @@ $(function() {
 });
 </script>
               </div>
-                    <%= f.label :tag_list, "分野" %><br>
-    <%= text_field_tag 'user[tag_list]', @users.tag_list.join(',') %><br>
+                   
     <p class="standard-font">プロフィール</p>
             <%= f.text_area :profile ,class: "text-edit-area",placeholder:"プロフィール(80文字以内)"%><br><br>
             <%= f.submit "保存", class: "button1" %><br>

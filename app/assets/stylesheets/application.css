@@ -18,7 +18,8 @@ body {
   min-height: 1vh;
   margin: 0;
   height: 100%;
- /* background-color: #edffd3;*/
+/* width:2075px;*/
+background-color:#edffd3;
   
 
 }
@@ -46,6 +47,11 @@ input {
   width:300px;
   height:30px;
 }
+.input {
+
+  width:300px;
+  height:30px;
+}
 input:focus {
   border:solid 1px #EEA34A;
 }
@@ -62,6 +68,7 @@ p {
 /****************     main      ****************/
 .main {
 /*  margin-top:50px;*/
+background-color:#edffd3;
 
 }
 .main-top {
@@ -180,6 +187,7 @@ a:hover {
   background-color:white;
   margin:0 auto;
 /*  height:780px;*/
+ min-height: 800px;
   
 }
 .resister-area {
@@ -232,12 +240,12 @@ a:hover {
 .flash {
   font-family :Verdana,arial,helvetica,clean,sans-serif;
 
-  width:1000px;
-  font-size :18px;
+  width:100%;
+  font-size :25px;
   color:#01960b;
   background-color:#c2ead1;
   border-radius: 5%;
-  margin:58px 0px 0px 400px;
+  margin:58px 0px 0px 0;
   text-align:center;
 }
 .errors  {
@@ -467,7 +475,7 @@ img.user-image {
 /********   post/index  **************/
 
 .post-index-back {
- 
+ background-color:#edffd3;
   height:auto;
  width:100%;
   margin: auto;
@@ -588,7 +596,7 @@ img.post-image {
   height:312px;
   background-color: white;
   float:left;
-  margin-left: 38px;
+  margin-left: 65px;
   margin-bottom: 15px;
   box-shadow: 0 2px 6px #c1ced7;
 }
@@ -705,7 +713,7 @@ img.post-image {
  
 }
 .footer-2 {
-  width:1000px;
+  
   height:auto;
 }
 /******************  tabs  **********************/
@@ -1124,7 +1132,7 @@ margin-bottom:20px;
 }
 .index-container-cover {
   width:2000px;
-  height:470px;
+  height:630px;
   margin:0 auto;
   
 
@@ -1141,11 +1149,17 @@ margin-bottom:20px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+ 
+ 
 }
 footer {
   margin-top: auto;
 }
-
+/*********************/
+.user-list-cover {
+  width:100%;
+}
 
 
 

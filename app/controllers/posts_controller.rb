@@ -5,7 +5,6 @@ class PostsController < ApplicationController
  
   def index
      
-     
      if  params[:id].present?
         @posts = Post.find_by(id: params[:id])
       else
@@ -37,9 +36,8 @@ class PostsController < ApplicationController
   end  
   
   def create
-  if  @posts =Post.create(post_params)
-   
-   
+   @posts =Post.new(post_params)
+   if  @posts.save
       redirect_to("/posts/index")
       flash[:notice]="投稿を作成しました"
     else 

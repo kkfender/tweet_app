@@ -28,13 +28,7 @@
                <li>
                  <%= link_to("new","/posts/new",class:"button")%>
                </li>
-               <li>
-                   <%=link_to("logout","/logout",{method: :post})%>
-               </li>
-           
-           <li>
-              <%= link_to("index","#",class:"button")%>
-            
+             
                <li>
                  <%= link_to("post","/posts/index",class:"button")%>
                </li>
@@ -42,7 +36,10 @@
                  <%= link_to("users","/users/index",class:"button")%>
              
            </li> 
-             
+               <li>
+                   <%=link_to("logout","/logout",{method: :post})%>
+               </li>
+           
              <% else %>                         <!--ログアウト状態で表示-->
            <li>
              <%= link_to("login","/login",class:"button")%>
@@ -80,6 +77,6 @@
            </div>
         </footer>
         </div>
-        
+                </div>
   </body>
 </html>
