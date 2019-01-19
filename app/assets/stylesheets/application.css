@@ -68,11 +68,11 @@ height:550px;
   text-align: center;
   margin:0 auto;
   width:50%;
-  height:200px;
+  height:auto;
   background-color: white;
   border-radius: 5% ;
   opacity: 0.5;
-  top:30%;
+  top:10%;
   position: relative
 
 }
@@ -221,7 +221,7 @@ a:hover {
   color:#01960b;
   background-color:#c2ead1;
   border-radius: 5%;
-  margin:58px 0px 10px 220px;
+  margin:58px 0px 0px 400px;
   text-align:center;
 }
 .errors  {
@@ -337,7 +337,7 @@ a:hover {
   text-align:center;
 }
 .mc-list {
-  background-color:#e8fffd;
+ 
  /* float:left;*/
   width: 1000px;
   border-bottom:solid 1px paleturquoise; 
@@ -396,7 +396,7 @@ a:hover {
 .follow-container {
   width:100%;
  /* margin-left:9px;*/
-  background-color: lightcyan;
+  
   float:left;
   padding-top:10px;
   margin-top:-12px;
@@ -539,7 +539,7 @@ height: 130px;
    
 }
 .post-index-action {
-  width:480px;
+ 
   float:left;
 /*  position: absolute;*/
  margin-bottom:-20px;
@@ -561,7 +561,7 @@ img.post-image {
 
 /*********************   userlist  **********************/
 .user-list {
-  width: 80%;
+  width: 50%;
   height:auto;
 /*  background-color: white ;*/
   margin: auto;
@@ -630,7 +630,7 @@ img.post-image {
   font-size: 13px;
   float:left;
   position: absolute;
-  bottom:0;
+  bottom:10px;
   margin:auto;
 }
 /***********************username*************************/
@@ -657,6 +657,7 @@ img.post-image {
 .prof {
   width: 100%;
   text-align:center;
+  margin-top:5px;
 }
 .user-profile-page {
   width: 100%;
@@ -695,7 +696,7 @@ img.post-image {
 /*タブ切り替え全体のスタイル*/
 .tabs {
   margin-top: 50px;
-  background-color: #fff;
+  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 1000px;
   margin: 0 auto;}
@@ -725,7 +726,7 @@ input[name="tab_item"] {
 /*タブ切り替えの中身のスタイル*/
 .tab_content {
   display: none;
-  background-color: lightcyan;
+  
   clear: both;
   overflow: hidden;
 }
@@ -991,12 +992,12 @@ ul.ultag li:hover span {
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 30px 20px 45px;
+  margin: 20px 35px 20px 40px;
   float:left;
   list-style: none;
 }
 .index-inner-area {
-  width:635px;
+  width:715px;
   margin:0 auto;
   padding: 0;
   text-align:center;
@@ -1004,7 +1005,7 @@ ul.ultag li:hover span {
   float: left;
    box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-  margin: 20px 10px 20px 50px;
+  margin: 20px 10px 20px 25px;
   height:350px;
 }
 .serch-main {
@@ -1027,7 +1028,7 @@ ul.ultag li:hover span {
   text-align:center;
   background-color:white;
   float:left;
-  margin-right: 20px;
+  margin: 20px 20px 0 20px;
 
 }
 
@@ -1103,7 +1104,7 @@ margin-bottom:20px;
 }
 .index-container-cover {
   width:1800px;
-  height:520px;
+  height:470px;
   margin:0 auto;
   
 
