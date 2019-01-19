@@ -18,12 +18,13 @@ body {
   min-height: 1vh;
   margin: 0;
   height: 100%;
-  background-color: #edffd3;
-  width:1800px
+ /* background-color: #edffd3;*/
+  
 
 }
 header {
   margin:0 auto;
+  width: 1000px;
 }
 h1,h2,h3 {
   font-size:25px;
@@ -51,6 +52,13 @@ input:focus {
 .text {
 font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
+p {
+  font-size:30px;
+  margin:0 auto;
+}
+.inp p {
+  font-size:20px;
+}
 /****************     main      ****************/
 .main {
 /*  margin-top:50px;*/
@@ -60,8 +68,9 @@ font-family :Verdana,arial,helvetica,clean,sans-serif;
 /*background-image: url("/top.jpg");*/
 background-size:cover;
 margin:0 auto;
-width:1000px;
-height:550px;
+width:60%;
+height:50%;
+margin-top:20px;
 
 }
 .main-inner {
@@ -116,7 +125,7 @@ a:hover {
 }
 .header-logo {
   float: left;
-  padding-left: 260px;
+/*  padding-left: 260px;*/
   margin-top: 13px;
   color: white;
   font-size: 22px;
@@ -127,14 +136,14 @@ a:hover {
 .header-menus{
 /*float:left;*/
   margin:0 auto;
-  padding-right: 220px;
+ /* padding-right: 220px;*/
   font-size: 10px;
     font-family :Verdana,arial,helvetica,clean,sans-serif;
 
 }
 .header-menus li{
   float: right;
-  line-height: 35px;
+  line-height: 50px;
   font-size: 13px;
   color: white;
   padding-left: 0;
@@ -170,14 +179,17 @@ a:hover {
   margin:0;
   background-color:white;
   margin:0 auto;
+/*  height:780px;*/
   
 }
 .resister-area {
-  background-color:#f4ffff;
+  background-color:#edffd3;
   width:1000px;
   margin:auto ;
-  padding:50px 0;
+  padding:140px 0;
   text-align:center;
+ margin-top:50px;
+ margin-bottom:50px;
 }
 .inner-area {
   width:500px;
@@ -457,7 +469,7 @@ img.user-image {
 .post-index-back {
  
   height:auto;
- 
+ width:100%;
   margin: auto;
  
 }
@@ -565,8 +577,8 @@ img.post-image {
 
 /*********************   userlist  **********************/
 .user-list {
-  width: 50%;
-  height:auto;
+  width: 1000px;
+  min-height:750px;
 /*  background-color: white ;*/
   margin: auto;
   padding-bottom: 5px;
@@ -678,11 +690,11 @@ img.post-image {
   height: 40px;
   background-color:white;
   float:left;
+  z-index:50;
   
 }
 .nav {
-  width:50%;
-  float:left;
+  
   margin:-15px;
 }
 .footer li {
@@ -691,6 +703,10 @@ img.post-image {
   padding-left:20px;
   font-size:15px;
  
+}
+.footer-2 {
+  width:1000px;
+  height:auto;
 }
 /******************  tabs  **********************/
 .link {
@@ -996,12 +1012,12 @@ ul.ultag li:hover span {
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 35px 20px 40px;
+  margin: 20px 35px 20px 70px;
   float:left;
   list-style: none;
 }
 .index-inner-area {
-  width:715px;
+  width:830px;
   margin:0 auto;
   padding: 0;
   text-align:center;
@@ -1009,8 +1025,8 @@ ul.ultag li:hover span {
   float: left;
    box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-  margin: 20px 10px 20px 25px;
-  height:350px;
+  margin: 20px 10px 20px 30px;
+  height:450px;
 }
 .serch-main {
   box-shadow: 0 2px 10px #c1ced7;
@@ -1020,7 +1036,7 @@ ul.ultag li:hover span {
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 50px;
   float:left;
 }
 
@@ -1032,7 +1048,7 @@ ul.ultag li:hover span {
   text-align:center;
   background-color:white;
   float:left;
-  margin: 20px 20px 0 20px;
+  margin: 20px 20px 0 50px;
 
 }
 
@@ -1107,7 +1123,7 @@ clear: both;
 margin-bottom:20px;
 }
 .index-container-cover {
-  width:1800px;
+  width:2000px;
   height:470px;
   margin:0 auto;
   
