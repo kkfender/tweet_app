@@ -1020,12 +1020,12 @@ ul.ultag li:hover span {
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 35px 20px 70px;
+  margin: 20px 35px 20px 0px;
   float:left;
   list-style: none;
 }
 .index-inner-area {
-  width:830px;
+  width:630px;
   margin:0 auto;
   padding: 0;
   text-align:center;
@@ -1033,7 +1033,7 @@ ul.ultag li:hover span {
   float: left;
    box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-  margin: 20px 10px 20px 30px;
+  margin: 20px 0px 20px 0px;
   height:450px;
 }
 .serch-main {
@@ -1044,7 +1044,7 @@ ul.ultag li:hover span {
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 20px 20px 50px;
+  margin: 20px 0px 20px 20px;
   float:left;
 }
 
@@ -1056,7 +1056,7 @@ ul.ultag li:hover span {
   text-align:center;
   background-color:white;
   float:left;
-  margin: 20px 20px 0 50px;
+  margin: 0px 0px 0 20px;
 
 }
 
@@ -1131,7 +1131,7 @@ clear: both;
 margin-bottom:20px;
 }
 .index-container-cover {
-  width:2000px;
+  width:1600px;
   height:630px;
   margin:0 auto;
   
