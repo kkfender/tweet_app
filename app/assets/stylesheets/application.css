@@ -16,9 +16,11 @@ html {
 body {
   color: #2d3133;
   min-height: 1vh;
-  margin: 0;
+  margin: 0 auto;
   height: 100%;
   background-color: #edffd3;
+  width:1800px
+
 }
 header {
   margin:0 auto;
@@ -66,11 +68,11 @@ height:550px;
   text-align: center;
   margin:0 auto;
   width:50%;
-  
+  height:200px;
   background-color: white;
   border-radius: 5% ;
   opacity: 0.5;
-  top:15%;
+  top:30%;
   position: relative
 
 }
@@ -335,14 +337,15 @@ a:hover {
   text-align:center;
 }
 .mc-list {
- 
+  background-color:#e8fffd;
+ /* float:left;*/
   width: 1000px;
   border-bottom:solid 1px paleturquoise; 
   padding: 15px 0 0 0;
   overflow: hidden;
 }
 .user-tabs {
- /*   background-color: white;*/
+  background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
@@ -393,7 +396,7 @@ a:hover {
 .follow-container {
   width:100%;
  /* margin-left:9px;*/
-  
+  background-color: lightcyan;
   float:left;
   padding-top:10px;
   margin-top:-12px;
@@ -571,7 +574,6 @@ img.post-image {
   float:left;
   margin-left: 38px;
   margin-top: 15px;
-   margin-bottom: 20px;
   box-shadow: 0 2px 6px #c1ced7;
 }
 .user-list-image {
@@ -693,7 +695,8 @@ img.post-image {
 /*タブ切り替え全体のスタイル*/
 .tabs {
   margin-top: 50px;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 1000px;
   margin: 0 auto;}
 /*タブのスタイル*/
@@ -722,7 +725,7 @@ input[name="tab_item"] {
 /*タブ切り替えの中身のスタイル*/
 .tab_content {
   display: none;
- 
+  background-color: lightcyan;
   clear: both;
   overflow: hidden;
 }
@@ -1013,7 +1016,7 @@ ul.ultag li:hover span {
   text-align:center;
   background-color:white;
   margin: 20px 20px 20px 20px;
-  float:right;
+  float:left;
 }
 
 .tag-serch-main {
@@ -1023,7 +1026,7 @@ ul.ultag li:hover span {
   padding: 0;
   text-align:center;
   background-color:white;
-  float:right;
+  float:left;
   margin-right: 20px;
 
 }
@@ -1079,7 +1082,6 @@ font-size: 30px;
   float:left;
   margin-top: 5px;
 }
-
 .post-index-cover-user {
 margin-bottom:10px;
   margin:auto;
@@ -1099,6 +1101,27 @@ height: 50px;
 clear: both;
 margin-bottom:20px;
 }
+.index-container-cover {
+  width:1800px;
+  height:520px;
+  margin:0 auto;
+  
+
+}
+.index-container {
+    width:90%;
+    height:520px;
+    margin:0 auto;
+ 
+
+}
+
+
+
+
+
+
+
 
 
 
