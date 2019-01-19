@@ -1,7 +1,7 @@
 <div class="post-index-back">
-  <% @users.posts.each do |post|%>   <!--modelのpostsメソッド-->
-    <div class="post-index-cover">
-      <div class="post-main">
+  <% @users.posts.reverse_each do |post|%>  <!--modelのpostsメソッド-->
+    <div class="post-index-cover-user">
+      <div class="post-main-users">
         <div class="post-main-box">
           <div class="post-index-img">
            <%= image_tag post.user.img.url,:class => "user-image" %>
@@ -13,23 +13,52 @@
               </div>
                
                   <p class="post-index-content"><%==simple_format(post.content) %></p>
+                <% if post.postimage.present? %>
+         <!--画像--><%= image_tag post.postimage.url,:class => "post-image"%>
+                   <%end%>
+                   
+                 <div class="post-index-action">
+            
+            <ul class="ultag">
+                <!--いいね-->           <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
+                       <%= link_to("/likes/#{post.id}/destroy",{method: "post",class:"tagf like-btn-unlike faa-pulse animated-hover"}, remote: true) do %>
+        <li><p class="itext"> <i class="fas fa-heart "></i></p></li>
+                     <%end%>
+                     <%else%>
+                       <%= link_to("/likes/#{post.id}/create", {method: "post",class:"tagf like-btn faa-pulse animated-hover"},:select_id => "a") do %>
+                      <li><p class="itext"> <i class="far fa-heart "></i></p></li>
+                      <%end%>
+                    <%end%>
+               <div class="tagf">   <li><p class="itext">     <%= post.like_count %>   </li></p> </div>  
+                    
+                    
+                      <%=link_to(new_return_path(p_id: post.id),class:"tagf")do%>
+                   <li> <p class="itext">  <i class="fas fa-reply"></i>返信</p></li>
+                      <%end%>
+                       <%if post.user_id==@current_user.id%>
+                       <%=link_to("/posts/#{post.id}/edit",class:"tagf")do%>
+                   <li><p class="itext">    <i class="fas fa-edit"></i>編集</p></li>
+                        <%end%>
+                       <%=link_to("/posts/#{post.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？"},class:" tagf" ) do%>
+                   <li><p class="itext"><i class="far fa-trash-alt"></i>削除</p></li>
+                        <%end%>
+                     <%end%>
+                    
                
-                  <div class="post-index-action">
-                    <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
-                      <%= link_to("/likes/#{post.id}/destroy", {method: "post"},class:"post-detail") do %>
-                      <span class="fa fa-heart like-btn-unlike"></span>
-                   <%end%>
-                   <%else%>
-                     <%= link_to("/likes/#{post.id}/create", {method: "post"},class:"post-detail") do %>
-                     <span class="fa fa-heart like-btn"></span>
-                   <%end%>
-                   <%end%>
-                     <%= post.like_count %>
-                   <%if post.user_id==@current_user.id%>
-                     <%=link_to("編集","/posts/#{post.id}/edit",class:"post-detail")%>
-                     <%=link_to("削除","/posts/#{post.id}/destroy",{method: "post",class:"post-detail"})%>
-                   <%end%>
-           </div>
+                    <%- post.tags.each do |tag| %> <!--タグサ--->
+      <li>  <%=link_to posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20") do%>
+        
+         <p class="itext"> <i class="fas fa-leaf"></i> <%=tag.name%> </p></li>
+      <% end %> 
+      <% end %>
+        
+                    </ul>
+             
+                    
+                     
+                    
+              
+         </div>
           </div>
         </div>
        </div>

@@ -15,8 +15,10 @@ class UsersController < ApplicationController
     @users = User.find(params[:id])
     @posts = Post.find_by(user_id: params[:id])
     @postall =Post.where(user_id: @users.id)
+    @returns = Return.all
     if @posts !=nil
       @likes_count = Like.where(post_id: @posts.id).count
+      
     end
   end
  
