@@ -55,7 +55,7 @@ font-family :Verdana,arial,helvetica,clean,sans-serif;
 
 }
 .main-top {
-background-image: url("/top.jpg");
+/*background-image: url("/top.jpg");*/
 background-size:cover;
 margin:0 auto;
 width:1000px;
@@ -535,7 +535,7 @@ height: 130px;
    
 }
 .post-index-action {
-  width:450px;
+  width:480px;
   float:left;
 /*  position: absolute;*/
  margin-bottom:-20px;
@@ -1034,6 +1034,9 @@ table.follow-table {
   color: #565656;
 }
 
+.fa-top {
+font-size: 30px;
+}
 
 
 

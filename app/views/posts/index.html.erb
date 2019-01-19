@@ -112,11 +112,11 @@
             
             <ul class="ultag">
                 <!--いいね-->           <% if Like.find_by(user_id: @current_user.id,post_id: post.id)%>
-                       <%= link_to("/likes/#{post.id}/destroy",{method: "post",class:"tagf like-btn-unlike"}, remote: true) do %>
+                       <%= link_to("/likes/#{post.id}/destroy",{method: "post",class:"tagf like-btn-unlike faa-pulse animated-hover"}, remote: true) do %>
         <li><p class="itext"> <i class="fas fa-heart "></i></p></li>
                      <%end%>
                      <%else%>
-                       <%= link_to("/likes/#{post.id}/create", {method: "post",class:"tagf like-btn"},:select_id => "a") do %>
+                       <%= link_to("/likes/#{post.id}/create", {method: "post",class:"tagf like-btn faa-pulse animated-hover"},:select_id => "a") do %>
                       <li><p class="itext"> <i class="far fa-heart "></i></p></li>
                       <%end%>
                     <%end%>
@@ -129,7 +129,7 @@
                        <%=link_to("/posts/#{post.id}/edit",class:"tagf")do%>
                    <li><p class="itext">    <i class="fas fa-edit"></i>編集</p></li>
                         <%end%>
-                       <%=link_to("/posts/#{post.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？",class:" tagf"} ) do%>
+                       <%=link_to("/posts/#{post.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？"},class:" tagf" ) do%>
                    <li><p class="itext"><i class="far fa-trash-alt"></i>削除</p></li>
                         <%end%>
                      <%end%>
