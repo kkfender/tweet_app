@@ -16,7 +16,7 @@ html {
 body {
   color: #2d3133;
   min-height: 1vh;
-  margin: 0 auto;
+  margin: 0;
   height: 100%;
   background-color: #edffd3;
   width:1800px
@@ -100,7 +100,7 @@ a:hover {
 /****************     header     ****************/
 
 .header-top {
-  height: 40px;
+  height: 50px;
   top: 0;
   width: 100%;
   background-color: white;
@@ -111,6 +111,8 @@ a:hover {
  z-index: 100;
 }
 .header-inner {
+  width:100%;
+  height:100%;
 }
 .header-logo {
   float: left;
@@ -132,22 +134,24 @@ a:hover {
 }
 .header-menus li{
   float: right;
-  line-height: 50px;
+  line-height: 35px;
   font-size: 13px;
   color: white;
   padding-left: 0;
-/*margin-top:13px;*/
+
   position: relative;
   list-style: none;
-	z-index:100
+	z-index:100;
+	margin-right:0px;
+	margin-left:0px;
 }
 .header-menus a {
   color: white;
 }
 .header-menus li a {
   display: block;
-  width: 150px;
-  height: 50px;
+  width: 100px;
+ /* height: 35px;*/
   text-align: center;
   color: black;
  
@@ -340,7 +344,7 @@ a:hover {
  
  /* float:left;*/
   width: 1000px;
-  border-bottom:solid 1px paleturquoise; 
+ 
   padding: 15px 0 0 0;
   overflow: hidden;
 }
@@ -573,7 +577,7 @@ img.post-image {
   background-color: white;
   float:left;
   margin-left: 38px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   box-shadow: 0 2px 6px #c1ced7;
 }
 .user-list-image {
@@ -670,7 +674,7 @@ img.post-image {
   border-bottom: 1px solid #aaa;;
   padding:10px 0; 
   font-size:15px;
-  margin:auto;
+  box-shadow: 0 2px 6px #c1ced7;
   height: 40px;
   background-color:white;
   float:left;
@@ -686,7 +690,7 @@ img.post-image {
   list-style:none;
   padding-left:20px;
   font-size:15px;
-   margin-bottom: 30px;
+ 
 }
 /******************  tabs  **********************/
 .link {
@@ -1116,8 +1120,15 @@ margin-bottom:20px;
  
 
 }
-
-
+/**************** footer fix *****************/
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+}
 
 
 
