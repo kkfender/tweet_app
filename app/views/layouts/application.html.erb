@@ -17,39 +17,56 @@
       <div class="header-inner">
       <header>
          <div class="header-logo">
-           <%= link_to("TweetApp", "/") %>
+           <%= link_to("/")do %>
+             <p class="itext"> <i class="fas fa-leaf"></i>TweetApp</p></li>
+                  <%end%>
          </div>
            <ul class="header-menus" style="list-style:none;">
              <%current_user=User.find_by(id: session[:user_id])%>
                <%if current_user%>       <!--ログイン状態で表示-->
-           <li>
-             <%= link_to(current_user.name,"/users/#{current_user.id}",class:"button")%>
+          
+             <%= link_to("/users/#{current_user.id}",class:"button")do%>
+            <li> <p class="itext">  <i class="far fa-user"></i><%=current_user.name%> </p></li>
+                  <%end%>
+              
+                 <%= link_to("/posts/new",class:"button")do%>
+              <li> <p class="itext">  <i class="fas fa-pen"></i>new </p></li>
+                  <%end%>
+               
+               
+             
+             
+               
+                 <%= link_to("/posts/index",class:"button")do%>
+                   <li> <p class="itext">  <i class="far fa-file-alt"></i>posts </p></li>
+                  <%end%>
+              
+               
+                 <%= link_to("/users/index",class:"button")do%>
+             <li> <p class="itext"> <i class="fas fa-users"></i>users </p></li>
+                  <%end%>
            
-               <li>
-                 <%= link_to("new","/posts/new",class:"button")%>
-               </li>
-             
-               <li>
-                 <%= link_to("post","/posts/index",class:"button")%>
-               </li>
-               <li>
-                 <%= link_to("users","/users/index",class:"button")%>
-             
-           </li> 
-               <li>
-                   <%=link_to("logout","/logout",{method: :post})%>
-               </li>
+              
+                   <%=link_to("/logout",{method: :post})do%>
+             <li> <p class="itext"> <i class="fas fa-sign-out-alt"></i>logout </p></li>
+              <%end%>
            
              <% else %>                         <!--ログアウト状態で表示-->
-           <li>
-             <%= link_to("login","/login",class:"button")%>
-           </li>
-           <li>
-             <%= link_to("about","/about",class:"button")%>
-           </li>
-           <li>
-             <%= link_to("new","/signup",class:"button")%>
-           </li>
+           
+             <%= link_to("/login",class:"button")do%>
+            <li> <p class="itext">  <i class="fas fa-sign-in-alt"></i>login </p></li>
+               <%end%>
+           
+          
+             <%= link_to("/about",class:"button")do%>
+           <li> <p class="itext">  <i class="fas fa-male"></i>about </p></li>
+              <%end%>
+          
+           
+             <%= link_to("/signup",class:"button")do%>
+             <li> <p class="itext">  <i class="fas fa-user-plus"></i>new </p></li>
+              <%end%>
+           
              <%end%>
            </ul>
     </div>

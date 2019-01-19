@@ -152,13 +152,13 @@ a:hover {
   float: right;
   line-height: 50px;
   font-size: 13px;
-  color: white;
+  color: grey;
   padding-left: 0;
 
   position: relative;
   list-style: none;
 	z-index:100;
-	margin-right:0px;
+	margin-right:10px;
 	margin-left:0px;
 }
 .header-menus a {
