@@ -9,12 +9,7 @@
             <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>
           </div>
             <div class="user-profile-page">
-              <% user.tag_list.each do |tag| %>
-  <span class="label label-primary"><%= tag %></span>
-  
-
-
-<% end %>
+             <div class="show-profile"> <%=user.profile%></div>
            </div> 
       </div>
  

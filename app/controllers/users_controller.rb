@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     
     @users = User.find(params[:id])
     @posts = Post.find_by(user_id: params[:id])
-   # @postall =Post.where(user_id: @users.id)
+    @postall =Post.where(user_id: @users.id)
     if @posts !=nil
       @likes_count = Like.where(post_id: @posts.id).count
     end
@@ -126,7 +126,7 @@ end
 
       params.require(:user).permit(
       :name, :email, :password, 
-      :password_confirmation,:img,:image_cache,:remove_img,:tag_list)
+      :password_confirmation,:img,:image_cache,:remove_img,:tag_list,:profile)
 
   end
  end

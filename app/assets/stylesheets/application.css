@@ -187,7 +187,7 @@ a:hover {
   font-size:20px;
  }
  .text-area {
-  width:540px;
+  width:500px;
   height:100px;
   margin:0 auto;
   font-size:20px;
@@ -291,7 +291,7 @@ a:hover {
 .prof-show-container {
   width: 1000px;
   height:auto;
-  background-color: lightcyan ;
+ 
   margin: auto;
   margin-top:50px;
 }
@@ -312,10 +312,12 @@ a:hover {
   background-color :white;
   margin: auto;
   position: relative;
+   box-shadow: 0 2px 10px #c1ced7;
+   margin-top:-5px;
 }
 .show-users-identfy {
   float:left;
-  height:150px;
+ 
 }
 .main-container {
   width: 1000px;
@@ -559,7 +561,7 @@ img.post-image {
 .user-list {
   width: 80%;
   height:auto;
-  background-color: white ;
+/*  background-color: white ;*/
   margin: auto;
   padding-bottom: 5px;
 }
@@ -569,7 +571,7 @@ img.post-image {
   background-color: white;
   float:left;
   margin-left: 38px;
-  margin-bottom: 45px;
+  margin-top: 15px;
   box-shadow: 0 2px 6px #c1ced7;
 }
 .user-list-image {
@@ -577,7 +579,14 @@ img.post-image {
   height:150px;
   text-align: center;
   position: relative;
-  margin:auto;
+  margin-bottom: -20px;
+}
+.post-user-list-image {
+ 
+  height:150px;
+  text-align: center;
+  position: relative;
+  margin-bottom: -20px;
 }
 /*******************   pagination         *******************/
 .pagination {
@@ -593,7 +602,7 @@ img.post-image {
 }
 .pagination a{
   width:20%;
-  background-color: white;
+ 
   
   margin:auto;
   text-align: center;
@@ -628,10 +637,11 @@ img.post-image {
   font-family: Segoe UI;
 }
 .follow-info {
-  width:470px;
+ 
   height:50px;
   float:left;
   position: absolute;
+  margin-right:10px;
 	right: 0;
 	bottom: 0;
 }
@@ -640,6 +650,7 @@ img.post-image {
   width:100%;
   font-size: 30px;
   color:#565656;
+  margin-top:-15px;
 }
 .prof {
   width: 100%;
@@ -1038,12 +1049,37 @@ table.follow-table {
 font-size: 30px;
 }
 
+#img_prev {
+  width:100px;
+  height:100px;
+}
 
+#user_remove_img {
+  width:20px;
+  height:20px;
+}
 
+.text-edit-area {
+  width:500px;
+  height:100px;
+  margin:0 auto;
+  font-size:20px;
+  background-color:white;
+}
 
-
-
-
+.user-show-profile {
+  width:600px;
+  height:50px;
+  float:left;
+  margin-top: 5px;
+}
+.show-profile {
+ word-wrap: break-word;
+ width: 100%;
+  height:50px;
+  float:left;
+  margin-top: 5px;
+}
 
 
 

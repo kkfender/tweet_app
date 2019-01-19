@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_212240) do
+ActiveRecord::Schema.define(version: 2019_01_19_051445) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_212240) do
     t.string "image_name"
     t.string "password_digest"
     t.string "img"
+    t.string "profile"
   end
 
 end

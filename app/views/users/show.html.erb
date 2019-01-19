@@ -15,12 +15,22 @@
               <div class="user-name"><%= "#{@users.name}" %>
               </div>
             </div>
-              <%= link_to("編集", "/users/#{@users.id}/edit",class:"edit") %>
-              <%= link_to("削除", "/users/#{@users.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？",class:"return-edit",class:"button-return-2"}) %>
-
- 
+            
+           <div class="user-show-profile"> <%=@users.profile%></div>
+          
                 <div class="follow-info">
                   <ul  class="show-menus">
+                     <li>
+                        <%=link_to("/users/#{@users.id}/edit",class:"tagf")do%>
+                   <p class="itext">    <i class="fas fa-edit"></i>アカウント編集 </p>
+                        <%end%>
+                     </li>
+                      <li>
+                        <%=link_to("/users/#{@users.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？"},class:" tagf" ) do%>
+                   <p class="itext"><i class="far fa-trash-alt"></i>削除</p>
+                        <%end%>
+                        
+                      </li>
                    <li>フォロー</li>
                    <li><%=@users.follow_count%>人</li>
                    <li>フォロワー </li>
@@ -28,7 +38,8 @@
                      <%=render"users/follow"%>     <!--followのパーシャル-->
                      <li><span class="fa fa-heart like-btn-unlike"></span>
                      </li>
-                    <li><%= Like.where(post_id: @users.id,post_id: @postall).count%>
+                    <li><% likecount=Like.where(post_id: @users.id,post_id: @postall).count%>
+                        <%=likecount-1 unless likecount==0%>
                     </li> 
                    </ul>
                 </div>

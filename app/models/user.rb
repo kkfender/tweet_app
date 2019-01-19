@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :name,presence: true, length: { maximum: 8 }               #  存在性
+  validates :profile,length: { maximum: 80 } 
 #  validates :password, length: { minimum: 8 }       # 「8文字以下」
 #  validates :password, confirmation: true
   
