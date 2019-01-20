@@ -1,9 +1,47 @@
 <div class="main">
   <div class="index-container-cover">
   <div class="index-container">
-  <div class="index-user">
-   
-    <div class="post-user-list-image">
+ 
+  <div class="tag-serch-main">
+   <div class="tag">
+      <ul class="ultag">
+         <p font-size="10px">人気タグ</p>
+       <%- @tags.each do |tag| %> <!--タグサ--->
+      <li>  <%=link_to (posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20")) do%>
+        
+         <p class="itext"> <i class="fas fa-leaf"></i> <%=tag.name%> </p></li>
+      <% end %> 
+      <% end %>
+     </ul>
+     </div>
+       </div>
+  
+  <div class="index-inner-area">
+      <p font-size="20px">投稿する</p>
+        
+      
+            <%@post.errors.full_messages.each do |message|%>
+             <p class="errors"><%=message%></p>
+          
+          <%end%>
+            <%= form_for @post, url: posts_path do |f| %>
+           <%=f.text_area :content, class: "text-area", wrap:"hard", placeholder:"140文字以内です"%><br>
+           <%= image_tag @post.postimage.url %><br>
+           画像<br>
+       <%= f.file_field :postimage, id: :users_img %><br>
+       タグ<br>
+            <%= text_field_tag 'post[tag_list]', @post.tag_list.join(','), placeholder:"カンマ区切りで複数タグになります" %><br><br>
+           <%=f.submit value:"投稿", class:"button1"%>
+          <%end%>
+  </div>
+      
+        
+
+    
+
+
+<div class="index-user">
+   <div class="post-user-list-image">
     <%= image_tag  @current_user.img.url,:class => "user-image"%>
      
      </div>
@@ -33,33 +71,14 @@
         </table>
 </div>
      </div>
-      
-        
 
-    <div class="index-inner-area">
-      <p font-size="20px">投稿する</p>
-        
-      
-            <%@post.errors.full_messages.each do |message|%>
-             <p class="errors"><%=message%></p>
-          
-          <%end%>
-            <%= form_for @post, url: posts_path do |f| %>
-           <%=f.text_area :content, class: "text-area", wrap:"hard", placeholder:"140文字以内です"%><br>
-           <%= image_tag @post.postimage.url %><br>
-           画像<br>
-       <%= f.file_field :postimage, id: :users_img %><br>
-       タグ<br>
-            <%= text_field_tag 'post[tag_list]', @post.tag_list.join(','), placeholder:"カンマ区切りで複数タグになります" %><br><br>
-           <%=f.submit value:"投稿", class:"button1"%>
-          <%end%>
-  </div>
 
+   
   
     <div class="serch-main">
     <p font-size="15px">検索</p>
       <%= form_tag("/posts/search",:method => 'get') do %>
-        <%= text_field_tag :search,"",:placeholder => "投稿内容を検索してください" %><br><br>
+        <%= text_field_tag :search,"",:placeholder => "投稿内容を検索してください",class: "ser" %><br><br>
         <%= submit_tag 'Search', :name => nil ,class: "button1" %><br><br>
       <% end %>  
      </div>
@@ -69,19 +88,7 @@
   
   
     
-      <div class="tag-serch-main">
-   <div class="tag">
-      <ul class="ultag">
-         <p font-size="10px">人気タグ</p>
-       <%- @tags.each do |tag| %> <!--タグサ--->
-      <li>  <%=link_to (posts_index_path(:tagsearch =>  tag.name).gsub("+", "%20")) do%>
-        
-         <p class="itext"> <i class="fas fa-leaf"></i> <%=tag.name%> </p></li>
-      <% end %> 
-      <% end %>
-     </ul>
-     </div>
-       </div></div>
+    </div>
        <p align="center">↓new post↓</p>
        </div>
        

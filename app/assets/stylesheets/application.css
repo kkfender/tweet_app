@@ -19,7 +19,7 @@ body {
   margin: 0;
   height: 100%;
 /* width:2075px;*/
-background-color:#edffd3;
+/*background-color:#edffd3;*/
   
 
 }
@@ -44,7 +44,7 @@ input {
   -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
   -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
   box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
-  width:300px;
+  width:200px;
   height:30px;
 }
 .input {
@@ -88,15 +88,15 @@ margin-top:20px;
   background-color: white;
   border-radius: 5% ;
   opacity: 0.5;
-  top:10%;
-  position: relative
+  /*top:10%;*/
+ /* position: relative*/
 
 }
 .infomation {
   font-size:20px; 
   font-weight: bold;
   color:red;
-  padding-top:60px;
+  padding:20px 0 20px 0;
   font-family: 'Hiragino Kaku Gothic ProN';
 }
 /*a:visited{
@@ -116,7 +116,7 @@ a:hover {
 /****************     header     ****************/
 
 .header-top {
-  height: 50px;
+  height: 35px;
   top: 0;
   width: 100%;
   background-color: white;
@@ -133,11 +133,11 @@ a:hover {
 .header-logo {
   float: left;
 /*  padding-left: 260px;*/
-  margin-top: 13px;
+  margin-top: 7px;
   color: white;
   font-size: 22px;
     font-family :Verdana,arial,helvetica,clean,sans-serif;
-
+margin-left:100px;
 }
 
 .header-menus{
@@ -150,7 +150,7 @@ a:hover {
 }
 .header-menus li{
   float: right;
-  line-height: 50px;
+  line-height: 35px;
   font-size: 13px;
   color: grey;
   padding-left: 0;
@@ -158,7 +158,7 @@ a:hover {
   position: relative;
   list-style: none;
 	z-index:100;
-	margin-right:10px;
+	margin-right:20px;
 	margin-left:0px;
 }
 .header-menus a {
@@ -187,17 +187,17 @@ a:hover {
   background-color:white;
   margin:0 auto;
 /*  height:780px;*/
- min-height: 800px;
+/* min-height: 800px;*/
   
 }
 .resister-area {
   background-color:#edffd3;
-  width:1000px;
+  width:800px;
   margin:auto ;
-  padding:140px 0;
+  padding:70px 0;
   text-align:center;
- margin-top:50px;
- margin-bottom:50px;
+
+ margin-bottom:20px;
 }
 .inner-area {
   width:500px;
@@ -210,10 +210,10 @@ a:hover {
 .input-area {
   background-color:white;
   margin:auto ;
-  font-size:20px;
+/*  font-size:20px;*/
  }
  .text-area {
-  width:500px;
+  width:350px;
   height:100px;
   margin:0 auto;
   font-size:20px;
@@ -245,7 +245,7 @@ a:hover {
   color:#01960b;
   background-color:#c2ead1;
   border-radius: 5%;
-  margin:58px 0px 0px 0;
+  margin:38px 0px 0px 0;
   text-align:center;
 }
 .errors  {
@@ -674,9 +674,10 @@ img.post-image {
 /****************************************************************/
 .show-index {
   width:100%;
-  font-size: 30px;
+  font-size: 25px;
   color:#565656;
   margin-top:-15px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
 .prof {
   width: 100%;
@@ -1014,49 +1015,50 @@ ul.ultag li:hover span {
 .index-user {
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-   width:350px;
-   height:300px;
+ /*  width:350px;*/
+ /*  height:300px;*/
   margin:0 auto;
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 35px 20px 0px;
-  float:left;
+  margin: 20px 20px 20px 0px;
+  float:right;
   list-style: none;
 }
 .index-inner-area {
-  width:630px;
+  width:450px;
   margin:0 auto;
   padding: 0;
   text-align:center;
   background-color:white;
-  float: left;
+  float: right;
    box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
   margin: 20px 0px 20px 0px;
-  height:450px;
+  height:400px;
 }
 .serch-main {
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-  width:400px;
+  width:230px;
   margin:0 auto;
   padding: 0;
   text-align:center;
   background-color:white;
-  margin: 20px 0px 20px 20px;
+  margin: 0px 0px 20px 0px;
   float:left;
 }
 
 .tag-serch-main {
    box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
-  width:400px;
+  width:280px;
   padding: 0;
   text-align:center;
   background-color:white;
-  float:left;
-  margin: 0px 0px 0 20px;
+  float:right;
+  margin: 20px 0px 0 20px;
+  height:400px;
 
 }
 
@@ -1069,11 +1071,13 @@ ul.ultag li:hover span {
 }
 table.follow-table {
   border-top:10px;
-  font-size:24px;
+  font-size:18px;
   font-weight: bold;
   text-align: center;
   margin: 0 auto;
   color: #565656;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+ 
 }
 
 .fa-top {
@@ -1131,14 +1135,14 @@ clear: both;
 margin-bottom:20px;
 }
 .index-container-cover {
-  width:1600px;
+  width:1000px;
   height:630px;
   margin:0 auto;
   
 
 }
 .index-container {
-    width:90%;
+    width:100%;
     height:520px;
     margin:0 auto;
  
@@ -1150,8 +1154,6 @@ margin-bottom:20px;
   flex-direction: column;
   min-height: 100vh;
 
- 
- 
 }
 footer {
   margin-top: auto;
