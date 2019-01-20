@@ -530,6 +530,7 @@ img.post-image {
   min-height:750px;
   margin: auto;
   padding-bottom: 5px;
+  background-color:#edffd3;
 }
 .user-profile {
   width:250px;
@@ -974,6 +975,10 @@ font-size: 30px;
 }
 
 #user_remove_img {
+  width:20px;
+  height:20px;
+}
+#post_remove_postimage {
   width:20px;
   height:20px;
 }
