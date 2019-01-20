@@ -931,7 +931,7 @@ margin:0 auto;
 ul.ultag li a {
   position: relative;
   display: inline-block;
-  max-width: 100px;
+  max-width: 200px;
   height: 28px;
   line-height: 28px;
   padding: 0 1em;

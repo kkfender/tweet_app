@@ -102,11 +102,11 @@
                       <%end%>
                     <%end%>
                     <div class="tagf">   <li><p class="itext"><%= post.like_count %></li></p></div>  
-                    <%if post.user_id==@current_user.id%>
-                      <%=link_to(new_return_path(p_id: post.id),class:"tagf")do%>
+                    <%=link_to(new_return_path(p_id: post.id),class:"tagf")do%>
                         <li><p class="itext"><i class="fas fa-reply"></i>返信</p></li>
                       <%end%>
-                      <%=link_to("/posts/#{post.id}/edit",class:"tagf")do%>
+                    <%if post.user_id==@current_user.id%>
+                        <%=link_to("/posts/#{post.id}/edit",class:"tagf")do%>
                         <li><p class="itext">    <i class="fas fa-edit"></i>編集</p></li>
                       <%end%>
                       <%=link_to("/posts/#{post.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？"},class:" tagf" ) do%>
