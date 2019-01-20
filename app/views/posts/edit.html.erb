@@ -13,7 +13,7 @@
              <%= image_tag @posts.postimage.url, id: :img_prev if @posts.postimage? %><br>
             </div>
            <%= f.check_box :remove_postimage %>画像を削除する<br><br>
-          <%= f.file_field :img, id: :users_img %><br><br>
+          <%= f.file_field :postimage, id: :post %><br><br>
     <script type="text/javascript">
 $(function() {
  function readURL(input) {
