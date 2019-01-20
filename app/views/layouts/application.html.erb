@@ -11,89 +11,70 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
   <body>
-      <div id="wrapper">
-
-    <div class="header-top">
-      <div class="header-inner">
-      <header>
-         <div class="header-logo">
-           <%= link_to("/")do %>
+    <div id="wrapper">
+      <div class="header-top">
+        <div class="header-inner">
+          <header>
+           <div class="header-logo">
+             <%= link_to("/")do %>
              <p class="itext"> <i class="fas fa-leaf"></i>TweetApp(仮)</p></li>
-                  <%end%>
-         </div>
-           <ul class="header-menus" style="list-style:none;">
-             <%current_user=User.find_by(id: session[:user_id])%>
-               <%if current_user%>       <!--ログイン状態で表示-->
-          
-             <%= link_to("/users/#{current_user.id}",class:"button")do%>
-            <li> <p class="itext">  <i class="far fa-user"></i><%=current_user.name%> </p></li>
-                  <%end%>
-              
-                 <%= link_to("/posts/new",class:"button")do%>
-              <li> <p class="itext">  <i class="fas fa-pen"></i>new </p></li>
-                  <%end%>
-               
-               
-             
-             
-               
-                 <%= link_to("/posts/index",class:"button")do%>
-                   <li> <p class="itext">  <i class="far fa-file-alt"></i>posts </p></li>
-                  <%end%>
-              
-               
-                 <%= link_to("/users/index",class:"button")do%>
-             <li> <p class="itext"> <i class="fas fa-users"></i>users </p></li>
-                  <%end%>
-           
-              
-                   <%=link_to("/logout",{method: :post})do%>
-             <li> <p class="itext"> <i class="fas fa-sign-out-alt"></i>logout </p></li>
-              <%end%>
-           
-             <% else %>                         <!--ログアウト状態で表示-->
-           
-             <%= link_to("/login",class:"button")do%>
-            <li> <p class="itext">  <i class="fas fa-sign-in-alt"></i>login </p></li>
-               <%end%>
-           
-          
-             <%= link_to("/about",class:"button")do%>
-           <li> <p class="itext">  <i class="fas fa-male"></i>about </p></li>
-              <%end%>
-          
-           
-             <%= link_to("/signup",class:"button")do%>
-             <li> <p class="itext">  <i class="fas fa-user-plus"></i>new </p></li>
-              <%end%>
-           
              <%end%>
-           </ul>
-    </div>
-    </div>
-      </header>
-        <div class="flash"> 
-          <%if flash[:notice]%>
-            <%=flash[:notice]%><br>
-          <%end%>
+           </div>
+             <ul class="header-menus" style="list-style:none;">
+               <%current_user=User.find_by(id: session[:user_id])%>
+               <%if current_user%>       <!--ログイン状態で表示-->
+                 <%= link_to("/users/#{current_user.id}",class:"button")do%>
+               <li> <p class="itext">  <i class="far fa-user"></i><%=current_user.name%> </p></li>
+                 <%end%>
+                 <%= link_to("/posts/new",class:"button")do%>
+               <li> <p class="itext">  <i class="fas fa-pen"></i>new </p></li>
+                 <%end%>
+                 <%= link_to("/posts/index",class:"button")do%>
+               <li> <p class="itext">  <i class="far fa-file-alt"></i>posts </p></li>
+                 <%end%>
+                 <%= link_to("/users/index",class:"button")do%>
+               <li> <p class="itext"> <i class="fas fa-users"></i>users </p></li>
+                 <%end%>
+                 <%=link_to("/logout",{method: :post})do%>
+               <li> <p class="itext"> <i class="fas fa-sign-out-alt"></i>logout </p></li>
+                 <%end%>
+               <% else %>                         <!--ログアウト状態で表示-->
+               <%= link_to("/login",class:"button")do%>
+               <li> <p class="itext">  <i class="fas fa-sign-in-alt"></i>login </p></li>
+               <%end%>
+               <%= link_to("/about",class:"button")do%>
+                 <li> <p class="itext">  <i class="fas fa-male"></i>about </p></li>
+               <%end%>
+               <%= link_to("/signup",class:"button")do%>
+                 <li> <p class="itext">  <i class="fas fa-user-plus"></i>new </p></li>
+               <%end%>
+             <%end%>
+             </ul>
         </div>
+      </div>
+          </header>
+            <div class="flash"> 
+              <%if flash[:notice]%>
+              <%=flash[:notice]%><br>
+              <%end%>
+            </div>
   
           <%= yield %>
-<footer>
-         <div class="footer">
-           <div class="footer-2">
-           <nav class="nav">
-              <ul>
-                <li>TweetAppについて</li>
-                <li>お問い合わせ</li>
-                <li>利用規約</a></li>
-              </ul>
-          </nav>
-            <div class="link">© 2019 tweetapp
-           </div>
-           </div>
-        </footer>
-        </div>
-                </div>
+         <footer>
+           <div class="footer">
+             <div class="footer-2">
+               <nav class="nav">
+                  <ul>
+                    <li>TweetAppについて</li>
+                    <li>お問い合わせ</li>
+                    <li>利用規約</a></li>
+                  </ul>
+              </nav>
+                <div class="link">© 2019 tweetapp
+               </div>
+             </div>
+          </footer>
+            </div>
+      </div>
   </body>
 </html>

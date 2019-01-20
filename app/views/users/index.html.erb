@@ -1,24 +1,22 @@
 <div class="user-list-cover">
-<div class="user-list">
-  <%= will_paginate %>
-    <% @users.each do |user| %>
-      <div class="user-profile">
-        <div class="user-list-image">
-          <%= image_tag user.img.url,:class => "user-image" %>
-        </div>
+  <div class="user-list">
+    <%= will_paginate %>
+      <% @users.each do |user| %>
+        <div class="user-profile">
+          <div class="user-list-image">
+            <%= image_tag user.img.url,:class => "user-image" %>
+          </div>
           <div class="prof">
             <%=link_to(user.name,"/users/#{user.id}",class:"show-index")%>
           </div>
-            <div class="user-profile-page">
-             <div class="show-profile"> <%=user.profile%></div>
-           </div> 
-      </div>
- 
-
-   
-<% end %>
-  <%= will_paginate %>
-</div>
+          <div class="user-profile-page">
+            <div class="show-profile"> <%=user.profile%>
+            </div>
+          </div> 
+        </div>
+       <% end %>
+    <%= will_paginate %>
+  </div>
 </div>
  
  

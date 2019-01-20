@@ -1,24 +1,13 @@
-
- 
-  
-
-
-
-
- <div class="new-main">
-  <div class="resister-area">
-    <div class="inner-area">
-      <p font-size="20px">一言コメント</p>
-        
-       
-           <%= form_for @returns,  url: returns_path do |f| %> 
-            <%= f.text_field :returncontent ,placeholder:"8文字以内"%> 
-          <%= f.hidden_field :post_id, value: params[:p_id] %>
-          <br><br>
-            
-           <%=f.submit value:"投稿", class:"button1"%>
-          <%end%>
-          
+<div class="new-main">
+ <div class="resister-area">
+   <div class="inner-area">
+     <p font-size="20px">一言コメント</p>
+     <%= form_for @returns,  url: returns_path do |f| %> 
+       <%= f.text_field :returncontent ,placeholder:"8文字以内"%> 
+       <%= f.hidden_field :post_id, value: params[:p_id] %>
+       <br><br>
+     <%=f.submit value:"投稿", class:"button1"%>
+     <%end%>
     </div>
   </div>
 </div>

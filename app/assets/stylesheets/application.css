@@ -59,7 +59,7 @@ input:focus {
 font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
 p {
-  font-size:30px;
+  font-size:20px;
   margin:0 auto;
 }
 .inp p {
@@ -541,7 +541,7 @@ height: 50px;
   min-height:70px;
   margin:0;
   float:left;
-  font-size:15px;
+  font-size:20px;
   word-break : break-all;
 }
 .post-index-inner {

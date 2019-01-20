@@ -2,25 +2,20 @@
   <div class="resister-area">
     <div class="inner-area">
       <p font-size="20px">投稿する</p>
-        
-        
-            <%@posts.errors.full_messages.each do |message| %>
-             <p class="errors"><%=message%></p>
-         
-          <%end%>
+        <%@posts.errors.full_messages.each do |message| %>
+          <p class="errors"><%=message%></p>
+        <%end%>
           <%= form_for @posts, url: posts_path do |f| %>
-           <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"140字以内です"%><br>
-            <p class="inp">画像</p>
-           <%= image_tag @posts.postimage.url %><br>
-
-           <%= f.file_field :postimage, id: :users_img %><br><br>
-           
-            <p class="inp">タグ</p>
-            <%= text_field_tag 'post[tag_list]', @posts.tag_list.join(','),placeholder:"カンマ区切りで複数タグ" %><br><br>
-            
-           <%=f.submit value:"投稿", class:"button1"%>
-          <%end%>
+          <%=f.text_area :content, class: "text-area",  rows:"2", cols:"60", wrap:"hard", placeholder:"140字以内です"%><br>
           
+          <p class="inp">画像</p>
+          <%= image_tag @posts.postimage.url %><br>
+          <%= f.file_field :postimage, id: :users_img %><br><br>
+        
+          <p class="inp">タグ</p>
+          <%= text_field_tag 'post[tag_list]', @posts.tag_list.join(','),placeholder:"カンマ区切りで複数タグ" %><br><br>
+          <%=f.submit value:"投稿", class:"button1"%>
+          <%end%>
     </div>
   </div>
 </div>

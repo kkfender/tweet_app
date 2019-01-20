@@ -1,26 +1,24 @@
 <div class="new-main">
   <div class="resister-area">
-  <div class="inner-area">
-    <h1>アカウント編集</h1>
-       <% @users.errors.full_messages.each do |message| %>
+    <div class="inner-area">
+      <h1>アカウント編集</h1>
+        <% @users.errors.full_messages.each do |message| %>
          <p class="errors">
            <%= message %>
          </p>
-       <% end %>
+        <% end %>
           <%= form_for @users ,url: user_path,class:"edit-image"  do |f| %>
-           <p class="standard-font">ユーザー名</p>
+            <p class="standard-font">ユーザー名</p>
             <%= f.text_field :name %><br>
+            
             <p class="standard-font">メールアドレス</p>
             <%= f.email_field :email %><br>
-            <div class="field">
-            <%#= image_tag @users.img.url if @users.img? %><br>
-            
-            <%#= f.hidden_field :img_cache %>
-            <div class ="before-user-image">
-           <%= image_tag @users.img.url, id: :img_prev if @users.img? %><br>
-            </div>
-           <%= f.check_box :remove_img %>画像を削除する<br><br>
-          <%= f.file_field :img, id: :users_img %><br><br>
+              <div class="field"><br>
+                <div class ="before-user-image">
+                  <%= image_tag @users.img.url, id: :img_prev if @users.img? %><br>
+                </div>
+                  <%= f.check_box :remove_img %>画像を削除する<br><br>
+                  <%= f.file_field :img, id: :users_img %><br><br>
 <script type="text/javascript">
 $(function() {
  function readURL(input) {
@@ -38,18 +36,10 @@ $(function() {
 });
 </script>
               </div>
-                   
-    <p class="standard-font">プロフィール</p>
-            <%= f.text_area :profile ,class: "text-edit-area",placeholder:"プロフィール(80文字以内)"%><br><br>
-            <%= f.submit "保存", class: "button1" %><br>
-          <% end %>
-
-       
-    
-    
-        
-    
-    
+  <p class="standard-font">プロフィール</p>
+    <%= f.text_area :profile ,class: "text-edit-area",placeholder:"プロフィール(80文字以内)"%><br><br>
+    <%= f.submit "保存", class: "button1" %><br>
+    <% end %>
     </div>
   </div>
 </div>

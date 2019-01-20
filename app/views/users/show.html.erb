@@ -1,117 +1,101 @@
 <div class="prof-show-container">
   <div class="prof-show-detail">
-     
     <div class="show-image">
-       <% if  @users.img.present? %>
-       <%= image_tag @users.img.url,:class => "user-image" %>
+      <% if  @users.img.present? %>
+        <%= image_tag @users.img.url,:class => "user-image" %>
       <% end%>
-      
-        <%if @current_user==@users%>
-        <%elsif @current_user.following? @users%>  <!--もしフォろーしてたら-->
-          <div class="back-message"> <%=@users.name%>をフォローしています</div>
-        <%end%>
+      <%if @current_user==@users%>
+      <%elsif @current_user.following? @users%>  <!--もしフォろーしてたら-->
+        <div class="back-message"> <%=@users.name%>をフォローしています</div>
+      <%end%>
+    </div>
+      <div class="show-users-identfy">
+        <div class="user-name"><%= "#{@users.name}" %>
+        </div>
+      </div>
+        <div class="user-show-profile"> <%=@users.profile%></div>
+          <div class="follow-info">
+            <ul  class="show-menus">
+              <li>
+                <%=link_to("/users/#{@users.id}/edit",class:"tagf")do%>
+                <p class="itext">    <i class="fas fa-edit"></i>アカウント編集 </p>
+                <%end%>
+              </li>
+              <li>
+                <%=link_to("/users/#{@users.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？"},class:" tagf" ) do%>
+                <p class="itext"><i class="far fa-trash-alt"></i>削除</p>
+                <%end%>
+              </li>
+              <li>フォロー</li>
+              <li><%=@users.follow_count%>人</li>
+              <li>フォロワー </li>
+              <li><%=@users.followers_count%>人</li>
+                <%=render"users/follow"%>     <!--followのパーシャル-->
+              <li><span class="fa fa-heart like-btn-unlike"></span>
+              </li>
+              <li><%=Like.where(post_id: @users.id,post_id: @postall).count%>
+              
+                 
+              </li> 
+            </ul>
           </div>
-            <div class="show-users-identfy">
-              <div class="user-name"><%= "#{@users.name}" %>
-              </div>
-            </div>
-            
-           <div class="user-show-profile"> <%=@users.profile%></div>
-          
-                <div class="follow-info">
-                  <ul  class="show-menus">
-                     <li>
-                        <%=link_to("/users/#{@users.id}/edit",class:"tagf")do%>
-                   <p class="itext">    <i class="fas fa-edit"></i>アカウント編集 </p>
-                        <%end%>
-                     </li>
-                      <li>
-                        <%=link_to("/users/#{@users.id}/destroy",method: "post",data: {confirm: "本当に削除しますか？"},class:" tagf" ) do%>
-                   <p class="itext"><i class="far fa-trash-alt"></i>削除</p>
-                        <%end%>
-                        
-                      </li>
-                   <li>フォロー</li>
-                   <li><%=@users.follow_count%>人</li>
-                   <li>フォロワー </li>
-                   <li><%=@users.followers_count%>人</li>
-                     <%=render"users/follow"%>     <!--followのパーシャル-->
-                     <li><span class="fa fa-heart like-btn-unlike"></span>
-                     </li>
-                    <li><% likecount=Like.where(post_id: @users.id,post_id: @postall).count%>
-                        <%=likecount-1 unless likecount==0%>
-                    </li> 
-                   </ul>
+        </div>
+        <div class="main-container">   <!--main-->
+          <div class="mc-list">         <!--↓-->
+            <div class="tabs">
+              <input id="all" type="radio" name="tab_item" checked>
+              <label class="tab_item" for="all">
+              <p class="itext">     <i class="far fa-comment"></i> つぶやき </p></label>
+              <input id="programming" type="radio" name="tab_item">
+              <label class="tab_item" for="programming">
+              <p class="itext">     <i class="fas fa-users"></i> フォロー </p></label>
+              <input id="design" type="radio" name="tab_item">
+              <label class="tab_item" for="design">
+               <p class="itext">     <i class="fas fa-users"></i> フォロワー </p></label>
+              <div class="tab_content" id="all_content">
+                <div class="tab_content_description">
+                  <p class="c-txtsp"><%=render"users/tweet"%></p>
                 </div>
-  </div>
-   <div class="main-container">   <!--main-->
-      <div class="mc-list">         <!--↓-->
-    <div class="tabs">
-<input id="all" type="radio" name="tab_item" checked>
-<label class="tab_item" for="all">
-  
-  <p class="itext">     <i class="far fa-comment"></i> つぶやき </p></label>
-  
-
- <input id="programming" type="radio" name="tab_item">
- 
-<label class="tab_item" for="programming">
-
- <p class="itext">     <i class="fas fa-users"></i> フォロー </p></label>
-
-
-<input id="design" type="radio" name="tab_item">
-
-<label class="tab_item" for="design">
-
- <p class="itext">     <i class="fas fa-users"></i> フォロワー </p></label>
-
-
-<div class="tab_content" id="all_content">
-<div class="tab_content_description">
-<p class="c-txtsp"><%=render"users/tweet"%></p>
+              </div>
+                <div class="tab_content" id="programming_content">
+                  <div class="tab_content_description">
+                    <p class="c-txtsp"><%=render"users/follows"%></p>
+                  </div>
+                </div>  
+              <div class="tab_content" id="design_content">
+                <div class="tab_content_description">
+                  <p class="c-txtsp"> <%=render"users/followd"%>  </p>
+                </div>
+              </div>
+      </div> 
+    </div>
+  </div><
 </div>
-</div>
-
-<div class="tab_content" id="programming_content">
-<div class="tab_content_description">
-<p class="c-txtsp"><%=render"users/follows"%></p>
-</div>
-</div>
-
-<div class="tab_content" id="design_content">
-<div class="tab_content_description">
-<p class="c-txtsp"> <%=render"users/followd"%>  </p>
-</div>
-</div>
-</div> 
-  </div>
-  
-</div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
