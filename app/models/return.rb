@@ -1,7 +1,7 @@
 class Return < ApplicationRecord
-   validates :returncontent,{presence: true,length:{maximum: 8}}
+  validates :returncontent,{presence: true,length:{maximum: 8}}
   belongs_to :post
-   belongs_to :user
+  belongs_to :user
 
   def user
     return  User.find_by(id: self.user_id)

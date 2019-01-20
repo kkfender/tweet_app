@@ -5,23 +5,22 @@ class PostsController < ApplicationController
  
   def index
      
-     if  params[:id].present?
+    if  params[:id].present?
         @posts = Post.find_by(id: params[:id])
-      else
-     @post=Post.new
-   end
+    else
+      @post=Post.new
+    end
     
-     @returns = Return.all
-     @tags = ActsAsTaggableOn::Tag.most_used
+    @returns = Return.all
+    @tags = ActsAsTaggableOn::Tag.most_used
   
-   if params[:tagsearch]
+    if params[:tagsearch]
      @posts =Post.tagged_with( params[:tagsearch])
-      params[:tagsearch]=nil
-   
-  else
+     params[:tagsearch]=nil
+    else
      @posts = Post.search(params[:search]).order(created_at: :desc) 
      params[:search]=nil
-  end 
+    end 
   end  
 
   def show
@@ -36,30 +35,25 @@ class PostsController < ApplicationController
   end  
   
   def create
-   @posts =Post.new(post_params)
-   if  @posts.save
-      redirect_to("/posts/index")
-      flash[:notice]="投稿を作成しました"
+    @posts =Post.new(post_params)
+    if @posts.save
+       redirect_to("/posts/index")
+       flash[:notice]="投稿を作成しました"
     else 
-      render("posts/new")   
+       render("posts/new")   
     end
   end
   
   def edit
     @posts=Post.find_by(id: params[:id])
-  
-    
   end
   
   def update
     @posts=Post.find_by(id: params[:id])
-      if  @posts.update_attributes(post_params)
+    if  @posts.update_attributes(post_params)
    # raise.params.inspect
-
-    
-      
-     flash[:notice]="投稿を編集しました"
-    redirect_to("/posts/index")
+      flash[:notice]="投稿を編集しました"
+      redirect_to("/posts/index")
     else
       render("posts/edit")   
     end
@@ -67,14 +61,11 @@ class PostsController < ApplicationController
   
   def destroy
     @posts=Post.find_by(id: params[:id]) 
-    
-   if @posts.destroy
-     @posts.tag_list.remove(@posts.all_tags_list)
-   
-    redirect_to("/posts/index")
-    flash[:notice]="投稿を削除しました"
-   
- end
+    if @posts.destroy
+      @posts.tag_list.remove(@posts.all_tags_list)
+      redirect_to("/posts/index")
+      flash[:notice]="投稿を削除しました"
+    end
   end 
   
   def ensure_correct_user
@@ -85,16 +76,11 @@ class PostsController < ApplicationController
     end
   end
   
-    private
+  private
+ 
   def post_params
-
       params.require(:post).permit(
       :content, :user_id, :postimage,:remove_postimage,:interests,:tag_list)
       .merge(user_id: @current_user.id)
-
-
-    end
-    
-    
+  end
 end
- 

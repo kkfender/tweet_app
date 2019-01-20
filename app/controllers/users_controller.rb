@@ -5,36 +5,31 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit,:update,:destroy]}
   
   def index
-   
     @users = User.paginate(:page => params[:page], :per_page => 6)
   end
   
   def show
-    
     @users = User.find(params[:id])
     @posts = Post.find_by(user_id: params[:id])
     @postall =Post.where(user_id: @users.id)
     @returns = Return.all
     if @posts !=nil
       @likes_count = Like.where(post_id: @posts.id).count
-      
     end
   end
  
   def new
-     @users = User.new
+    @users = User.new
   end 
   
   def create        
     #raise.params.inspect
     @users =User.new(user_params)
-  if @users.save
+    if @users.save
       session[:user_id]=@users.id
-      
       flash[:notice]="ユーザー登録を完了しました"
       redirect_to users_path(@users) 
     else
-      
       render "users/new"
     end  
   end  
@@ -45,7 +40,6 @@ class UsersController < ApplicationController
   def login
     @users = User.find_by(email: params[:session][:email].downcase)
     if @users && @users.authenticate(params[:session][:password])
-
       session[:user_id]=@users.id
       flash[:notice]="ログイン成功しました"
       redirect_to("/users/index")
@@ -64,24 +58,19 @@ class UsersController < ApplicationController
   def update
      #raise.params.inspect
     @users = User.find_by(id: params[:id])
-    
     if  @users.update_attributes(user_params)
-  
       flash[:notice] = "ユーザー情報を編集しました"
       redirect_to("/users/#{@users.id}")
-     else
+    else
       render("users/edit")  
-     end
     end
-   def destroy
-
-
+  end
  
- 
-   User.find(params[:id]).destroy
-   flash[:notice] = "ユーザーを削除しました"
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:notice] = "ユーザーを削除しました"
     redirect_to ("/login")
-   end
+  end
  
   def likes 
     @users = User.find_by(id: params[:id])
@@ -93,7 +82,7 @@ class UsersController < ApplicationController
   end
     
   def ensure_correct_user
-     @users=User.find_by(id: params[:id])
+    @users=User.find_by(id: params[:id])
     if @users.id !=@current_user.id
       flash[:notice]="権限がありません"
       redirect_to("/posts/index")
@@ -116,20 +105,21 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@users.name}さんをフォローを解除しました"
   end
   
-    def tag_list
-    # order('count DESC')でカウントの多い順にタグを並べています
+  def tag_list
+   # order('count DESC')でカウントの多い順にタグを並べています
     @tags = User.tag_counts_on(:tags).order('count DESC')
   end
+  
   def tag_list
-end
+  end
+  
   private
+  
   def user_params
-
       params.require(:user).permit(
       :name, :email, :password, 
       :password_confirmation,:img,:image_cache,:remove_img,:tag_list,:profile)
-
   end
- end
+end
  
 
