@@ -18,10 +18,6 @@ body {
   min-height: 1vh;
   margin: 0;
   height: 100%;
-/* width:2075px;*/
-/*background-color:#edffd3;*/
-  
-
 }
 header {
   margin:0 auto;
@@ -31,15 +27,10 @@ h1,h2,h3 {
   font-size:25px;
   font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
-/*p {
-  font-size:25px;
-  font-family:Verdana,arial,helvetica,clean,sans-serif;
-}*/
 a {
   text-decoration: none;
    color:#8899a6;
 }
-
 input {
   -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
   -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
@@ -48,7 +39,6 @@ input {
   height:30px;
 }
 .input {
-
   width:300px;
   height:30px;
 }
@@ -67,18 +57,13 @@ p {
 }
 /****************     main      ****************/
 .main {
-/*  margin-top:50px;*/
-background-color:#edffd3;
-
+  background-color:#edffd3;
 }
 .main-top {
-/*background-image: url("/top.jpg");*/
-background-size:cover;
-margin:0 auto;
-width:60%;
-height:50%;
-margin-top:150px;
-
+  margin:0 auto;
+  width:60%;
+  height:50%;
+  margin-top:150px;
 }
 .main-inner {
   text-align: center;
@@ -88,9 +73,6 @@ margin-top:150px;
   background-color: white;
   border-radius: 5% ;
   opacity: 0.5;
-  /*top:10%;*/
- /* position: relative*/
-
 }
 .infomation {
   font-size:20px; 
@@ -99,9 +81,6 @@ margin-top:150px;
   padding:20px 0 20px 0;
   font-family: 'Hiragino Kaku Gothic ProN';
 }
-/*a:visited{
-  color: orange;
-}*/
 a:hover {
   filter: alpha(opacity=70);
   -moz-opacity: 0.7;
@@ -110,7 +89,6 @@ a:hover {
 .post-index,.post-detail,.post-edit {
   font-size:15px;
   font-family :Verdana,arial,helvetica,clean,sans-serif;
-
 }
 
 /****************     header     ****************/
@@ -122,9 +100,9 @@ a:hover {
   background-color: white;
   margin:0 auto;
   padding:0;
-   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
- position:fixed;
- z-index: 100;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  position:fixed;
+  z-index: 100;
 }
 .header-inner {
   width:100%;
@@ -132,21 +110,16 @@ a:hover {
 }
 .header-logo {
   float: left;
-/*  padding-left: 260px;*/
   margin-top: 7px;
   color: white;
   font-size: 22px;
-    font-family :Verdana,arial,helvetica,clean,sans-serif;
-margin-left:100px;
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
+  margin-left:100px;
 }
-
 .header-menus{
-/*float:left;*/
   margin:0 auto;
- /* padding-right: 220px;*/
   font-size: 10px;
-    font-family :Verdana,arial,helvetica,clean,sans-serif;
-
+  font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
 .header-menus li{
   float: right;
@@ -154,7 +127,6 @@ margin-left:100px;
   font-size: 13px;
   color: grey;
   padding-left: 0;
-
   position: relative;
   list-style: none;
 	z-index:100;
@@ -167,18 +139,14 @@ margin-left:100px;
 .header-menus li a {
   display: block;
   width: 100px;
- /* height: 35px;*/
   text-align: center;
   color: black;
- 
   transition: 0.5s;
   text-decoration: none;
   box-sizing: border-box;
   font-size: 18px;
- 
 }
 
-  
  /******************** new ********************/
 
 .new-main {
@@ -186,9 +154,6 @@ margin-left:100px;
   margin:0;
   background-color:white;
   margin:0 auto;
-/*  height:780px;*/
-/* min-height: 800px;*/
-  
 }
 .resister-area {
   background-color:#edffd3;
@@ -196,8 +161,7 @@ margin-left:100px;
   margin:auto ;
   padding:70px 0;
   text-align:center;
-
- margin-bottom:20px;
+  margin-bottom:20px;
 }
 .inner-area {
   width:500px;
@@ -210,7 +174,6 @@ margin-left:100px;
 .input-area {
   background-color:white;
   margin:auto ;
-/*  font-size:20px;*/
  }
  .text-area {
   width:440px;
@@ -239,7 +202,6 @@ margin-left:100px;
 
 .flash {
   font-family :Verdana,arial,helvetica,clean,sans-serif;
-
   width:100%;
   font-size :25px;
   color:#01960b;
@@ -270,7 +232,7 @@ margin-left:100px;
   border-radius: 10%;
 }
 .button2 {
-   font-size:15px;
+  font-size:15px;
   font-family :Verdana,arial,helvetica,clean,sans-serif;
   padding: 6px;
   background-color: #ff4500;
@@ -292,7 +254,6 @@ margin-left:100px;
   color: white !important;
   border-style: none;
   border-radius: 5%;
-  
 }
 .button3:hover {
   background-color: #f9cfed;
@@ -317,7 +278,6 @@ margin-left:100px;
 .prof-show-container {
   width: 1000px;
   height:auto;
- 
   margin: auto;
   margin-top:50px;
 }
@@ -338,8 +298,8 @@ margin-left:100px;
   background-color :white;
   margin: auto;
   position: relative;
-   box-shadow: 0 2px 10px #c1ced7;
-   margin-top:-5px;
+  box-shadow: 0 2px 10px #c1ced7;
+  margin-top:-5px;
 }
 .show-users-identfy {
   float:left;
@@ -348,9 +308,7 @@ margin-left:100px;
 .main-container {
   width: 1000px;
   height:auto;
-/*  background-color: lightcyan ;*/
   margin: auto;
-/*  padding-bottom: 5px;*/
 }
 .show-image {
   float:left;
@@ -361,10 +319,7 @@ margin-left:100px;
   text-align:center;
 }
 .mc-list {
- 
- /* float:left;*/
   width: 1000px;
- 
   padding: 15px 0 0 0;
   overflow: hidden;
 }
@@ -419,8 +374,6 @@ margin-left:100px;
 /*****************      folloes           ******************/
 .follow-container {
   width:100%;
- /* margin-left:9px;*/
-  
   float:left;
   padding-top:10px;
   margin-top:-12px;
@@ -442,12 +395,11 @@ margin-left:100px;
 img.user-image {
   width: 100px;
   height:100px;
-    border-radius: 20%;
+  border-radius: 20%;
   box-shadow: 0 2px 6px #c1ced7;
   margin: 20px 0 10px;
   text-align: center;
 }
-
 .user-index-box {
   height: 250px;
   width: 250px;
@@ -479,48 +431,43 @@ img.user-image {
   height:auto;
  width:100%;
   margin: auto;
- 
 }
 .post-index-cover {
   width:800px;
   margin:auto;
   min-height: 50px;
-height: auto !important;
-height: 50px;
+  height: auto !important;
+  height: 50px;
  }
 .post-main {
   width:80%;
   background-color: white;
   margin:0 auto;
-
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
   min-height: 50px;
-height: auto !important;
-height: 50px;
-clear: both;
+  height: auto !important;
+  height: 50px;
+  clear: both;
 }
 .post-main-box {
- 
-  padding: 10px;
+   padding: 10px;
   border: 1px solid #aaa;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
   align-items: center;
   min-height: 50px;
-height: auto !important;
-height: 50px;
- display: flex;
- position: relative;
+  height: auto !important;
+  height: 50px;
+  display: flex;
+  position: relative;
 
   /* 横並びに表示する */
   flex-direction: row;
 
   /* 画面幅に収まらない場合は折り返す */
   flex-wrap: wrap;
-
-
 }
 
 .post-index-img {
@@ -546,28 +493,23 @@ height: 50px;
 }
 .post-index-inner {
   position:relative;
- padding: 10px;
+  padding: 10px;
   width:600px;
   float:left;
   font-size: 20px;
   margin-left: 130px;
-  
   min-height: 130px;
-height: auto !important;
-height: 130px;
+  height: auto !important;
+  height: 130px;
 }
 .show-menus li{
   float:left; 
    bottom:0;
    padding-left: 10px;
-   
 }
 .post-index-action {
- 
   float:left;
-/*  position: absolute;*/
- margin-bottom:-20px;
-  
+  margin-bottom:-20px;
 }
 .action-menus li {
   float:left;
@@ -577,7 +519,6 @@ height: 130px;
 }
 img.post-image {
   text-align:center;
-  
   max-width:400px ;
   max-height:350px ;
   margin:  0 0 10px;
@@ -587,7 +528,6 @@ img.post-image {
 .user-list {
   width: 1000px;
   min-height:750px;
-/*  background-color: white ;*/
   margin: auto;
   padding-bottom: 5px;
 }
@@ -608,7 +548,6 @@ img.post-image {
   margin-bottom: -20px;
 }
 .post-user-list-image {
- 
   height:150px;
   text-align: center;
   position: relative;
@@ -622,32 +561,16 @@ img.post-image {
  text-align: center;
  vertical-align: middle;
  margin: auto;
-   font-family :Verdana,arial,helvetica,clean,sans-serif;
-
-  
+ font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
 .pagination a{
   width:20%;
- 
-  
   margin:auto;
   text-align: center;
 }
 .pagination a:hover {
   background-color: #eaeaea;
 }
-/*
-.previous_page  {
-  border-right: 1px solid   #eaeaea;
-
-}
-.current {
-  border-right: 1px solid   #eaeaea;
-
-}
-.next_page {
-  
-}*/
 .back-message {
   background-color: #eaebed;
   color:#838484;
@@ -663,7 +586,6 @@ img.post-image {
   font-family: Segoe UI;
 }
 .follow-info {
- 
   height:50px;
   float:left;
   position: absolute;
@@ -700,10 +622,8 @@ img.post-image {
   background-color:white;
   float:left;
   z-index:50;
-  
 }
 .nav {
-  
   margin:-15px;
 }
 .footer li {
@@ -711,10 +631,8 @@ img.post-image {
   list-style:none;
   padding-left:20px;
   font-size:15px;
- 
 }
 .footer-2 {
-  
   height:auto;
 }
 /******************  tabs  **********************/
@@ -725,7 +643,6 @@ img.post-image {
 /*タブ切り替え全体のスタイル*/
 .tabs {
   margin-top: 50px;
-  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 1000px;
   margin: 0 auto;}
@@ -755,7 +672,6 @@ input[name="tab_item"] {
 /*タブ切り替えの中身のスタイル*/
 .tab_content {
   display: none;
-  
   clear: both;
   overflow: hidden;
 }
@@ -770,20 +686,7 @@ input[name="tab_item"] {
   background-color: #5ab4bd;
   color: #fff;
 }
-/************    serch    **************/
-/*.serch {
-  width:50%;
-  margin:auto;
-  text-align:center;
-}
-.serch-form {
-  background-color:lightcyan;
-  margin:auto ;
- 
-  text-align:center;
-}*/
 
-/**/
 /**************      about     **************/
 
 .about {
@@ -817,18 +720,9 @@ input[name="tab_item"] {
 p.standard-font {
   font-family :Verdana,arial,helvetica,clean,sans-serif;
 }
-
-.edit-image {
- /* width:500px;
-  height:500px;*/
-/*  margin: auto 0;*/
-}
 #img_prev {
- max-width:400px;
+  max-width:400px;
   max-height:400px;
- /*   margin: auto 0;*/
- /* float:left;*/
-  
 }
 
 /*************** return *********************/
@@ -836,9 +730,9 @@ p.standard-font {
   width:800px;
   margin:auto;
   min-height: 50px;
-height: auto !important;
-height: 50px;
-background-color: pink;
+  height: auto !important;
+  height: 50px;
+  background-color: pink;
  }
 .line {
   margin:0 auto;
@@ -850,33 +744,30 @@ background-color: pink;
    box-shadow: 0 2px 10px #c1ced7;
 }
 .line-cover {
-   
   height:50px;
-   background-color:#edffd3; 
+  background-color:#edffd3; 
   margin:0 auto;
 }
 .post-index-return-img-cover {
-   width:190px;
+  width:190px;
   height:100px;
-  
 }
 .post-index-return-img {
-   width:50px;
+  width:50px;
   height:50px;
-   float:left;
-   
+  float:left;
 }
 .return-user-image {
-   width:50px;
+  width:50px;
   height:50px;
   float:left;
 }
 .return-index-back {
-    min-height: 50px;
-height: auto !important;
-height: 50px;
-background-color: #edffd3;
-margin:0 auto;
+  min-height: 50px;
+  height: auto !important;
+  height: 50px;
+  background-color: #edffd3;
+  margin:0 auto;
 }
 .post-index-return-content {
   min-height: 30px;
@@ -893,7 +784,6 @@ margin:0 auto;
   float:left;
 }
 .yohaku {
-/*  width :500px;*/
   height: 50px;
   margin:0 auto;
   background-color: #edffd3;
@@ -915,8 +805,6 @@ margin:0 auto;
   border-radius: 10%;
 }
   /********* タグ*********/
-
-
  ul.ultag {
   margin: 0px;
   padding: 0;
@@ -990,7 +878,6 @@ ul.ultag li:hover span {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-
 .post-detail {
   float:left;
 } 
@@ -999,7 +886,7 @@ ul.ultag li:hover span {
   min-width:50px;
 }
 .user_tag {
-   float:left;
+  float:left;
   min-width:50px;
 }
 .tagf {
@@ -1015,8 +902,6 @@ ul.ultag li:hover span {
 .index-user {
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
- /*  width:350px;*/
- /*  height:300px;*/
   margin:0 auto;
   padding: 0;
   text-align:center;
@@ -1077,7 +962,6 @@ table.follow-table {
   margin: 0 auto;
   color: #565656;
   font-family :Verdana,arial,helvetica,clean,sans-serif;
- 
 }
 
 .fa-top {
@@ -1111,16 +995,16 @@ font-size: 30px;
 .show-profile {
  word-wrap: break-word;
  width: 100%;
-  height:50px;
-  float:left;
-  margin-top: 5px;
+ height:50px;
+ float:left;
+ margin-top: 5px;
 }
 .post-index-cover-user {
-margin-bottom:10px;
+  margin-bottom:10px;
   margin:auto;
   min-height: 50px;
-height: auto !important;
-height: 50px;
+  height: auto !important;
+  height: 50px;
  }
 .post-main-users {
   width:80%;
@@ -1129,31 +1013,25 @@ height: 50px;
   box-shadow: 0 2px 10px #c1ced7;
   border-radius:2%;
   min-height: 50px;
-height: auto !important;
-height: 50px;
-clear: both;
-margin-bottom:20px;
+  height: auto !important;
+  height: 50px;
+  clear: both;
+  margin-bottom:20px;
 }
 .index-container-cover {
   width:1000px;
-/*  height:630px;*/
   margin:0 auto;
-  
-
 }
 .index-container {
-    width:100%;
-    height:520px;
-    margin:0 auto;
- 
-
+  width:100%;
+  height:520px;
+  margin:0 auto;
 }
 /**************** footer fix *****************/
 #wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
 }
 footer {
   margin-top: auto;

@@ -2,7 +2,7 @@
   <div class="about-area">
     <div class="about-main">
 <p>閲覧ありがとうございます。</p>
-<p>こちらはポートフォリオ用のツイッターの疑似サイトです。</p>
+<p>こちらはポートフォリオ用サイトです。</p>
 <hr color="lavender">
 <p>実装した機能</p>
 
@@ -11,11 +11,13 @@
 投稿詳細表示機能/
 投稿機能/
 投稿検索機能/
-いいね機能<br>
+いいね機能/
+返信機能<br>
 フォローフォロワー機能 "gem acts_as_follower"/
-画像ファイルアップロード機能(プロフィールのみ)<br>
+画像ファイルアップロード機能<br>
 ページネーション機能"will_paginate,3.1.6"/
 セキュリティ、validation gem bcrypt
+タグ付け、タグ検索機能'acts-as-taggable-on'/
 <hr color="lavender">
 <p>使用した言語等</p>
 
@@ -25,7 +27,7 @@ AWSのcloud9でruby/RubyonRailsを使用しました。<br>
 <%=link_to("https://github.com/kkfender/tweet_app","https://github.com/kkfender/tweet_app")%><br>
 <hr color="lavender">
 <p>制作期間</p>
-約20日ほどです。
+約一ヵ月ほどです。
 <hr color="lavender">
 <p>参考サイト、書籍</p>
 <サイト><br><br>
@@ -42,6 +44,9 @@ AWSのcloud9でruby/RubyonRailsを使用しました。<br>
   <li>
     <%=link_to("teratail","https://teratail.com/")%>
   </li>
+  <li>
+    <%=link_to("fontawesome","https://fontawesome.com/")%>
+  </li>
 </ul>
 <br>
 <書籍>
@@ -55,7 +60,7 @@ AWSのcloud9でruby/RubyonRailsを使用しました。<br>
 <hr color="lavender">
 <p>終わりに</p>
   <ul>
-    <li>テスト
+  <li>テスト
   </li>
   <br>
   単体テストと統合テストに関して知識不足もあり、ほとんど行えていなえていません。今後はしっかりと学習時間を取って、RSpec,Capybara,FactoryBot等でテストの
@@ -65,7 +70,7 @@ AWSのcloud9でruby/RubyonRailsを使用しました。<br>
    <li>Rubyらしい記述
   </li>
   <br>
-  erbから脱却しhamlやslimでの記述、form_tagではなくform_for、form_withでの記述など、Rubyらしく書き換えたいです。
+  erbから脱却しhamlやslimでの記述、form_tag、form_forではなくform_withでの記述など、Rubyらしく書き換えたいです。
 	また、カスタムヘルパーをあまり使用していないのでHTML内で冗長な記述になっています。
 	今後リファクタリングをする際に可読性、保守性に優れたコードを書きたいと思います。
 	<br>
@@ -73,9 +78,13 @@ AWSのcloud9でruby/RubyonRailsを使用しました。<br>
    <li>実装したい機能
   </li>
   <br>
-  画像投稿機能、返信機能、メッセージ機能、確認画面、ソート機能、管理ユーザーに関する機能等を追加したいです。
+  mecabとgem 'natto'を使い、形態素解析を行い、POSTされた投稿に自動でタグを設定したいです。<br>
+  外部APIと連携し、地図表記等を行えるようにしたいです。<br>
+  その他メッセージ機能、ソート機能、管理ユーザーに関する機能等を追加したいです。<br>
 	また、非同期処理で画面遷移させずにアクションを起こしたいです。	
+  
   </ul>
+  
     </div>
   </div>
 </div>
