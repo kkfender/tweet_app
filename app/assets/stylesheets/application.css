@@ -77,7 +77,7 @@ background-size:cover;
 margin:0 auto;
 width:60%;
 height:50%;
-margin-top:20px;
+margin-top:150px;
 
 }
 .main-inner {
@@ -482,7 +482,7 @@ img.user-image {
  
 }
 .post-index-cover {
-  width:50%;
+  width:800px;
   margin:auto;
   min-height: 50px;
 height: auto !important;
@@ -1136,7 +1136,7 @@ margin-bottom:20px;
 }
 .index-container-cover {
   width:1000px;
-  height:630px;
+/*  height:630px;*/
   margin:0 auto;
   
 
